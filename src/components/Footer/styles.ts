@@ -1,11 +1,9 @@
 import styled from "styled-components";
-import { Color } from "../../config";
+import { Color } from "../../ui";
 
 const StyledFooter = styled.div`
   display: flex;
   justify-content: space-between;
-  max-width: 1120px;
-  margin: 0 auto;
 `;
 
 const ExpDate = styled.h3`

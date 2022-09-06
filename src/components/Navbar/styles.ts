@@ -1,24 +1,27 @@
 import styled from "styled-components";
-import { Color } from "../../config";
+import { Color } from "../../ui";
 
 const StyledNavbar = styled.nav`
   display: flex;
   justify-content: space-between;
   padding: 20px 32px;
   background-color: ${Color.White};
-  margin-bottom: 72px;
+  margin-bottom: 50px;
 `;
 
-const SearchList = styled.ul`
+const NavbarList = styled.ul`
   display: flex;
   justify-content: space-between;
-  text-align: center;
 `;
 
-const SearchItem = styled.li`
+const SearchIcon = styled.li`
   list-style: none;
   align-self: center;
-  text-decoration: none;
+  margin-right: 70px;
 `;
 
-export { StyledNavbar, SearchList, SearchItem };
+const SignInIcon = styled.li`
+  list-style: none;
+`;
+
+export { StyledNavbar, NavbarList, SearchIcon, SignInIcon };

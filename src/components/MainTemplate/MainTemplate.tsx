@@ -1,11 +1,11 @@
 import { Outlet } from "react-router-dom";
 import { Footer } from "../Footer/Footer";
 import { Navbar } from "../Navbar/Navbar";
-import { StyledMainTemplate, Main, Container } from "./styles";
+import { Wrapper, Container, Main } from "./styles";
 
 export const MainTemplate = () => {
   return (
-    <StyledMainTemplate>
+    <Wrapper>
       <Navbar />
       <Container>
         <Main>
@@ -13,6 +13,6 @@ export const MainTemplate = () => {
         </Main>
         <Footer />
       </Container>
-    </StyledMainTemplate>
+    </Wrapper>
   );
 };

@@ -3,7 +3,7 @@ import { ReactComponent as Logo } from "../../assets/logo.svg";
 import { ReactComponent as Search } from "../../assets/search.svg";
 import { ReactComponent as SignIn } from "../../assets/sign-in.svg";
 import { ROUTE } from "../../routes";
-import { SearchList, StyledNavbar, SearchItem } from "./styles";
+import { NavbarList, StyledNavbar, SearchIcon, SignInIcon } from "./styles";
 
 export const Navbar = () => {
   return (
@@ -12,20 +12,20 @@ export const Navbar = () => {
         <Logo />
       </Link>
 
-      <SearchList>
-        <SearchItem>
+      <NavbarList>
+        <SearchIcon>
           <Link to={ROUTE.SEARCH}>
             {" "}
             <Search />
           </Link>
-        </SearchItem>
-        <SearchItem>
+        </SearchIcon>
+        <SignInIcon>
           <Link to={ROUTE.SING_IN}>
             {" "}
             <SignIn /> Sign In
           </Link>
-        </SearchItem>
-      </SearchList>
+        </SignInIcon>
+      </NavbarList>
     </StyledNavbar>
   );
 };

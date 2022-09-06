@@ -1,6 +1,6 @@
 export enum ROUTE {
   HOME = "/",
-  SEARCH = "/search",
+  SEARCH = "search",
   SING_IN = "sign-in",
   SIGN_UP = "sign-up",
   CONTENT = "content",
