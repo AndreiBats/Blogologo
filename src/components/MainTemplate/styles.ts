@@ -1,17 +1,17 @@
 import styled from "styled-components";
 
 const Wrapper = styled.div`
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
 `;
 
 const Container = styled.div`
-  width: 1120px;
-  margin: 0 auto;
-  flex-grow: 1;
   display: flex;
   flex-direction: column;
+  flex-grow: 1;
+  margin: 0 auto;
+  width: 1120px;
 `;
 
 const Main = styled.div`

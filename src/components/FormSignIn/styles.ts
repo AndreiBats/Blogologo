@@ -1,13 +1,14 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { Color } from "../../ui";
 
 const StyledFormSignIn = styled.div`
-  width: 624px;
   background-color: ${Color.White};
   border-radius: 16px;
-  padding: 40px;
   margin: 0 auto;
   margin-bottom: 152px;
+  padding: 40px;
+  width: 624px;
 `;
 
 const Form = styled.form`
@@ -16,53 +17,68 @@ const Form = styled.form`
 `;
 
 const EmailInput = styled.input`
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 20px;
-  color: ${Color.Medium};
   border: 1px solid ${Color.Light};
   border-radius: 4px;
+  color: ${Color.Medium};
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
   margin-bottom: 40px;
   padding: 18px;
 `;
 
 const PasswordInput = styled.input`
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 20px;
-  color: ${Color.Medium};
   border: 1px solid ${Color.Light};
   border-radius: 4px;
+  color: ${Color.Medium};
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
   margin-bottom: 16px;
   padding: 18px;
 `;
 
 const Button = styled.button`
-  font-weight: 600;
-  font-size: 18px;
-  line-height: 24px;
-  color: ${Color.White};
   background: ${Color.Primary};
-  border-radius: 4px;
   border: none;
+  border-radius: 4px;
+  color: ${Color.White};
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 24px;
   margin-bottom: 24px;
   padding: 16px;
 `;
 
 const Question = styled.p`
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 20px;
   color: ${Color.Secondary};
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
   margin-bottom: 48px;
 `;
 
 const Title = styled.h3`
+  color: ${Color.Secondary};
+  font-size: 16px;
   font-weight: 600;
+  line-height: 20px;
+  margin-bottom: 8px;
+`;
+
+const SignUp = styled(Link)`
+  color: ${Color.Primary};
+  text-decoration: none;
+  font-weight: 500;
   font-size: 16px;
   line-height: 20px;
-  color: ${Color.Secondary};
-  margin-bottom: 8px;
+`;
+
+const Auth = styled.p`
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: ${Color.Light};
 `;
 
 export {
@@ -73,4 +89,6 @@ export {
   Button,
   Question,
   Title,
+  SignUp,
+  Auth,
 };

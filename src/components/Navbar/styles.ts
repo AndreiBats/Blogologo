@@ -2,11 +2,11 @@ import styled from "styled-components";
 import { Color } from "../../ui";
 
 const StyledNavbar = styled.nav`
+  background-color: ${Color.White};
   display: flex;
   justify-content: space-between;
-  padding: 20px 32px;
-  background-color: ${Color.White};
   margin-bottom: 50px;
+  padding: 20px 32px;
 `;
 
 const NavbarList = styled.ul`
@@ -15,8 +15,8 @@ const NavbarList = styled.ul`
 `;
 
 const SearchIcon = styled.li`
-  list-style: none;
   align-self: center;
+  list-style: none;
   margin-right: 70px;
 `;
 

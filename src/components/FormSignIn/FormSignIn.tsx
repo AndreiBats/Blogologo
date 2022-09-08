@@ -10,6 +10,8 @@ import {
   Button,
   Question,
   Title,
+  SignUp,
+  Auth,
 } from "./styles";
 
 export const FormSignIn = () => {
@@ -22,9 +24,10 @@ export const FormSignIn = () => {
         <PasswordInput type="password" placeholder="Your password" />
         <Question>Forgot password?</Question>
         <Button type="submit">Sign IN</Button>
-        <p>
-          Don’t have an account? <Link to={`/${ROUTE.SIGN_UP}`}>Sign Up</Link>
-        </p>
+        <Auth>
+          Don’t have an account?{" "}
+          <SignUp to={`/${ROUTE.SIGN_UP}`}>Sign Up</SignUp>
+        </Auth>
       </Form>
     </StyledFormSignIn>
   );

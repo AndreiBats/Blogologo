@@ -1,22 +1,23 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { Color } from "../../ui";
 
 const StyledSignIn = styled.div``;
 
-const Back = styled.h3`
-  text-decoration: none;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 24px;
+const Back = styled(Link)`
   color: ${Color.Secondary};
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
   margin-bottom: 32px;
+  text-decoration: none;
 `;
 
 const Title = styled.h2`
-  font-weight: 700;
-  font-size: 56px;
-  line-height: 80px;
   color: ${Color.Secondary};
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 80px;
   margin-bottom: 72px;
 `;
 
