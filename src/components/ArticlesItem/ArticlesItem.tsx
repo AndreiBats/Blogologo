@@ -8,17 +8,21 @@ import {
   Title,
 } from "./styles";
 
-export const ArticlesItem = () => {
+interface IProps {
+  publishedAt: string;
+  title: string;
+  imageUrl: any;
+}
+
+export const ArticlesItem = ({ title, publishedAt, imageUrl }: IProps) => {
   return (
     <StyledArticlesItem>
       <MainImage>
-        <img src="../assets/overlay.jpg" alt="" />
+        <img src={imageUrl} alt="" />
       </MainImage>
       <Description>
-        <MainDate>21.03.2022</MainDate>
-        <Title>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, nam
-        </Title>
+        <MainDate>{publishedAt}</MainDate>
+        <Title>{title}</Title>
       </Description>
     </StyledArticlesItem>
   );
