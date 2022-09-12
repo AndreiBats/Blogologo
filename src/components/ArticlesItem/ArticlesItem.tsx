@@ -17,9 +17,7 @@ interface IProps {
 export const ArticlesItem = ({ title, publishedAt, imageUrl }: IProps) => {
   return (
     <StyledArticlesItem>
-      <MainImage>
-        <img src={imageUrl} alt="" />
-      </MainImage>
+      <MainImage src={imageUrl} alt="mainphoto" />
       <Description>
         <MainDate>{publishedAt}</MainDate>
         <Title>{title}</Title>

@@ -8,7 +8,11 @@ const StyledArticlesItem = styled.li`
   border-radius: 16px;
 `;
 
-const MainImage = styled.div``;
+const MainImage = styled.img`
+  width: 100%;
+  height: 208px;
+  border-radius: 16px 16px 0 0;
+`;
 
 const Description = styled.div`
   padding: 32px;

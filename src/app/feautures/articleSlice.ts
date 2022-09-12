@@ -1,4 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { AxiosError } from "axios";
+import { articleAPI } from "../../servicies/articleAPI";
+import { IArticle } from "../../types";
 
 interface ArticleState {
   articles: any[];
@@ -12,10 +15,17 @@ const initialState: ArticleState = {
   error: null,
 };
 
-const fetchArticles = createAsyncThunk("articles/fetchArticles", async () => {
-  return fetch(
-    "https://api.spaceflightnewsapi.net/v3/articles?_limit=20&_sort=title"
-  ).then((articles) => articles.json());
+const fetchArticles = createAsyncThunk<
+  IArticle[],
+  undefined,
+  { rejectValue: string }
+>("articles/fetchArticles", async (_, { rejectWithValue }) => {
+  try {
+    return await articleAPI.getAllArticles();
+  } catch (error) {
+    const AxiosError = error as AxiosError;
+    return rejectWithValue(AxiosError.message);
+  }
 });
 
 const articleSlice = createSlice({
@@ -31,9 +41,11 @@ const articleSlice = createSlice({
       state.isLoading = false;
       state.articles = payload;
     });
-    builder.addCase(fetchArticles.rejected, (state) => {
-      state.isLoading = false;
-      state.error = "Error";
+    builder.addCase(fetchArticles.rejected, (state, { payload }) => {
+      if (payload) {
+        state.isLoading = false;
+        state.error = payload;
+      }
     });
   },
 });
