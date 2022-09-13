@@ -1,5 +1,3 @@
-import React from "react";
-import { Link } from "react-router-dom";
 import { ROUTE } from "../../routes";
 
 import {
@@ -23,7 +21,7 @@ export const FormSignIn = () => {
         <Title>Password</Title>
         <PasswordInput type="password" placeholder="Your password" />
         <Question>Forgot password?</Question>
-        <Button type="submit">Sign IN</Button>
+        <Button type="submit">Sign In</Button>
         <Auth>
           Don’t have an account?{" "}
           <SignUp to={`/${ROUTE.SIGN_UP}`}>Sign Up</SignUp>

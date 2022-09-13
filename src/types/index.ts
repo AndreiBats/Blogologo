@@ -1,9 +1,3 @@
-export type InputValues = {
-  title: string;
-  imageUrl: number;
-  publishedAt: string;
-};
-
 export interface IArticle {
   id: number;
   title: string;

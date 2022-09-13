@@ -1,11 +1,12 @@
 import { Route, Routes } from "react-router-dom";
 import { MainTemplate } from "./components/MainTemplate/MainTemplate";
-import { ContentPage } from "./pages/ContentPage";
-import { HomePage } from "./pages/HomePage";
-import { NotFoundPage } from "./pages/NotFoundPage";
-import { SearchPage } from "./pages/SearchPage";
-import { SignInPage } from "./pages/SignInPage";
-import { SignUpPage } from "./pages/SignUpPage";
+import { ContentPage } from "./pages/ContentPage/ContentPage";
+import { HomePage } from "./pages/HomePage/HomePage";
+import { NotFoundPage } from "./pages/NotFoundPage/NotFoundPage";
+import { SearchPage } from "./pages/SearchPage/SearchPage";
+import { SignInPage } from "./pages/SignInPage/SignInPage";
+import { SignUpPage } from "./pages/SignUpPage/SignUpPage";
+
 import { ROUTE } from "./routes";
 
 export const App = () => {

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Color } from "../../ui";
 
-const StyledHome = styled.div``;
+const StyledHomePage = styled.div``;
 
 const ArticlesNews = styled.div`
   border-bottom: 2px solid ${Color.Light};
@@ -40,4 +40,4 @@ const ButtonNews = styled.button`
   }
 `;
 
-export { StyledHome, ArticlesNews, ButtonArticles, ButtonNews };
+export { ArticlesNews, ButtonArticles, ButtonNews, StyledHomePage };

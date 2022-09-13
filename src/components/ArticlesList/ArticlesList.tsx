@@ -2,10 +2,15 @@ import React, { useEffect } from "react";
 import { fetchArticles } from "../../app/feautures/articleSlice";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { getArticles } from "../../app/selectors/articleSelectors";
-import { InputValues } from "../../types";
 import { ArticlesItem } from "../ArticlesItem/ArticlesItem";
 import { Spinner } from "../Spinner/Spinner";
 import { StyledArticlesList } from "./styles";
+
+type InputValues = {
+  title: string;
+  imageUrl: number;
+  publishedAt: string;
+};
 
 export const ArticlesList = () => {
   const dispatch = useAppDispatch();
