@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { fetchArticles } from "../../app/feautures/articleSlice";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { getArticles } from "../../app/selectors/articleSelectors";
