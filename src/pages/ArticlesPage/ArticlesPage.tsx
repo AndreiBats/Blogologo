@@ -1,14 +1,14 @@
 import { ArticlesBlogs } from "../../components/ArticlesBlogs/ArticlesBlogs";
 import { ArticlesList } from "../../components/ArticlesList/ArticlesList";
 import { CustomSelect } from "../../components/CustomSelect/CustomSelect";
-import { StyledHomePage } from "./styles";
+import { StyledArticlesPage } from "./styles";
 
-export const HomePage = () => {
+export const ArticlesPage = () => {
   return (
-    <StyledHomePage>
+    <StyledArticlesPage>
       <ArticlesBlogs />
       <CustomSelect />
       <ArticlesList />
-    </StyledHomePage>
+    </StyledArticlesPage>
   );
 };

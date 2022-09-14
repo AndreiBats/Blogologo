@@ -1,5 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import { MainTemplate } from "./components/MainTemplate/MainTemplate";
+import { ArticlesPage } from "./pages/ArticlesPage/ArticlesPage";
+import { BlogsPage } from "./pages/BlogsPage/BlogsPage";
 import { ContentPage } from "./pages/ContentPage/ContentPage";
 import { HomePage } from "./pages/HomePage/HomePage";
 import { NotFoundPage } from "./pages/NotFoundPage/NotFoundPage";
@@ -14,6 +16,8 @@ export const App = () => {
     <Routes>
       <Route path={ROUTE.HOME} element={<MainTemplate />}>
         <Route path={ROUTE.HOME} element={<HomePage />} />
+        <Route path={ROUTE.ARTICLES} element={<ArticlesPage />} />
+        <Route path={ROUTE.BLOGS} element={<BlogsPage />} />
         <Route path={ROUTE.SEARCH} element={<SearchPage />} />
         <Route path={ROUTE.SING_IN} element={<SignInPage />} />
         <Route path={ROUTE.SIGN_UP} element={<SignUpPage />} />

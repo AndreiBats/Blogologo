@@ -21,6 +21,12 @@ class ArticleAPI {
 
     return data;
   }
+
+  public async getAllBlogs() {
+    const { data } = await this.API.get<IArticle[]>(Endpoint.BLOGS);
+
+    return data;
+  }
 }
 
 export const articleAPI = new ArticleAPI();
