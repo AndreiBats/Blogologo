@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const StyledArticlesList = styled.ul`
+const StyledBlogsList = styled.ul`
   list-style: none;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -8,4 +8,4 @@ const StyledArticlesList = styled.ul`
   grid-gap: 40px 32px;
 `;
 
-export { StyledArticlesList };
+export { StyledBlogsList };

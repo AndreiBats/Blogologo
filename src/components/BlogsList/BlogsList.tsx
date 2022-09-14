@@ -2,9 +2,10 @@ import { useEffect } from "react";
 import { fetchBlogs } from "../../app/feautures/blogSlice";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { getBlogs } from "../../app/selectors/blogSelectors";
-import { ArticlesItem } from "../ArticlesItem/ArticlesItem";
+import { BlogsItem } from "../BlogsItem/BlogsItem";
+
 import { Spinner } from "../Spinner/Spinner";
-import { StyledArticlesList } from "./styles";
+import { StyledBlogsList } from "./styles";
 
 type InputValues = {
   title: string;
@@ -29,16 +30,16 @@ export const BlogsList = () => {
   }
 
   return (
-    <StyledArticlesList>
+    <StyledBlogsList>
       {blogs.map(({ title, imageUrl, publishedAt }: InputValues) => {
         return (
-          <ArticlesItem
+          <BlogsItem
             title={title}
             imageUrl={imageUrl}
             publishedAt={publishedAt}
           />
         );
       })}
-    </StyledArticlesList>
+    </StyledBlogsList>
   );
 };

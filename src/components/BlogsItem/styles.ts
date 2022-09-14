@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Color } from "../../ui";
 
-const StyledArticlesItem = styled.li`
+const StyledBlogsItem = styled.li`
   background-color: ${Color.White};
   max-width: 351px;
   box-shadow: 0px 12px 40px 9px rgba(0, 0, 0, 0.1);
@@ -33,4 +33,4 @@ const Title = styled.h2`
   color: ${Color.Secondary};
 `;
 
-export { StyledArticlesItem, MainImage, MainDate, Title, Description };
+export { StyledBlogsItem, MainImage, MainDate, Title, Description };

@@ -2,7 +2,7 @@ import {
   Description,
   MainDate,
   MainImage,
-  StyledArticlesItem,
+  StyledBlogsItem,
   Title,
 } from "./styles";
 
@@ -12,14 +12,14 @@ interface IProps {
   imageUrl: any;
 }
 
-export const ArticlesItem = ({ title, publishedAt, imageUrl }: IProps) => {
+export const BlogsItem = ({ title, publishedAt, imageUrl }: IProps) => {
   return (
-    <StyledArticlesItem>
+    <StyledBlogsItem>
       <MainImage src={imageUrl} alt="mainphoto" />
       <Description>
         <MainDate>{publishedAt}</MainDate>
         <Title>{title}</Title>
       </Description>
-    </StyledArticlesItem>
+    </StyledBlogsItem>
   );
 };
