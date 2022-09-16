@@ -1,12 +1,15 @@
-import { ArticlesBlogs, ArticlesList, CustomSelect } from "../../components";
+import { useState } from "react";
+import { TabBar, ArticlesList, CustomSelect, BlogsList } from "../../components";
 import { StyledHomePage } from "./styles";
 
 export const HomePage = () => {
+  const [tab, setTab] = useState<string>("articles");
+
   return (
     <StyledHomePage>
-      <ArticlesBlogs />
+      <TabBar tab={tab} setTab={setTab} />
       <CustomSelect />
-      <ArticlesList />
+      {tab === "articles" ? <ArticlesList /> : <BlogsList />}
     </StyledHomePage>
   );
 };

@@ -1,14 +1,13 @@
-import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { Color } from "../../ui";
 
-const StyledArticlesBlogs = styled.div`
+const StyledTabBar = styled.div`
   border-bottom: 2px solid ${Color.Light};
   margin-bottom: 64px;
   padding-bottom: 20px;
 `;
 
-const Button = styled(Link)`
+const Button = styled.button`
   font-weight: 600;
   font-size: 16px;
   line-height: 24px;
@@ -24,4 +23,4 @@ const Button = styled(Link)`
   }
 `;
 
-export { StyledArticlesBlogs, Button };
+export { StyledTabBar, Button };

@@ -1,4 +1,4 @@
-import { ArticlesBlogs } from "./ArticlesBlogs/ArticlesBlogs";
+import { TabBar } from "./TabBar/TabBar";
 import { ArticlesItem } from "./ArticlesItem/ArticlesItem";
 import { ArticlesList } from "./ArticlesList/ArticlesList";
 import { BlogsItem } from "./BlogsItem/BlogsItem";
@@ -13,7 +13,7 @@ import { Navbar } from "./Navbar/Navbar";
 import { Spinner } from "./Spinner/Spinner";
 
 export {
-  ArticlesBlogs,
+  TabBar,
   ArticlesItem,
   ArticlesList,
   BlogsItem,
