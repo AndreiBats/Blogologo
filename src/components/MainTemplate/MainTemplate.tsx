@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
-import { Footer } from "../Footer/Footer";
-import { Navbar } from "../Navbar/Navbar";
+import { Footer, Navbar } from "..";
+
 import { Wrapper, Container, Main } from "./styles";
 
 export const MainTemplate = () => {

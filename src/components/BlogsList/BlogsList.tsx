@@ -1,8 +1,8 @@
 import { useEffect } from "react";
+import { BlogsItem } from "..";
 import { fetchBlogs } from "../../app/feautures/blogSlice";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { getBlogs } from "../../app/selectors/blogSelectors";
-import { BlogsItem } from "../BlogsItem/BlogsItem";
 
 import { Spinner } from "../Spinner/Spinner";
 import { StyledBlogsList } from "./styles";
@@ -32,13 +32,7 @@ export const BlogsList = () => {
   return (
     <StyledBlogsList>
       {blogs.map(({ title, imageUrl, publishedAt }: InputValues) => {
-        return (
-          <BlogsItem
-            title={title}
-            imageUrl={imageUrl}
-            publishedAt={publishedAt}
-          />
-        );
+        return <BlogsItem title={title} imageUrl={imageUrl} publishedAt={publishedAt} />;
       })}
     </StyledBlogsList>
   );

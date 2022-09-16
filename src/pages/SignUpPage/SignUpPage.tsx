@@ -1,4 +1,4 @@
-import { FormSignUp } from "../../components/FormSignUp/FormSignUP";
+import { FormSignUp } from "../../components";
 import { ROUTE } from "../../routes";
 import { Back, StyledSignUpPage, Title } from "./styles";
 

@@ -1,7 +1,4 @@
-import React from "react";
-import { ArticlesBlogs } from "../../components/ArticlesBlogs/ArticlesBlogs";
-import { BlogsList } from "../../components/BlogsList/BlogsList";
-import { CustomSelect } from "../../components/CustomSelect/CustomSelect";
+import { ArticlesBlogs, BlogsList, CustomSelect } from "../../components";
 import { StyledBlogsList } from "./style";
 
 export const BlogsPage = () => {

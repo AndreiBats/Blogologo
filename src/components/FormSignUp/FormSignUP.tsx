@@ -1,17 +1,8 @@
 import { SubmitHandler, useForm } from "react-hook-form";
+import { Input } from "..";
 import { ROUTE } from "../../routes";
-import { Input } from "../Input/Input";
 
-import {
-  Form,
-  StyledFormSignUp,
-  Button,
-  Question,
-  Title,
-  SignIn,
-  Auth,
-  Message,
-} from "./styles";
+import { Form, StyledFormSignUp, Button, Question, Title, SignIn, Auth, Message } from "./styles";
 
 type SignUpValues = {
   email: string;
@@ -43,8 +34,7 @@ export const FormSignUp = () => {
           name="email"
           rules={{
             required: "Email is required",
-            pattern:
-              /^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/,
+            pattern: /^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/,
           }}
         />
         {errors.email && <Message>{errors.email.message}</Message>}
@@ -66,8 +56,7 @@ export const FormSignUp = () => {
         <Question>Forgot password?</Question>
         <Button type="submit">Sign Up</Button>
         <Auth>
-          Already have an account?{" "}
-          <SignIn to={`/${ROUTE.SING_IN}`}>Sign In</SignIn>
+          Already have an account? <SignIn to={`/${ROUTE.SING_IN}`}>Sign In</SignIn>
         </Auth>
       </Form>
     </StyledFormSignUp>

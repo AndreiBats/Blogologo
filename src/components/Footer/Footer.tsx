@@ -1,4 +1,3 @@
-import React from "react";
 import { StyledFooter, ExpDate, ThemeToggle } from "./styles";
 
 export const Footer = () => {

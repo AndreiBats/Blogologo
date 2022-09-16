@@ -1,4 +1,4 @@
-import { FormSignIn } from "../../components/FormSignIn/FormSignIn";
+import { FormSignIn } from "../../components";
 import { ROUTE } from "../../routes";
 import { Back, StyledSignInPage, Title } from "./styles";
 

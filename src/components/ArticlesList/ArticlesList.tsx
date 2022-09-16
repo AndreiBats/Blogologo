@@ -1,9 +1,8 @@
 import { useEffect } from "react";
+import { ArticlesItem, Spinner } from "..";
 import { fetchArticles } from "../../app/feautures/articleSlice";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { getArticles } from "../../app/selectors/articleSelectors";
-import { ArticlesItem } from "../ArticlesItem/ArticlesItem";
-import { Spinner } from "../Spinner/Spinner";
 import { StyledArticlesList } from "./styles";
 
 type InputValues = {
@@ -31,13 +30,7 @@ export const ArticlesList = () => {
   return (
     <StyledArticlesList>
       {articles.map(({ title, imageUrl, publishedAt }: InputValues) => {
-        return (
-          <ArticlesItem
-            title={title}
-            imageUrl={imageUrl}
-            publishedAt={publishedAt}
-          />
-        );
+        return <ArticlesItem title={title} imageUrl={imageUrl} publishedAt={publishedAt} />;
       })}
     </StyledArticlesList>
   );

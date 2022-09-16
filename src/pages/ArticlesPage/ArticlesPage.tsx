@@ -1,6 +1,4 @@
-import { ArticlesBlogs } from "../../components/ArticlesBlogs/ArticlesBlogs";
-import { ArticlesList } from "../../components/ArticlesList/ArticlesList";
-import { CustomSelect } from "../../components/CustomSelect/CustomSelect";
+import { ArticlesBlogs, ArticlesList, CustomSelect } from "../../components";
 import { StyledArticlesPage } from "./styles";
 
 export const ArticlesPage = () => {
