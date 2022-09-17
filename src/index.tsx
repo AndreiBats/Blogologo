@@ -5,17 +5,14 @@ import { GlobalStyles } from "./ui/GlobalStyles";
 import { App } from "./App";
 import { Provider } from "react-redux";
 import { store } from "./app/store";
+import "./firebase";
 
-const root = ReactDOM.createRoot(
-  document.getElementById("root") as HTMLElement
-);
+const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);
 root.render(
-  <React.StrictMode>
-    <GlobalStyles />
-    <BrowserRouter>
-      <Provider store={store}>
-        <App />
-      </Provider>
-    </BrowserRouter>
-  </React.StrictMode>
+  <BrowserRouter>
+    <Provider store={store}>
+      <GlobalStyles />
+      <App />
+    </Provider>
+  </BrowserRouter>,
 );

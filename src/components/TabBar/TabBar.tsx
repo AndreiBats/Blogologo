@@ -2,26 +2,22 @@ import { Button, StyledTabBar } from "./styles";
 
 interface IProps {
   tab: string;
-  setTab: any;
+  setTab: (tab: string) => void;
 }
 
 export const TabBar = ({ setTab }: IProps) => {
+  const handleSetArticles = () => {
+    setTab("articles");
+  };
+
+  const handleSetBlogs = () => {
+    setTab("blogs");
+  };
+
   return (
     <StyledTabBar>
-      <Button
-        onClick={() => {
-          setTab("articles");
-        }}
-      >
-        Articles
-      </Button>
-      <Button
-        onClick={() => {
-          setTab("blogs");
-        }}
-      >
-        Blogs
-      </Button>
+      <Button onClick={handleSetArticles}>Articles</Button>
+      <Button onClick={handleSetBlogs}>Blogs</Button>
     </StyledTabBar>
   );
 };

@@ -1,13 +1,6 @@
 import { Route, Routes } from "react-router-dom";
-import { MainTemplate } from "./components/MainTemplate/MainTemplate";
-// import { ArticlesPage } from "./pages/ArticlesPage/ArticlesPage";
-// import { BlogsPage } from "./pages/BlogsPage/BlogsPage";
-import { ContentPage } from "./pages/ContentPage/ContentPage";
-import { HomePage } from "./pages/HomePage/HomePage";
-import { NotFoundPage } from "./pages/NotFoundPage/NotFoundPage";
-import { SearchPage } from "./pages/SearchPage/SearchPage";
-import { SignInPage } from "./pages/SignInPage/SignInPage";
-import { SignUpPage } from "./pages/SignUpPage/SignUpPage";
+import { MainTemplate } from "./components";
+import { ContentPage, HomePage, NotFoundPage, SearchPage, SignInPage, SignUpPage } from "./pages";
 
 import { ROUTE } from "./routes";
 

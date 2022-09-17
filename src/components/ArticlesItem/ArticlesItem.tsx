@@ -1,24 +1,17 @@
-import {
-  Description,
-  MainDate,
-  MainImage,
-  StyledArticlesItem,
-  Title,
-} from "./styles";
+import { IArticle } from "../../types";
+import { Description, MainDate, MainImage, StyledArticlesItem, Title } from "./styles";
 
 interface IProps {
-  publishedAt: string;
-  title: string;
-  imageUrl: any;
+  article: IArticle;
 }
 
-export const ArticlesItem = ({ title, publishedAt, imageUrl }: IProps) => {
+export const ArticlesItem = (article: IProps) => {
   return (
     <StyledArticlesItem>
-      <MainImage src={imageUrl} alt="mainphoto" />
+      <MainImage src={article.article.imageUrl} alt="mainphoto" />
       <Description>
-        <MainDate>{publishedAt}</MainDate>
-        <Title>{title}</Title>
+        <MainDate>{article.article.publishedAt}</MainDate>
+        <Title>{article.article.title}</Title>
       </Description>
     </StyledArticlesItem>
   );

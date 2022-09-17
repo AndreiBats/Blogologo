@@ -6,7 +6,14 @@ interface IProps {
   type: string;
   control: any;
   name: string;
-  rules: any;
+  rules: {
+    required: string;
+    pattern?: any;
+    minLength?: {
+      value: number;
+      message: string;
+    };
+  };
 }
 
 export const Input = ({ placeholder, type, control, name, rules }: IProps) => {
@@ -15,9 +22,7 @@ export const Input = ({ placeholder, type, control, name, rules }: IProps) => {
       control={control}
       name={name}
       rules={rules}
-      render={({ field }) => (
-        <StyledInput type={type} placeholder={placeholder} {...field} />
-      )}
+      render={({ field }) => <StyledInput type={type} placeholder={placeholder} {...field} />}
     />
   );
 };

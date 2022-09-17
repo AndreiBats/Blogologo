@@ -1,9 +1,8 @@
 import { Link } from "react-router-dom";
-import { ReactComponent as Logo } from "../../assets/logo.svg";
-import { ReactComponent as Search } from "../../assets/search.svg";
-import { ReactComponent as SignIn } from "../../assets/sign-in.svg";
+import { Logo, Search, SignIn } from "../../assets/index";
+
 import { ROUTE } from "../../routes";
-import { NavbarList, StyledNavbar, SearchIcon, SignInIcon } from "./styles";
+import { NavbarList, StyledNavbar, SearchIcon, NavItem } from "./styles";
 
 export const Navbar = () => {
   return (
@@ -11,7 +10,6 @@ export const Navbar = () => {
       <Link to={ROUTE.HOME}>
         <Logo />
       </Link>
-
       <NavbarList>
         <SearchIcon>
           <Link to={ROUTE.SEARCH}>
@@ -19,12 +17,12 @@ export const Navbar = () => {
             <Search />
           </Link>
         </SearchIcon>
-        <SignInIcon>
+        <NavItem>
           <Link to={ROUTE.SING_IN}>
             {" "}
             <SignIn /> Sign In
           </Link>
-        </SignInIcon>
+        </NavItem>
       </NavbarList>
     </StyledNavbar>
   );

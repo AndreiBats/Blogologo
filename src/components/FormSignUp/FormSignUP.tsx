@@ -1,7 +1,6 @@
 import { SubmitHandler, useForm } from "react-hook-form";
-import { Input } from "..";
+import { Input } from "../index";
 import { ROUTE } from "../../routes";
-
 import { Form, StyledFormSignUp, Button, Question, Title, SignIn, Auth, Message } from "./styles";
 
 type SignUpValues = {

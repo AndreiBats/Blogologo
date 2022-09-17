@@ -15,9 +15,11 @@ export const Reset = css`
   }
   ul {
     list-style-type: none;
+    list-style: none;
   }
   li {
     text-transform: none;
+    list-style: none;
   }
   a {
     background-color: transparent;
@@ -53,6 +55,7 @@ export const Reset = css`
   select,
   textarea {
     line-height: inherit;
+    border: none;
   }
   button {
     overflow: visible;

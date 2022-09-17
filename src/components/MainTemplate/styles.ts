@@ -12,6 +12,7 @@ const Container = styled.div`
   flex-grow: 1;
   margin: 0 auto;
   max-width: 1120px;
+  width: 100%;
 `;
 
 const Main = styled.div`

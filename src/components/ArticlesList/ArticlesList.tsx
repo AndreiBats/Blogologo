@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { ArticlesItem, Spinner } from "..";
+import { ArticlesItem, Spinner } from "../index";
 import { fetchArticles } from "../../app/feautures/articleSlice";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { getArticles } from "../../app/selectors/articleSelectors";
@@ -19,9 +19,9 @@ export const ArticlesList = () => {
     dispatch(fetchArticles());
   }, [dispatch]);
 
-  if (isLoading) {
-    return <Spinner />;
-  }
+  // if (isLoading) {
+  //   return <Spinner />;
+  // }
 
   if (error) {
     return <h1>Error: {error}</h1>;
@@ -29,8 +29,8 @@ export const ArticlesList = () => {
 
   return (
     <StyledArticlesList>
-      {articles.map(({ title, imageUrl, publishedAt }: InputValues) => {
-        return <ArticlesItem title={title} imageUrl={imageUrl} publishedAt={publishedAt} />;
+      {articles.map((article) => {
+        return <ArticlesItem article={article} />;
       })}
     </StyledArticlesList>
   );

@@ -20,8 +20,6 @@ const SearchIcon = styled.li`
   margin-right: 70px;
 `;
 
-const SignInIcon = styled.li`
-  list-style: none;
-`;
+const NavItem = styled.li``;
 
-export { StyledNavbar, NavbarList, SearchIcon, SignInIcon };
+export { StyledNavbar, NavbarList, SearchIcon, NavItem };

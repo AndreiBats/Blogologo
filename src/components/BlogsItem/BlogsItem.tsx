@@ -1,24 +1,17 @@
-import {
-  Description,
-  MainDate,
-  MainImage,
-  StyledBlogsItem,
-  Title,
-} from "./styles";
+import { IBlog } from "../../types";
+import { Description, MainDate, MainImage, StyledBlogsItem, Title } from "./styles";
 
 interface IProps {
-  publishedAt: string;
-  title: string;
-  imageUrl: any;
+  blog: IBlog;
 }
 
-export const BlogsItem = ({ title, publishedAt, imageUrl }: IProps) => {
+export const BlogsItem = (blog: IProps) => {
   return (
     <StyledBlogsItem>
-      <MainImage src={imageUrl} alt="mainphoto" />
+      <MainImage src={blog.blog.imageUrl} alt="mainphoto" />
       <Description>
-        <MainDate>{publishedAt}</MainDate>
-        <Title>{title}</Title>
+        <MainDate>{blog.blog.publishedAt}</MainDate>
+        <Title>{blog.blog.title}</Title>
       </Description>
     </StyledBlogsItem>
   );

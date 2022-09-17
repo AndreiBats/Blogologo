@@ -6,6 +6,7 @@ const StyledBlogsItem = styled.li`
   max-width: 351px;
   box-shadow: 0px 12px 40px 9px rgba(0, 0, 0, 0.1);
   border-radius: 16px;
+  width: 100%;
 `;
 
 const MainImage = styled.img`

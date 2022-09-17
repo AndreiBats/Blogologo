@@ -7,7 +7,7 @@ const StyledFooter = styled.div`
   padding: 24px 0;
 `;
 
-const ExpDate = styled.h3`
+const CopyRight = styled.h3`
   color: ${Color.Medium};
   font-weight: 400;
   font-size: 16px;
@@ -21,4 +21,4 @@ const ThemeToggle = styled.button`
   line-height: 24px;
 `;
 
-export { StyledFooter, ThemeToggle, ExpDate };
+export { StyledFooter, ThemeToggle, CopyRight };

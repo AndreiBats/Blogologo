@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { BlogsItem } from "..";
+import { BlogsItem } from "../index";
 import { fetchBlogs } from "../../app/feautures/blogSlice";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { getBlogs } from "../../app/selectors/blogSelectors";
@@ -21,9 +21,9 @@ export const BlogsList = () => {
     dispatch(fetchBlogs());
   }, [dispatch]);
 
-  if (isLoading) {
-    return <Spinner />;
-  }
+  // if (isLoading) {
+  //   return <Spinner />;
+  // }
 
   if (error) {
     return <h1>Error: {error}</h1>;
@@ -31,8 +31,8 @@ export const BlogsList = () => {
 
   return (
     <StyledBlogsList>
-      {blogs.map(({ title, imageUrl, publishedAt }: InputValues) => {
-        return <BlogsItem title={title} imageUrl={imageUrl} publishedAt={publishedAt} />;
+      {blogs.map((blog) => {
+        return <BlogsItem blog={blog} />;
       })}
     </StyledBlogsList>
   );

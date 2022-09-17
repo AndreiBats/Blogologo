@@ -1,9 +1,9 @@
-import { StyledFooter, ExpDate, ThemeToggle } from "./styles";
+import { StyledFooter, CopyRight, ThemeToggle } from "./styles";
 
 export const Footer = () => {
   return (
     <StyledFooter>
-      <ExpDate>©2022 Blogolog</ExpDate>
+      <CopyRight>©2022 Blogolog</CopyRight>
       <ThemeToggle type="button">Dark theme</ThemeToggle>
     </StyledFooter>
   );
