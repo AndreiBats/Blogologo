@@ -1,4 +1,5 @@
-import { SubmitHandler, useForm } from "react-hook-form";
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { Controller, SubmitHandler, useForm } from "react-hook-form";
 import { Input } from "../index";
 import { ROUTE } from "../../routes";
 import { Form, StyledFormSignUp, Button, Question, Title, SignIn, Auth, Message } from "./styles";
@@ -17,31 +18,31 @@ export const FormSignUp = () => {
   } = useForm<SignUpValues>();
 
   const onSubmit: SubmitHandler<SignUpValues> = ({ email, password }) => {
-    console.log(email);
-    console.log(password);
-    reset();
+    const auth = getAuth();
+    createUserWithEmailAndPassword(auth, email, password).then((userCredential) => {
+      console.log(userCredential);
+    });
   };
 
   return (
     <StyledFormSignUp>
       <Form onSubmit={handleSubmit(onSubmit)}>
         <Title> Email</Title>
-        <Input
+        <Controller
           control={control}
-          type="text"
-          placeholder="Your email"
           name="email"
           rules={{
             required: "Email is required",
             pattern: /^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/,
           }}
+          render={({ field: { onChange, value } }) => (
+            <Input onChange={onChange} value={value} placeholder="Your email" type="text" />
+          )}
         />
         {errors.email && <Message>{errors.email.message}</Message>}
         <Title>Password</Title>
-        <Input
+        <Controller
           control={control}
-          type="password"
-          placeholder="Your password"
           name="password"
           rules={{
             required: "Password is required",
@@ -50,6 +51,9 @@ export const FormSignUp = () => {
               message: "Password must have 6 symbols",
             },
           }}
+          render={({ field: { onChange, value } }) => (
+            <Input onChange={onChange} value={value} placeholder="Your password" type="password" />
+          )}
         />
         {errors.password && <Message>{errors.password.message}</Message>}
         <Question>Forgot password?</Question>

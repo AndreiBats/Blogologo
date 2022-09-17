@@ -1,28 +1,13 @@
-import { Controller } from "react-hook-form";
+import { ChangeEvent } from "react";
 import { StyledInput } from "./styles";
 
-interface IProps {
-  placeholder: string;
+export interface IProps {
+  value: string;
+  onChange: (event: ChangeEvent<HTMLInputElement>) => void;
   type: string;
-  control: any;
-  name: string;
-  rules: {
-    required: string;
-    pattern?: any;
-    minLength?: {
-      value: number;
-      message: string;
-    };
-  };
+  placeholder: string;
 }
 
-export const Input = ({ placeholder, type, control, name, rules }: IProps) => {
-  return (
-    <Controller
-      control={control}
-      name={name}
-      rules={rules}
-      render={({ field }) => <StyledInput type={type} placeholder={placeholder} {...field} />}
-    />
-  );
+export const Input = ({ placeholder, type, onChange, value }: IProps) => {
+  return <StyledInput type={type} placeholder={placeholder} onChange={onChange} value={value} />;
 };
