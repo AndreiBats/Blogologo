@@ -4,12 +4,8 @@ import { fetchArticles } from "../../app/feautures/articleSlice";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { getArticles } from "../../app/selectors/articleSelectors";
 import { StyledArticlesList } from "./styles";
-
-type InputValues = {
-  title: string;
-  imageUrl: number;
-  publishedAt: string;
-};
+import { Link } from "react-router-dom";
+import { ROUTE } from "../../routes";
 
 export const ArticlesList = () => {
   const dispatch = useAppDispatch();
@@ -30,7 +26,11 @@ export const ArticlesList = () => {
   return (
     <StyledArticlesList>
       {articles.map((article) => {
-        return <ArticlesItem article={article} />;
+        return (
+          <Link to={`/article/${article.id}`}>
+            <ArticlesItem article={article} key={article.id} />
+          </Link>
+        );
       })}
     </StyledArticlesList>
   );

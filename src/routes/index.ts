@@ -6,6 +6,7 @@ export enum ROUTE {
   FAVORITES = "favorites",
   SING_IN = "sign-in",
   SIGN_UP = "sign-up",
-  CONTENT = "content",
+  ARTICLE = "article/:id",
+  BLOG = "blog/:id",
   NOT_FOUND = "*",
 }

@@ -4,7 +4,7 @@ import { spaceFlyAPI } from "../../services/services";
 import { IArticle } from "../../types";
 
 interface ArticleState {
-  articles: any[];
+  articles: IArticle[];
   isLoading: boolean;
   error: null | string;
 }

@@ -7,12 +7,6 @@ import { getBlogs } from "../../app/selectors/blogSelectors";
 import { Spinner } from "../Spinner/Spinner";
 import { StyledBlogsList } from "./styles";
 
-type InputValues = {
-  title: string;
-  imageUrl: number;
-  publishedAt: string;
-};
-
 export const BlogsList = () => {
   const dispatch = useAppDispatch();
   const { isLoading, error, blogs } = useAppSelector(getBlogs);
@@ -32,7 +26,7 @@ export const BlogsList = () => {
   return (
     <StyledBlogsList>
       {blogs.map((blog) => {
-        return <BlogsItem blog={blog} />;
+        return <BlogsItem blog={blog} key={blog.id} />;
       })}
     </StyledBlogsList>
   );
