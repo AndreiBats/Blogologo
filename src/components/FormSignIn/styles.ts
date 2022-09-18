@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { Color } from "../../ui";
 
-const StyledFormSignIn = styled.div`
+const StyledFormSignUp = styled.div`
   background-color: ${Color.White};
   border-radius: 16px;
   margin: 0 auto;
@@ -81,8 +81,15 @@ const Auth = styled.p`
   color: ${Color.Light};
 `;
 
+const Message = styled.p`
+  color: ${Color.Red};
+  margin-bottom: 26px;
+`;
+
+const ErrorMessage = styled.p``;
+
 export {
-  StyledFormSignIn,
+  StyledFormSignUp,
   Form,
   EmailInput,
   PasswordInput,
@@ -91,4 +98,6 @@ export {
   Title,
   SignUp,
   Auth,
+  Message,
+  ErrorMessage,
 };

@@ -1,8 +1,7 @@
 import { Link } from "react-router-dom";
-import { Logo, Search, SignIn } from "../../assets/index";
-
+import { Logo, Search, SignIn, Favorites } from "../../assets/index";
 import { ROUTE } from "../../routes";
-import { NavbarList, StyledNavbar, SearchIcon, NavItem } from "./styles";
+import { NavbarList, StyledNavbar, SearchItem, NavItem, FavoritesItem } from "./styles";
 
 export const Navbar = () => {
   return (
@@ -11,12 +10,18 @@ export const Navbar = () => {
         <Logo />
       </Link>
       <NavbarList>
-        <SearchIcon>
+        <FavoritesItem>
+          <Link to={ROUTE.FAVORITES}>
+            {" "}
+            <Favorites />
+          </Link>
+        </FavoritesItem>
+        <SearchItem>
           <Link to={ROUTE.SEARCH}>
             {" "}
             <Search />
           </Link>
-        </SearchIcon>
+        </SearchItem>
         <NavItem>
           <Link to={ROUTE.SING_IN}>
             {" "}

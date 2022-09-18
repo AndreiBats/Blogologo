@@ -86,6 +86,8 @@ const Message = styled.p`
   margin-bottom: 26px;
 `;
 
+const ErrorMessage = styled.p``;
+
 export {
   StyledFormSignUp,
   Form,
@@ -97,4 +99,5 @@ export {
   SignIn,
   Auth,
   Message,
+  ErrorMessage,
 };

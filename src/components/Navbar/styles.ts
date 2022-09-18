@@ -14,7 +14,7 @@ const NavbarList = styled.ul`
   justify-content: space-between;
 `;
 
-const SearchIcon = styled.li`
+const SearchItem = styled.li`
   align-self: center;
   list-style: none;
   margin-right: 70px;
@@ -22,4 +22,6 @@ const SearchIcon = styled.li`
 
 const NavItem = styled.li``;
 
-export { StyledNavbar, NavbarList, SearchIcon, NavItem };
+const FavoritesItem = styled.li``;
+
+export { StyledNavbar, NavbarList, SearchItem, NavItem, FavoritesItem };

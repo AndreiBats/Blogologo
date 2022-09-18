@@ -1,8 +1,21 @@
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { Controller, SubmitHandler, useForm } from "react-hook-form";
-import { Input } from "../index";
+import { Input, Spinner } from "../index";
 import { ROUTE } from "../../routes";
-import { Form, StyledFormSignUp, Button, Question, Title, SignIn, Auth, Message } from "./styles";
+import {
+  Form,
+  StyledFormSignUp,
+  Button,
+  Question,
+  Title,
+  SignIn,
+  Auth,
+  Message,
+  ErrorMessage,
+} from "./styles";
+import { useState } from "react";
+import { getFireBaseMessage } from "../../utils/firebaseErrors";
+import { useNavigate } from "react-router-dom";
 
 type SignUpValues = {
   email: string;
@@ -10,6 +23,10 @@ type SignUpValues = {
 };
 
 export const FormSignUp = () => {
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate();
+
   const {
     control,
     handleSubmit,
@@ -18,10 +35,21 @@ export const FormSignUp = () => {
   } = useForm<SignUpValues>();
 
   const onSubmit: SubmitHandler<SignUpValues> = ({ email, password }) => {
+    setIsLoading(true);
+    setErrorMessage(null);
     const auth = getAuth();
-    createUserWithEmailAndPassword(auth, email, password).then((userCredential) => {
-      console.log(userCredential);
-    });
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        console.log(userCredential);
+        navigate("/");
+      })
+      .catch((err) => {
+        setErrorMessage(getFireBaseMessage(err.code));
+      })
+      .finally(() => {
+        setIsLoading(false);
+        reset();
+      });
   };
 
   return (
@@ -57,7 +85,11 @@ export const FormSignUp = () => {
         />
         {errors.password && <Message>{errors.password.message}</Message>}
         <Question>Forgot password?</Question>
-        <Button type="submit">Sign Up</Button>
+        {errorMessage && <ErrorMessage>{errorMessage}</ErrorMessage>}
+        <Button type="submit">
+          Sign Up
+          {isLoading && <Spinner />}
+        </Button>
         <Auth>
           Already have an account? <SignIn to={`/${ROUTE.SING_IN}`}>Sign In</SignIn>
         </Auth>

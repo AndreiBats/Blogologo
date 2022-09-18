@@ -11,6 +11,8 @@ import { Input } from "./Input/Input";
 import { MainTemplate } from "./MainTemplate/MainTemplate";
 import { Navbar } from "./Navbar/Navbar";
 import { Spinner } from "./Spinner/Spinner";
+import { RequireAuth } from "./RequireAuth/RequireAuth";
+import { Favorites } from "./Favorites/Favorites";
 
 export {
   TabBar,
@@ -26,4 +28,6 @@ export {
   MainTemplate,
   Navbar,
   Spinner,
+  RequireAuth,
+  Favorites,
 };
