@@ -7,7 +7,7 @@ enum Endpoint {
   ARTICLES_ID = "articles/",
   BLOGS_COUNT = "blogs/count",
   BLOGS = "blogs",
-  BLOGS_ID = "blogs/{id}",
+  BLOGS_ID = "blogs/",
 }
 
 class SpaceFlyAPI {

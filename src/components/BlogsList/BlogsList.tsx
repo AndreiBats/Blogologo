@@ -6,6 +6,7 @@ import { getBlogs } from "../../app/selectors/blogSelectors";
 
 import { Spinner } from "../Spinner/Spinner";
 import { StyledBlogsList } from "./styles";
+import { Link } from "react-router-dom";
 
 export const BlogsList = () => {
   const dispatch = useAppDispatch();
@@ -26,7 +27,11 @@ export const BlogsList = () => {
   return (
     <StyledBlogsList>
       {blogs.map((blog) => {
-        return <BlogsItem blog={blog} key={blog.id} />;
+        return (
+          <Link to={`/blog/${blog.id}`}>
+            <BlogsItem blog={blog} key={blog.id} />
+          </Link>
+        );
       })}
     </StyledBlogsList>
   );
