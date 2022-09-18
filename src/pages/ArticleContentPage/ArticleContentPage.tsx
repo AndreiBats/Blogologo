@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { fetchArticleDetailsByID } from "../../app/feautures/articleDetailsSlice";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { getDetailsArticle } from "../../app/selectors/articleDetailsSelectors";
+import { Spinner } from "../../components";
 
 import { StyledArticleContentPage, Title, Description, MainImage } from "./styles";
 
@@ -15,6 +16,10 @@ export const ArticleContentPage = () => {
   useEffect(() => {
     dispatch(fetchArticleDetailsByID(id!));
   }, [dispatch, id]);
+
+  if (isLoading) {
+    return <Spinner />;
+  }
 
   return (
     <StyledArticleContentPage>

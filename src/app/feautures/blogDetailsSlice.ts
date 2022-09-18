@@ -1,12 +1,12 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { AxiosError } from "axios";
 import { spaceFlyAPI } from "../../services/services";
-import { IArticle } from "../../types";
+import { IArticle, IBlog } from "../../types";
 
 interface BlogDetailsState {
   isLoading: boolean;
   error: null | string;
-  details: any;
+  details: IBlog;
 }
 
 const initialState: BlogDetailsState = {

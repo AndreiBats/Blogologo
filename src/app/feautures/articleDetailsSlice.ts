@@ -6,7 +6,7 @@ import { IArticle } from "../../types";
 interface ArticleDetailsState {
   isLoading: boolean;
   error: null | string;
-  details: any;
+  details: IArticle;
 }
 
 const initialState: ArticleDetailsState = {
