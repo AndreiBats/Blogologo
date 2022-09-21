@@ -13,6 +13,7 @@ import { Navbar } from "./Navbar/Navbar";
 import { Spinner } from "./Spinner/Spinner";
 import { RequireAuth } from "./RequireAuth/RequireAuth";
 import { Favorites } from "./Favorites/Favorites";
+import { Search } from "./Search/Search";
 
 export {
   TabBar,
@@ -30,4 +31,5 @@ export {
   Spinner,
   RequireAuth,
   Favorites,
+  Search,
 };

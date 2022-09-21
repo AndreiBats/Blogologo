@@ -1,3 +1,4 @@
+import { format } from "date-fns";
 import { IArticle } from "../../types";
 import { Description, MainDate, MainImage, StyledArticlesItem, Title } from "./styles";
 
