@@ -33,4 +33,6 @@ const Title = styled.h2`
   color: ${Color.Secondary};
 `;
 
-export { StyledArticlesItem, MainImage, MainDate, Title, Description };
+const Button = styled.button``;
+
+export { StyledArticlesItem, MainImage, MainDate, Title, Description, Button };

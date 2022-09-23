@@ -1,4 +1,3 @@
-import React from "react";
 import { Search } from "../../components";
 import { StyledSearchPage } from "./styles";
 

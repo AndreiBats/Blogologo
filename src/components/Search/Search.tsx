@@ -1,12 +1,10 @@
-import React from "react";
-import { StyledSearch, Form, SearchButton } from "./styles";
+import { StyledSearch, SearchButton, Input } from "./styles";
 
 export const Search = () => {
   return (
     <StyledSearch>
-      <Form>
-        <SearchButton>Search</SearchButton>
-      </Form>
+      <Input type="search" placeholder="Search" />
+      <SearchButton>Search</SearchButton>
     </StyledSearch>
   );
 };
