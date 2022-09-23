@@ -3,10 +3,10 @@ import { IArticle, IBlog } from "../types";
 
 enum Endpoint {
   ARTICLES_COUNT = "articles/count",
-  ARTICLES = "articles",
+  ARTICLES = "articles?_limit=12",
   ARTICLES_ID = "articles/",
   BLOGS_COUNT = "blogs/count",
-  BLOGS = "blogs",
+  BLOGS = "blogs?_limit=12",
   BLOGS_ID = "blogs/",
 }
 

@@ -8,7 +8,6 @@ export const HomePage = () => {
   return (
     <StyledHomePage>
       <TabBar tab={tab} setTab={setTab} />
-      <CustomSelect />
       {tab === "articles" ? <ArticlesList /> : <BlogsList />}
     </StyledHomePage>
   );

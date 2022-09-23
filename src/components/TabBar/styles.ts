@@ -2,9 +2,13 @@ import styled from "styled-components";
 import { Color } from "../../ui";
 
 const StyledTabBar = styled.div`
-  border-bottom: 2px solid ${Color.Light};
-  margin-bottom: 64px;
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 `;
+
+const TabItems = styled.div``;
 
 const Button = styled.button`
   font-weight: 600;
@@ -12,12 +16,14 @@ const Button = styled.button`
   line-height: 24px;
   color: ${Color.Secondary};
   background-color: transparent;
-  padding: 0 40px 24px 40px;
+  padding: 16px 24px;
+  border: none;
+  border-radius: 4px;
 
   &:active,
   :focus {
-    border-bottom: 2px solid ${Color.Secondary};
+    background-color: ${Color.Primary};
   }
 `;
 
-export { StyledTabBar, Button };
+export { StyledTabBar, Button, TabItems };

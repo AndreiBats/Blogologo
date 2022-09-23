@@ -6,7 +6,7 @@ export const CustomStyles = {
     display: "flex",
     background: Color.White,
     borderRadius: "4px",
-    marginBottom: "64px",
+
     padding: "15px",
   }),
 

@@ -1,4 +1,5 @@
-import { Button, StyledTabBar } from "./styles";
+import { CustomSelect } from "../CustomSelect/CustomSelect";
+import { Button, StyledTabBar, TabItems } from "./styles";
 
 interface IProps {
   tab: string;
@@ -16,8 +17,11 @@ export const TabBar = ({ setTab }: IProps) => {
 
   return (
     <StyledTabBar>
-      <Button onClick={handleSetArticles}>Articles</Button>
-      <Button onClick={handleSetBlogs}>Blogs</Button>
+      <TabItems>
+        <Button onClick={handleSetArticles}>Articles</Button>
+        <Button onClick={handleSetBlogs}>Blogs</Button>
+      </TabItems>
+      <CustomSelect />
     </StyledTabBar>
   );
 };

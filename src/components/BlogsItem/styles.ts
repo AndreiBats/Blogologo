@@ -6,7 +6,8 @@ const StyledBlogsItem = styled.li`
   max-width: 351px;
   box-shadow: 0px 12px 40px 9px rgba(0, 0, 0, 0.1);
   border-radius: 16px;
-  width: 100%;
+  position: relative;
+  height: 380px;
 `;
 
 const MainImage = styled.img`
@@ -34,4 +35,14 @@ const Title = styled.h2`
   color: ${Color.Secondary};
 `;
 
-export { StyledBlogsItem, MainImage, MainDate, Title, Description };
+const Button = styled.button`
+  padding: 10px;
+  border-radius: 4px;
+  color: ${Color.White};
+  background-color: ${Color.Primary};
+  position: absolute;
+  top: 15px;
+  right: 15px;
+`;
+
+export { StyledBlogsItem, MainImage, MainDate, Title, Description, Button };

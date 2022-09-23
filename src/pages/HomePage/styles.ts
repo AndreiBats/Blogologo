@@ -1,7 +1,9 @@
 import styled from "styled-components";
 import { Color } from "../../ui";
 
-const StyledHomePage = styled.div``;
+const StyledHomePage = styled.div`
+  margin: 0 15px;
+`;
 
 const ArticlesNews = styled.div`
   border-bottom: 2px solid ${Color.Light};

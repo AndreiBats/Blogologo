@@ -1,5 +1,5 @@
 import { IBlog } from "../../types";
-import { Description, MainDate, MainImage, StyledBlogsItem, Title } from "./styles";
+import { Button, Description, MainDate, MainImage, StyledBlogsItem, Title } from "./styles";
 
 interface IProps {
   blog: IBlog;
@@ -12,6 +12,7 @@ export const BlogsItem = (blog: IProps) => {
       <Description>
         <MainDate>{blog.blog.publishedAt}</MainDate>
         <Title>{blog.blog.title}</Title>
+        <Button>Read Later</Button>
       </Description>
     </StyledBlogsItem>
   );

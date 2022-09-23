@@ -6,6 +6,8 @@ const StyledArticlesItem = styled.li`
   max-width: 351px;
   box-shadow: 0px 12px 40px 9px rgba(0, 0, 0, 0.1);
   border-radius: 16px;
+  position: relative;
+  height: 380px;
 `;
 
 const MainImage = styled.img`
@@ -31,8 +33,17 @@ const Title = styled.h2`
   font-size: 18px;
   line-height: 28px;
   color: ${Color.Secondary};
+  margin-bottom: 16px;
 `;
 
-const Button = styled.button``;
+const Button = styled.button`
+  padding: 10px;
+  border-radius: 4px;
+  color: ${Color.White};
+  background-color: ${Color.Primary};
+  position: absolute;
+  top: 15px;
+  right: 15px;
+`;
 
 export { StyledArticlesItem, MainImage, MainDate, Title, Description, Button };

@@ -12,12 +12,13 @@ const StyledNavbar = styled.nav`
 const NavbarList = styled.ul`
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  width: 200px;
 `;
 
 const SearchItem = styled.li`
   align-self: center;
   list-style: none;
-  margin-right: 70px;
 `;
 
 const NavItem = styled.li``;
