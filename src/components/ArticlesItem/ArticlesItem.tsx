@@ -10,8 +10,8 @@ interface IProps {
 export const ArticlesItem = (article: IProps) => {
   const dispatch = useAppDispatch();
 
-  const onChange = (e: any) => {
-    console.log(e);
+  const onChange = (event: any) => {
+    console.log(event);
     // e.preventDefault();
     // dispatch(addToFavotires(article));
   };

@@ -14,6 +14,7 @@ const options: IOption[] = [
 export const CustomSelect = () => {
   const dispatch = useAppDispatch();
   const { isLoading, error, articles } = useAppSelector(getArticles);
+  console.log(getArticles);
 
   useEffect(() => {
     dispatch(fetchArticles());
