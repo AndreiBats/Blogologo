@@ -9,11 +9,11 @@ import {
   PURGE,
   REGISTER,
 } from "redux-persist";
-import articleReducer from "./feautures/articleSlice";
-import blogReducer from "./feautures/blogSlice";
-import articleDetailsReducer from "./feautures/articleDetailsSlice";
-import blogDetailsReducer from "./feautures/blogDetailsSlice";
-import favoritesDetailsReducer from "./feautures/favoritesSlice";
+import articleReducer from "./features/articleSlice";
+import blogReducer from "./features/blogSlice";
+import articleDetailsReducer from "./features/articleDetailsSlice";
+import blogDetailsReducer from "./features/blogDetailsSlice";
+import favoritesDetailsReducer from "./features/favoritesSlice";
 import storage from "redux-persist/es/storage";
 
 const persistConfig = {

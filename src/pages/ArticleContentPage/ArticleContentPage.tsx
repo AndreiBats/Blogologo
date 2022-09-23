@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { fetchArticleDetailsByID } from "../../app/feautures/articleDetailsSlice";
+import { fetchArticleDetailsByID } from "../../app/features/articleDetailsSlice";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { getDetailsArticle } from "../../app/selectors/articleDetailsSelectors";
 import { Spinner } from "../../components";

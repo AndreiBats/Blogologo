@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { ArticlesItem, Spinner } from "../index";
-import { fetchArticles } from "../../app/feautures/articleSlice";
+import { fetchArticles } from "../../app/features/articleSlice";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { getArticles } from "../../app/selectors/articleSelectors";
 import { StyledArticlesList } from "./styles";
