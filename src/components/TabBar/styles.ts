@@ -1,14 +1,23 @@
 import styled from "styled-components";
-import { Color } from "../../ui";
+import { Color, Media } from "../../ui";
 
 const StyledTabBar = styled.div`
   margin-bottom: 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  ${Media.Small} {
+    display: flex;
+    flex-direction: column;
+  }
 `;
 
-const TabItems = styled.div``;
+const TabItems = styled.div`
+  ${Media.Small} {
+    margin-bottom: 15px;
+  }
+`;
 
 const Button = styled.button`
   font-weight: 600;

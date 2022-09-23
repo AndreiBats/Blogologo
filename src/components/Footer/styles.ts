@@ -5,6 +5,7 @@ const StyledFooter = styled.div`
   display: flex;
   justify-content: space-between;
   padding: 24px 0;
+  margin: 0 15px;
 `;
 
 const CopyRight = styled.h3`

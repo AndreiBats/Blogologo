@@ -4,9 +4,8 @@ export const CustomStyles = {
   control: () => ({
     width: "256px",
     display: "flex",
-    background: Color.White,
+    background: Color.ExtraLight,
     borderRadius: "4px",
-
     padding: "15px",
   }),
 

@@ -1,4 +1,5 @@
 import { format } from "date-fns";
+import { useAppDispatch } from "../../app/hooks";
 import { IArticle } from "../../types";
 import { Button, Description, MainDate, MainImage, StyledArticlesItem, Title } from "./styles";
 
@@ -7,13 +8,20 @@ interface IProps {
 }
 
 export const ArticlesItem = (article: IProps) => {
+  const dispatch = useAppDispatch();
+
+  const onChange = (e: any) => {
+    console.log(e);
+    // e.preventDefault();
+    // dispatch(addToFavotires(article));
+  };
   return (
     <StyledArticlesItem>
       <MainImage src={article.article.imageUrl} alt="mainphoto" />
       <Description>
         <MainDate>{article.article.publishedAt}</MainDate>
         <Title>{article.article.title}</Title>
-        <Button>Read Later</Button>
+        <Button onClick={onChange}>Read Later</Button>
       </Description>
     </StyledArticlesItem>
   );

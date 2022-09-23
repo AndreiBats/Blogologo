@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Color } from "../../ui";
+import { Color, Media } from "../../ui";
 
 const StyledBlogsItem = styled.li`
   background-color: ${Color.White};
@@ -8,16 +8,29 @@ const StyledBlogsItem = styled.li`
   border-radius: 16px;
   position: relative;
   height: 380px;
+
+  ${Media.Medium} {
+    height: 320px;
+    margin: 0 auto;
+  }
 `;
 
 const MainImage = styled.img`
   width: 100%;
   height: 208px;
   border-radius: 16px 16px 0 0;
+
+  ${Media.Medium} {
+    height: 160px;
+  }
 `;
 
 const Description = styled.div`
   padding: 32px;
+
+  ${Media.Medium} {
+    padding: 16px;
+  }
 `;
 
 const MainDate = styled.h3`
@@ -26,6 +39,10 @@ const MainDate = styled.h3`
   line-height: 24px;
   color: ${Color.Medium};
   margin-bottom: 8px;
+
+  ${Media.Medium} {
+    font-size: 14px;
+  }
 `;
 
 const Title = styled.h2`
@@ -33,6 +50,10 @@ const Title = styled.h2`
   font-size: 18px;
   line-height: 28px;
   color: ${Color.Secondary};
+
+  ${Media.Medium} {
+    font-size: 14px;
+  }
 `;
 
 const Button = styled.button`
@@ -43,6 +64,10 @@ const Button = styled.button`
   position: absolute;
   top: 15px;
   right: 15px;
+
+  ${Media.Medium} {
+    padding: 8px;
+  }
 `;
 
 export { StyledBlogsItem, MainImage, MainDate, Title, Description, Button };

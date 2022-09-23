@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { TabBar, ArticlesList, CustomSelect, BlogsList } from "../../components";
+import { TabBar, ArticlesList, BlogsList } from "../../components";
 import { StyledHomePage } from "./styles";
 
 export const HomePage = () => {
