@@ -13,7 +13,7 @@ export const BlogsItem = ({ blog }: IProps) => {
   const dispatch = useAppDispatch();
   const [isRead, toggleIsRead] = useToggle(false);
 
-  const handleAddToLibrary = (event: any): void => {
+  const handleAddToLibrary = (event: { preventDefault: () => void }) => {
     event.preventDefault();
     dispatch(addToFavorites(blog));
     toggleIsRead();

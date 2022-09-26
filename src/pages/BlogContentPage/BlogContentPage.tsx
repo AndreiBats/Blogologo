@@ -4,7 +4,7 @@ import { fetchArticleDetailsByID } from "../../app/features/articleDetailsSlice"
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { getDetailsArticle } from "../../app/selectors/articleDetailsSelectors";
 import { Spinner } from "../../components";
-import { Description, MainImage, StyledArticleContentPage, Title } from "./styles";
+import { Description, MainImage, StyledArticleContentPage, Title, ButtonHome } from "./styles";
 
 export const BlogContentPage = () => {
   const { id } = useParams();
@@ -22,6 +22,7 @@ export const BlogContentPage = () => {
 
   return (
     <StyledArticleContentPage>
+      <ButtonHome>Home / Post: {details.id}</ButtonHome>
       <Title>{details.title}</Title>
       <MainImage src={details.imageUrl} />
       <Description>{details.summary}</Description>

@@ -8,7 +8,6 @@ import { StyledFavorites } from "./styles";
 
 export const Favorites = () => {
   const { favorites } = useAppSelector(getFavoriteArticle);
-  const dispatch = useAppDispatch();
 
   return (
     <StyledFavorites>

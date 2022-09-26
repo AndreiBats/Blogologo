@@ -2,7 +2,7 @@ import { format } from "date-fns";
 import { useAppDispatch } from "../../app/hooks";
 import { IArticle } from "../../types";
 import { Button, Description, MainDate, MainImage, StyledArticlesItem, Title } from "./styles";
-import { addToFavorites, removeFavorite } from "../../app/features/favoritesSlice";
+import { addToFavorites } from "../../app/features/favoritesSlice";
 import { useToggle } from "../../hooks/useToggle";
 
 interface IProps {
@@ -14,7 +14,7 @@ export const ArticlesItem = ({ article }: IProps) => {
   const dispatch = useAppDispatch();
   const [isRead, toggleIsRead] = useToggle(false);
 
-  const handleAddToLibrary = (event: any): void => {
+  const handleAddToLibrary = (event: { preventDefault: () => void }) => {
     event.preventDefault();
     dispatch(addToFavorites(article));
     toggleIsRead();

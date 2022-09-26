@@ -14,12 +14,13 @@ import blogReducer from "./features/blogSlice";
 import articleDetailsReducer from "./features/articleDetailsSlice";
 import blogDetailsReducer from "./features/blogDetailsSlice";
 import favoritesDetailsReducer from "./features/favoritesSlice";
+import userReducer from "./features/userSlice";
 import storage from "redux-persist/es/storage";
 
 const persistConfig = {
   key: "root",
   storage,
-  whitelist: ["favorites"],
+  whitelist: ["favorites", "user"],
 };
 
 const rootReducer = combineReducers({
@@ -28,6 +29,7 @@ const rootReducer = combineReducers({
   articleDetails: articleDetailsReducer,
   blogDetails: blogDetailsReducer,
   favoritesDetails: favoritesDetailsReducer,
+  user: userReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

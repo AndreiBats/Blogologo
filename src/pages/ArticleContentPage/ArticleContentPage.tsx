@@ -5,7 +5,7 @@ import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { getDetailsArticle } from "../../app/selectors/articleDetailsSelectors";
 import { Spinner } from "../../components";
 
-import { StyledArticleContentPage, Title, Description, MainImage } from "./styles";
+import { StyledArticleContentPage, Title, Description, MainImage, ButtonHome } from "./styles";
 
 export const ArticleContentPage = () => {
   const { id } = useParams();
@@ -23,6 +23,7 @@ export const ArticleContentPage = () => {
 
   return (
     <StyledArticleContentPage>
+      <ButtonHome>Home / Post: {details.id}</ButtonHome>
       <Title>{details.title}</Title>
       <MainImage src={details.imageUrl} />
       <Description>{details.summary}</Description>
