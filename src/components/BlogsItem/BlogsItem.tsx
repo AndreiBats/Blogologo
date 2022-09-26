@@ -5,13 +5,14 @@ interface IProps {
   blog: IBlog;
 }
 
-export const BlogsItem = (blog: IProps) => {
+export const BlogsItem = ({ blog }: IProps) => {
+  const { imageUrl, publishedAt, title } = blog;
   return (
     <StyledBlogsItem>
-      <MainImage src={blog.blog.imageUrl} alt="mainphoto" />
+      <MainImage src={imageUrl} alt={title} />
       <Description>
-        <MainDate>{blog.blog.publishedAt}</MainDate>
-        <Title>{blog.blog.title}</Title>
+        <MainDate>{publishedAt}</MainDate>
+        <Title>{title}</Title>
         <Button>Read Later</Button>
       </Description>
     </StyledBlogsItem>
