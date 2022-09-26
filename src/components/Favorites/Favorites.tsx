@@ -1,12 +1,14 @@
 import { Link } from "react-router-dom";
-import { useAppSelector } from "../../app/hooks";
+import { removeFavorite } from "../../app/features/favoritesSlice";
+import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { getFavoriteArticle } from "../../app/selectors/getFavoriteArticle";
 import { IArticle } from "../../types";
-import { ArticlesItem } from "../ArticlesItem/ArticlesItem";
+import { FavoritesArticle } from "../FavoritesArticle/FavoritesArticle";
 import { StyledFavorites } from "./styles";
 
 export const Favorites = () => {
   const { favorites } = useAppSelector(getFavoriteArticle);
+  const dispatch = useAppDispatch();
 
   return (
     <StyledFavorites>
@@ -14,7 +16,7 @@ export const Favorites = () => {
         favorites.map((article: IArticle) => {
           return (
             <Link to={`/article/${article.id}`}>
-              <ArticlesItem key={article.id} article={article} />;
+              <FavoritesArticle key={article.id} article={article} />;
             </Link>
           );
         })

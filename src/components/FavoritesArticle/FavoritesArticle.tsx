@@ -2,22 +2,19 @@ import { format } from "date-fns";
 import { useAppDispatch } from "../../app/hooks";
 import { IArticle } from "../../types";
 import { Button, Description, MainDate, MainImage, StyledArticlesItem, Title } from "./styles";
-import { addToFavorites, removeFavorite } from "../../app/features/favoritesSlice";
-import { useToggle } from "../../hooks/useToggle";
+import { removeFavorite } from "../../app/features/favoritesSlice";
 
 interface IProps {
   article: IArticle;
 }
 
-export const ArticlesItem = ({ article }: IProps) => {
+export const FavoritesArticle = ({ article }: IProps) => {
   const { imageUrl, title, publishedAt } = article;
   const dispatch = useAppDispatch();
-  const [isRead, toggleIsRead] = useToggle(false);
 
-  const handleReadLater = (event: any): void => {
+  const handleDeleteArticle = (event: any) => {
     event.preventDefault();
-    dispatch(addToFavorites(article));
-    toggleIsRead();
+    dispatch(removeFavorite(article));
   };
 
   return (
@@ -26,7 +23,7 @@ export const ArticlesItem = ({ article }: IProps) => {
       <Description>
         <MainDate>{publishedAt}</MainDate>
         <Title>{title}</Title>
-        <Button onClick={handleReadLater}>{isRead ? "Added to library" : "Read Later"}</Button>
+        <Button onClick={handleDeleteArticle}>Delete</Button>
       </Description>
     </StyledArticlesItem>
   );
