@@ -17,6 +17,8 @@ export const FavoritesArticle = ({ article }: IProps) => {
     dispatch(removeFavorite(article));
   };
 
+  console.log(handleDeleteArticle);
+
   return (
     <StyledArticlesItem>
       <MainImage src={imageUrl} alt={title} />

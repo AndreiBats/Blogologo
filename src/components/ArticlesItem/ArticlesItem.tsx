@@ -14,7 +14,7 @@ export const ArticlesItem = ({ article }: IProps) => {
   const dispatch = useAppDispatch();
   const [isRead, toggleIsRead] = useToggle(false);
 
-  const handleReadLater = (event: any): void => {
+  const handleAddToLibrary = (event: any): void => {
     event.preventDefault();
     dispatch(addToFavorites(article));
     toggleIsRead();
@@ -26,7 +26,7 @@ export const ArticlesItem = ({ article }: IProps) => {
       <Description>
         <MainDate>{publishedAt}</MainDate>
         <Title>{title}</Title>
-        <Button onClick={handleReadLater}>{isRead ? "Added to library" : "Read Later"}</Button>
+        <Button onClick={handleAddToLibrary}>{isRead ? "Added to library" : "Read Later"}</Button>
       </Description>
     </StyledArticlesItem>
   );
