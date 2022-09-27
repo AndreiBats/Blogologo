@@ -17,9 +17,9 @@ export const App = () => {
       <Route path={ROUTE.HOME} element={<MainTemplate />}>
         <Route path={ROUTE.HOME} element={<HomePage />} />
         <Route path={ROUTE.SEARCH} element={<SearchPage />} />
-        {/* <Route element={<RequireAuth />}> */}
-        <Route path={ROUTE.FAVORITES} element={<FavoritesPage />} />
-        {/* </Route> */}
+        <Route element={<RequireAuth />}>
+          <Route path={ROUTE.FAVORITES} element={<FavoritesPage />} />
+        </Route>
         <Route path={ROUTE.SING_IN} element={<SignInPage />} />
         <Route path={ROUTE.SIGN_UP} element={<SignUpPage />} />
         <Route path={ROUTE.ARTICLE} element={<ArticleContentPage />} />
