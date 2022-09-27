@@ -1,9 +1,10 @@
 import { format } from "date-fns";
-import { useAppDispatch } from "../../app/hooks";
+import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { IArticle } from "../../types";
 import { Button, Description, MainDate, MainImage, StyledArticlesItem, Title } from "./styles";
 import { addToFavorites } from "../../app/features/favoritesSlice";
 import { useToggle } from "../../hooks/useToggle";
+import { getUserInfo } from "../../app/selectors/userSelectors";
 
 interface IProps {
   article: IArticle;
@@ -13,6 +14,7 @@ export const ArticlesItem = ({ article }: IProps) => {
   const { imageUrl, title, publishedAt } = article;
   const dispatch = useAppDispatch();
   const [isRead, toggleIsRead] = useToggle(false);
+  const { isAuth } = useAppSelector(getUserInfo);
 
   const handleAddToLibrary = (event: { preventDefault: () => void }) => {
     event.preventDefault();
