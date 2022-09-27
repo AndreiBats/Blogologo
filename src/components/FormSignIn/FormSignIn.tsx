@@ -22,6 +22,23 @@ type SignInValues = {
   password: string;
 };
 
+const validateRules = {
+  password: {
+    required: "Password is required",
+    minLength: {
+      value: 6,
+      message: "Password must have 6 symbols",
+    },
+  },
+  email: {
+    requared: "Email is requared !",
+    pattern: {
+      value: /^[\w-\\.]+@([\w-]+\.)+[\w-]{2,4}$/g,
+      message: "Please enter a valid email",
+    },
+  },
+};
+
 export const FormSignIn = () => {
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -58,10 +75,7 @@ export const FormSignIn = () => {
         <Controller
           control={control}
           name="email"
-          rules={{
-            required: "Email is required",
-            pattern: /^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/,
-          }}
+          rules={validateRules.email}
           render={({ field: { onChange, value } }) => (
             <Input onChange={onChange} value={value} placeholder="Your email" type="text" />
           )}
@@ -71,19 +85,13 @@ export const FormSignIn = () => {
         <Controller
           control={control}
           name="password"
-          rules={{
-            required: "Password is required",
-            minLength: {
-              value: 6,
-              message: "Password must have 6 symbols",
-            },
-          }}
+          rules={validateRules.password}
           render={({ field: { onChange, value } }) => (
             <Input onChange={onChange} value={value} placeholder="Your password" type="password" />
           )}
         />
         {errors.password && <Message>{errors.password.message}</Message>}
-        <Question>Forgot password?</Question>
+
         {errorMessage && <ErrorMessage>{errorMessage}</ErrorMessage>}
         <Button type="submit">
           Sign In
