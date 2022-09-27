@@ -1,7 +1,14 @@
 import { Link } from "react-router-dom";
-import { Logo, Search, SignIn, Favorites } from "../../assets/index";
+import { Logo, Search, Account, Favorites } from "../../assets/index";
 import { ROUTE } from "../../routes";
-import { NavbarList, StyledNavbar, SearchItem, NavItem, FavoritesItem } from "./styles";
+import {
+  NavbarList,
+  StyledNavbar,
+  SearchItem,
+  NavItem,
+  FavoritesItem,
+  AccountItem,
+} from "./styles";
 
 export const Navbar = () => {
   return (
@@ -23,11 +30,13 @@ export const Navbar = () => {
           </Link>
         </SearchItem>
         <NavItem>
-          <Link to={ROUTE.SING_IN}>
-            {" "}
-            <SignIn /> Sign In
-          </Link>
+          <Link to={ROUTE.SING_IN}> Sign In</Link>
         </NavItem>
+        <AccountItem>
+          <Link to={ROUTE.ACCOUNT}>
+            <Account />
+          </Link>
+        </AccountItem>
       </NavbarList>
     </StyledNavbar>
   );

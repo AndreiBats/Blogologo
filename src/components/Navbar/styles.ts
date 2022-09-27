@@ -25,4 +25,6 @@ const NavItem = styled.li``;
 
 const FavoritesItem = styled.li``;
 
-export { StyledNavbar, NavbarList, SearchItem, NavItem, FavoritesItem };
+const AccountItem = styled.li``;
+
+export { StyledNavbar, NavbarList, SearchItem, NavItem, FavoritesItem, AccountItem };

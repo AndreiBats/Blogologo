@@ -6,6 +6,7 @@ import { SearchPage } from "./SearchPage/SearchPage";
 import { SignInPage } from "./SignInPage/SignInPage";
 import { SignUpPage } from "./SignUpPage/SignUpPage";
 import { FavoritesPage } from "./FavoritesPage/FavoritesPage";
+import { AccountPage } from "./AccountPage/AccountPage";
 
 export {
   ArticleContentPage,
@@ -16,4 +17,5 @@ export {
   SignInPage,
   SignUpPage,
   FavoritesPage,
+  AccountPage,
 };

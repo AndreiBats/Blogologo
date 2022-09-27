@@ -16,38 +16,38 @@ import {
 import { useState } from "react";
 import { getFireBaseMessage } from "../../utils/firebaseErrors";
 import { useNavigate } from "react-router-dom";
+import { useAppDispatch, useAppSelector } from "../../app/hooks";
+import { getUserInfo } from "../../app/selectors/userSelectors";
+import { fetchSignInUser } from "../../app/features/userSlice";
 
 type SignUpValues = {
   email: string;
   password: string;
 };
 
-export const FormSignUp = () => {
-  const [errorMessage, setErrorMessage] = useState<string | null>(null);
-  const [isLoading, setIsLoading] = useState(false);
-  const navigate = useNavigate();
+interface IProps {
+  toggleModal: (value: boolean) => void;
+}
+
+export const FormSignUp = ({ toggleModal }: IProps) => {
+  const { isPendingAuth, error } = useAppSelector(getUserInfo);
+  const dispatch = useAppDispatch();
 
   const {
     control,
     handleSubmit,
     reset,
     formState: { errors },
-  } = useForm<SignUpValues>();
+  } = useForm<SignUpValues>({
+    defaultValues: { email: "", password: "" },
+  });
 
-  const onSubmit: SubmitHandler<SignUpValues> = ({ email, password }) => {
-    setIsLoading(true);
-    setErrorMessage(null);
-    const auth = getAuth();
-    createUserWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        console.log(userCredential);
-        navigate("/");
-      })
-      .catch((err) => {
-        setErrorMessage(getFireBaseMessage(err.code));
+  const onSubmit: SubmitHandler<SignUpValues> = (userInfo) => {
+    dispatch(fetchSignInUser(userInfo))
+      .then(() => {
+        toggleModal(true);
       })
       .finally(() => {
-        setIsLoading(false);
         reset();
       });
   };
@@ -84,11 +84,13 @@ export const FormSignUp = () => {
           )}
         />
         {errors.password && <Message>{errors.password.message}</Message>}
+
         <Question>Forgot password?</Question>
-        {errorMessage && <ErrorMessage>{errorMessage}</ErrorMessage>}
+
+        {error && <ErrorMessage>{error}</ErrorMessage>}
         <Button type="submit">
           Sign Up
-          {isLoading && <Spinner />}
+          {isPendingAuth && <Spinner />}
         </Button>
         <Auth>
           Already have an account? <SignIn to={`/${ROUTE.SING_IN}`}>Sign In</SignIn>

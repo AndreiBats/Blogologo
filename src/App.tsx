@@ -1,13 +1,16 @@
 import { Route, Routes } from "react-router-dom";
 import { MainTemplate, RequireAuth } from "./components";
 import {
+  AccountPage,
   ArticleContentPage,
   BlogContentPage,
   FavoritesPage,
   HomePage,
   NotFoundPage,
+  SearchPage,
+  SignInPage,
+  SignUpPage,
 } from "./pages";
-import { SearchPage, SignInPage, SignUpPage } from "./pages";
 
 import { ROUTE } from "./routes";
 
@@ -19,6 +22,7 @@ export const App = () => {
         <Route path={ROUTE.SEARCH} element={<SearchPage />} />
         <Route element={<RequireAuth />}>
           <Route path={ROUTE.FAVORITES} element={<FavoritesPage />} />
+          <Route path={ROUTE.ACCOUNT} element={<AccountPage />} />
         </Route>
         <Route path={ROUTE.SING_IN} element={<SignInPage />} />
         <Route path={ROUTE.SIGN_UP} element={<SignUpPage />} />

@@ -14,6 +14,10 @@ import { Spinner } from "./Spinner/Spinner";
 import { RequireAuth } from "./RequireAuth/RequireAuth";
 import { Favorites } from "./Favorites/Favorites";
 import { Search } from "./Search/Search";
+import { ButtonReadLater } from "./ButtonReadLater/ButtonReadLater";
+import { Portal } from "./Portal/Portal";
+import { Modal } from "./Modal/Modal";
+import { FavoritesArticle } from "./FavoritesArticle/FavoritesArticle";
 
 export {
   TabBar,
@@ -32,4 +36,8 @@ export {
   RequireAuth,
   Favorites,
   Search,
+  ButtonReadLater,
+  Portal,
+  Modal,
+  FavoritesArticle,
 };

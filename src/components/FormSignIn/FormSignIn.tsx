@@ -32,17 +32,14 @@ export const FormSignIn = () => {
     handleSubmit,
     reset,
     formState: { errors },
-  } = useForm<SignInValues>({
-    defaultValues: { email: "", password: "" },
-  });
+  } = useForm<SignInValues>();
 
   const onSubmit: SubmitHandler<SignInValues> = ({ email, password }) => {
     setIsLoading(true);
     setErrorMessage(null);
     const auth = getAuth();
     signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        console.log(userCredential);
+      .then((_) => {
         navigate("/");
       })
       .catch((err) => {
@@ -50,8 +47,8 @@ export const FormSignIn = () => {
       })
       .finally(() => {
         setIsLoading(false);
-        reset();
       });
+    reset();
   };
 
   return (
