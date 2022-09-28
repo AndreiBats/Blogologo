@@ -50,14 +50,6 @@ const Button = styled.button`
   padding: 16px;
 `;
 
-const Question = styled.p`
-  color: ${Color.Secondary};
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 20px;
-  margin-bottom: 48px;
-`;
-
 const Title = styled.h3`
   color: ${Color.Secondary};
   font-size: 16px;
@@ -94,7 +86,6 @@ export {
   EmailInput,
   PasswordInput,
   Button,
-  Question,
   Title,
   SignIn,
   Auth,

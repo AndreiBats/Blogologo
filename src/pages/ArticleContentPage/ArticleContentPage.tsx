@@ -12,7 +12,7 @@ export const ArticleContentPage = () => {
   const { id } = useParams();
 
   const dispatch = useAppDispatch();
-  const { isLoading, error, details } = useAppSelector(getDetailsArticle);
+  const { isLoading, details } = useAppSelector(getDetailsArticle);
 
   useEffect(() => {
     dispatch(fetchArticleDetailsByID(id!));

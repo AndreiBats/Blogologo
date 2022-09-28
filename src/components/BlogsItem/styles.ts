@@ -7,7 +7,7 @@ const StyledBlogsItem = styled.li`
   box-shadow: 0px 12px 40px 9px rgba(0, 0, 0, 0.1);
   border-radius: 16px;
   position: relative;
-  height: 380px;
+  height: 400px;
 
   ${Media.Medium} {
     height: 320px;

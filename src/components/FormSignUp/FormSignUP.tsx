@@ -5,7 +5,6 @@ import {
   Form,
   StyledFormSignUp,
   Button,
-  Question,
   Title,
   SignIn,
   Auth,
@@ -19,6 +18,7 @@ import { fetchSignInUser } from "../../app/features/userSlice";
 type SignUpValues = {
   email: string;
   password: string;
+  confirmPassword: string;
 };
 
 const validateRules = {
@@ -34,6 +34,13 @@ const validateRules = {
     pattern: {
       value: /^[\w-\\.]+@([\w-]+\.)+[\w-]{2,4}$/g,
       message: "Please enter a valid email",
+    },
+  },
+  confirmPassword: {
+    required: "Password is required",
+    minLength: {
+      value: 6,
+      message: "Password must have 6 symbols",
     },
   },
 };
@@ -89,6 +96,22 @@ export const FormSignUp = ({ toggleModal }: IProps) => {
           )}
         />
         {errors.password && <Message>{errors.password.message}</Message>}
+
+        <Title>Confirm Password</Title>
+        <Controller
+          control={control}
+          name="confirmPassword"
+          rules={validateRules.confirmPassword}
+          render={({ field: { onChange, value } }) => (
+            <Input
+              onChange={onChange}
+              value={value}
+              placeholder="Confirm Your password"
+              type="password"
+            />
+          )}
+        />
+        {errors.confirmPassword && <Message>{errors.confirmPassword.message}</Message>}
 
         <Button type="submit">
           Sign Up

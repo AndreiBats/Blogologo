@@ -3,9 +3,7 @@ import { Link } from "react-router-dom";
 import { fetchArticlesRecommendations } from "../../app/features/articleRecommendationSlice";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { getArticlesRecommendations } from "../../app/selectors/articleRecommendationsSelectors";
-// eslint-disable-next-line max-len
-import { ArticleRecommendationsItem } from "../ArticleRecommendationsItem/ArticleRecommendationsItem";
-
+import { ArticleRecommendationsItem, Spinner } from "../index";
 import { StyledArticleRecommendations } from "./styles";
 
 export const ArticleRecommendations = () => {
@@ -16,9 +14,9 @@ export const ArticleRecommendations = () => {
     dispatch(fetchArticlesRecommendations());
   }, [dispatch]);
 
-  // if (isLoading) {
-  //   return <Spinner />;
-  // }
+  if (isLoading) {
+    return <Spinner />;
+  }
 
   if (error) {
     return <h1>Error: {error}</h1>;
