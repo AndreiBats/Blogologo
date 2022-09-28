@@ -64,6 +64,7 @@ const Button = styled.button`
   position: absolute;
   top: 15px;
   right: 15px;
+  cursor: pointer;
 
   ${Media.Medium} {
     padding: 8px;

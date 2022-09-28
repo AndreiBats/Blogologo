@@ -14,10 +14,13 @@ import { Spinner } from "./Spinner/Spinner";
 import { RequireAuth } from "./RequireAuth/RequireAuth";
 import { Favorites } from "./Favorites/Favorites";
 import { Search } from "./Search/Search";
-import { ButtonReadLater } from "./ButtonReadLater/ButtonReadLater";
 import { Portal } from "./Portal/Portal";
 import { Modal } from "./Modal/Modal";
 import { FavoritesArticle } from "./FavoritesArticle/FavoritesArticle";
+import { SliderSwiper } from "./SliderSwider/SliderSwiper";
+import { ArticleRecommendations } from "./ArticleRecommendations/ArticleRecommendations";
+// eslint-disable-next-line max-len
+import { ArticleRecommendationsItem } from "./ArticleRecommendationsItem/ArticleRecommendationsItem";
 
 export {
   TabBar,
@@ -36,8 +39,10 @@ export {
   RequireAuth,
   Favorites,
   Search,
-  ButtonReadLater,
   Portal,
   Modal,
   FavoritesArticle,
+  SliderSwiper,
+  ArticleRecommendations,
+  ArticleRecommendationsItem,
 };

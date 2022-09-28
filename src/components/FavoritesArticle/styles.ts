@@ -58,6 +58,7 @@ const Title = styled.h2`
 `;
 
 const Button = styled.button`
+  cursor: pointer;
   padding: 10px;
   border-radius: 4px;
   color: ${Color.White};

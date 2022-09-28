@@ -4,6 +4,8 @@ import { IArticle, IBlog } from "../types";
 enum Endpoint {
   ARTICLES_COUNT = "articles/count",
   ARTICLES = "articles?_limit=12",
+  ARTICLES_RECOMMENDATIONS = "articles?_limit=3",
+  BLOGS_RECOMMENDATIONS = "blogs?_limit=3",
   ARTICLES_ID = "articles/",
   BLOGS_COUNT = "blogs/count",
   BLOGS = "blogs?_limit=12",
@@ -36,6 +38,18 @@ class SpaceFlyAPI {
 
   public async getBlogDetailByID(id: number) {
     const { data } = await this.API.get<IBlog>(`blog/${id}`);
+
+    return data;
+  }
+
+  public async getArticlesRecommendations() {
+    const { data } = await this.API.get<IArticle[]>(Endpoint.ARTICLES_RECOMMENDATIONS);
+
+    return data;
+  }
+
+  public async getBlogsRecommendations() {
+    const { data } = await this.API.get<IArticle[]>(Endpoint.BLOGS_RECOMMENDATIONS);
 
     return data;
   }

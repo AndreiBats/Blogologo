@@ -1,9 +1,10 @@
-import React, { useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useEffect } from "react";
+import { Link, useParams } from "react-router-dom";
 import { fetchArticleDetailsByID } from "../../app/features/articleDetailsSlice";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { getDetailsArticle } from "../../app/selectors/articleDetailsSelectors";
-import { Spinner } from "../../components";
+import { SliderSwiper, Spinner } from "../../components";
+import { ROUTE } from "../../routes";
 
 import { StyledArticleContentPage, Title, Description, MainImage, ButtonHome } from "./styles";
 
@@ -23,10 +24,13 @@ export const ArticleContentPage = () => {
 
   return (
     <StyledArticleContentPage>
-      <ButtonHome>Home / Post: {details.id}</ButtonHome>
+      <Link to={ROUTE.HOME}>
+        <ButtonHome>Home / Post: {details.id}</ButtonHome>
+      </Link>
       <Title>{details.title}</Title>
       <MainImage src={details.imageUrl} />
       <Description>{details.summary}</Description>
+      <SliderSwiper />
     </StyledArticleContentPage>
   );
 };

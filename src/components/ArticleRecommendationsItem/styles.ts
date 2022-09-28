@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Color, Media } from "../../ui";
 
-const StyledArticlesItem = styled.li`
+const StyledRecommendationsItem = styled.li`
   background-color: ${Color.White};
   max-width: 351px;
   box-shadow: 0px 12px 40px 9px rgba(0, 0, 0, 0.1);
@@ -72,4 +72,4 @@ const Button = styled.button`
   }
 `;
 
-export { StyledArticlesItem, MainImage, MainDate, Title, Description, Button };
+export { StyledRecommendationsItem, MainImage, MainDate, Title, Description, Button };

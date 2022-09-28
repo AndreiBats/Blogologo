@@ -12,6 +12,7 @@ const ButtonHome = styled.button`
   color: ${Color.Secondary};
   background-color: ${Color.ExtraLight};
   margin-bottom: 20px;
+  cursor: pointer;
 `;
 
 const Title = styled.h3`
