@@ -2,13 +2,13 @@ import axios from "axios";
 import { IArticle, IBlog } from "../types";
 
 enum Endpoint {
+  ARTICLES = "articles",
   ARTICLES_COUNT = "articles/count",
-  ARTICLES = "articles?_limit=12",
-  ARTICLES_RECOMMENDATIONS = "articles?_limit=3",
-  BLOGS_RECOMMENDATIONS = "blogs?_limit=3",
+  ARTICLES_LIMIT = "articles?_limit=12",
   ARTICLES_ID = "articles/",
+  BLOGS = "blogs",
   BLOGS_COUNT = "blogs/count",
-  BLOGS = "blogs?_limit=12",
+  BLOGS_LIMIT = "blogs?_limit=12",
   BLOGS_ID = "blogs/",
 }
 
@@ -19,37 +19,31 @@ class SpaceFlyAPI {
   });
 
   public async getArticles() {
-    const { data } = await this.API.get<IArticle[]>(Endpoint.ARTICLES);
+    const { data } = await this.API.get<IArticle[]>(Endpoint.ARTICLES_LIMIT);
 
     return data;
   }
 
   public async getBlogs() {
-    const { data } = await this.API.get<IArticle[]>(Endpoint.BLOGS);
+    const { data } = await this.API.get<IArticle[]>(Endpoint.BLOGS_LIMIT);
 
     return data;
   }
 
   public async getArticleDetailByID(id: any) {
-    const { data } = await this.API.get<IArticle>(`articles/${id}`);
+    const { data } = await this.API.get<IArticle>(`${Endpoint.ARTICLES_ID}${id}`);
 
     return data;
   }
 
   public async getBlogDetailByID(id: number) {
-    const { data } = await this.API.get<IBlog>(`blog/${id}`);
+    const { data } = await this.API.get<IBlog>(`${Endpoint.BLOGS_ID}${id}`);
 
     return data;
   }
 
-  public async getArticlesRecommendations() {
-    const { data } = await this.API.get<IArticle[]>(Endpoint.ARTICLES_RECOMMENDATIONS);
-
-    return data;
-  }
-
-  public async getBlogsRecommendations() {
-    const { data } = await this.API.get<IArticle[]>(Endpoint.BLOGS_RECOMMENDATIONS);
+  public async getArticlesByRecommendations(word: string) {
+    const { data } = await this.API.get<IArticle>(`${Endpoint.ARTICLES}${word}`);
 
     return data;
   }

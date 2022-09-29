@@ -6,13 +6,36 @@ import { IArticle } from "../../types";
 interface ArticleDetailsState {
   isLoading: boolean;
   error: null | string;
-  details: IArticle;
+  articleDetails: IArticle;
+  articleRecommendations: IArticle[];
 }
 
 const initialState: ArticleDetailsState = {
   isLoading: false,
   error: null,
-  details: {},
+  articleDetails: {
+    id: 0,
+    featured: false,
+    title: "",
+    url: "",
+    imageUrl: "",
+    newsSite: "",
+    summary: "",
+    publishedAt: "",
+    launches: [
+      {
+        id: "",
+        provider: "",
+      },
+    ],
+    events: [
+      {
+        id: "",
+        provider: "",
+      },
+    ],
+  },
+  articleRecommendations: [],
 };
 
 const fetchArticleDetailsByID = createAsyncThunk<IArticle, string>(
@@ -33,7 +56,7 @@ const articleDetailsSlice = createSlice({
     });
     builder.addCase(fetchArticleDetailsByID.fulfilled, (state, { payload }) => {
       state.isLoading = false;
-      state.details = payload;
+      state.articleDetails = payload;
     });
     builder.addCase(fetchArticleDetailsByID.rejected, (state, { payload }) => {
       if (payload) {

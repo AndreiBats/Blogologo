@@ -17,10 +17,7 @@ import { Search } from "./Search/Search";
 import { Portal } from "./Portal/Portal";
 import { Modal } from "./Modal/Modal";
 import { FavoritesArticle } from "./FavoritesArticle/FavoritesArticle";
-import { SliderSwiper } from "./SliderSwider/SliderSwiper";
-import { ArticleRecommendations } from "./ArticleRecommendations/ArticleRecommendations";
-// eslint-disable-next-line max-len
-import { ArticleRecommendationsItem } from "./ArticleRecommendationsItem/ArticleRecommendationsItem";
+import { SliderSwiper } from "./SliderSwiper/SliderSwiper";
 
 export {
   TabBar,
@@ -43,6 +40,4 @@ export {
   Modal,
   FavoritesArticle,
   SliderSwiper,
-  ArticleRecommendations,
-  ArticleRecommendationsItem,
 };
