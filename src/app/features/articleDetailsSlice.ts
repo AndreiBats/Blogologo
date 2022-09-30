@@ -2,6 +2,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { AxiosError } from "axios";
 import { spaceFlyAPI } from "../../services/services";
 import { IArticle } from "../../types";
+import { getKeyWord } from "../../utils/keyword";
 
 interface ArticleDetailsState {
   isLoading: boolean;
@@ -35,15 +36,48 @@ const initialState: ArticleDetailsState = {
       },
     ],
   },
-  articleRecommendations: [],
+  articleRecommendations: [
+    {
+      id: 0,
+      featured: false,
+      title: "",
+      url: "",
+      imageUrl: "",
+      newsSite: "",
+      summary: "",
+      publishedAt: "",
+      launches: [
+        {
+          id: "",
+          provider: "",
+        },
+      ],
+      events: [
+        {
+          id: "",
+          provider: "",
+        },
+      ],
+    },
+  ],
 };
 
-const fetchArticleDetailsByID = createAsyncThunk<IArticle, string>(
-  "articleDetails/fetchArticleDetailsByID",
-  async (id) => {
-    return await spaceFlyAPI.getArticleDetailByID(id);
-  },
-);
+const fetchArticleDetailsByID = createAsyncThunk<
+  { articleDetails: IArticle; articleRecommendations: IArticle },
+  string,
+  { rejectValue: string }
+>("articleDetails/fetchArticleDetailsByID", async (id, { rejectWithValue }) => {
+  try {
+    const articleDetails = await spaceFlyAPI.getArticleDetailByID(id);
+    const keyWord = getKeyWord(articleDetails.title);
+    const articleRecommendations = await spaceFlyAPI.getArticlesByKeyWord(keyWord);
+
+    return { articleDetails, articleRecommendations };
+  } catch (error) {
+    const axiosError = error as AxiosError;
+    return rejectWithValue(axiosError.message);
+  }
+});
 
 const articleDetailsSlice = createSlice({
   name: "articleDetails",
@@ -56,7 +90,8 @@ const articleDetailsSlice = createSlice({
     });
     builder.addCase(fetchArticleDetailsByID.fulfilled, (state, { payload }) => {
       state.isLoading = false;
-      state.articleDetails = payload;
+      state.articleDetails = payload.articleDetails;
+      state.articleRecommendations = payload.articleRecommendations.title;
     });
     builder.addCase(fetchArticleDetailsByID.rejected, (state, { payload }) => {
       if (payload) {

@@ -11,6 +11,7 @@ interface IProps {
 }
 
 export const ArticlesItem = ({ article }: IProps) => {
+  console.log(article);
   const { imageUrl, title, publishedAt } = article;
   const dispatch = useAppDispatch();
   const [isRead, toggleIsRead] = useToggle(false);

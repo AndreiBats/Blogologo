@@ -17,7 +17,8 @@ import { Search } from "./Search/Search";
 import { Portal } from "./Portal/Portal";
 import { Modal } from "./Modal/Modal";
 import { FavoritesArticle } from "./FavoritesArticle/FavoritesArticle";
-import { SliderSwiper } from "./SliderSwiper/SliderSwiper";
+import { ArticleRecommendations } from "./ArticleRecommendations/ArticleRecommendations";
+import { Slider } from "./Slider/Slider";
 
 export {
   TabBar,
@@ -39,5 +40,6 @@ export {
   Portal,
   Modal,
   FavoritesArticle,
-  SliderSwiper,
+  ArticleRecommendations,
+  Slider,
 };

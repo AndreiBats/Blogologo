@@ -7,8 +7,8 @@ import { IOption } from "../../types";
 import { CustomStyles } from "./styled";
 
 const options: IOption[] = [
-  { value: "&_sort=title", label: "Title" },
-  { value: "&_sort=publishedAt", label: "Date" },
+  { value: "?_sort=title", label: "Title" },
+  { value: "?_sort=publishedAt", label: "Date" },
 ];
 
 export const CustomSelect = () => {

@@ -3,19 +3,18 @@ import { Link, useParams } from "react-router-dom";
 import { fetchArticleDetailsByID } from "../../app/features/articleDetailsSlice";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { getDetailsArticle } from "../../app/selectors/articleDetailsSelectors";
-import { SliderSwiper, Spinner } from "../../components";
+import { ArticleRecommendations, ArticlesItem, Slider, Spinner } from "../../components";
 import { ROUTE } from "../../routes";
-
 import { StyledArticleContentPage, Title, Description, MainImage, ButtonHome } from "./styles";
 
 export const ArticleContentPage = () => {
   const { id } = useParams();
 
   const dispatch = useAppDispatch();
-  const { isLoading, articleDetails: details } = useAppSelector(getDetailsArticle);
+  const { isLoading, articleDetails, articleRecommendations } = useAppSelector(getDetailsArticle);
 
   useEffect(() => {
-    dispatch(fetchArticleDetailsByID(id!));
+    id && dispatch(fetchArticleDetailsByID(id));
   }, [dispatch, id]);
 
   if (isLoading) {
@@ -25,12 +24,12 @@ export const ArticleContentPage = () => {
   return (
     <StyledArticleContentPage>
       <Link to={ROUTE.HOME}>
-        <ButtonHome>Home / Post: {details.id}</ButtonHome>
+        <ButtonHome>Home / Post: {articleDetails.id}</ButtonHome>
       </Link>
-      <Title>{details.title}</Title>
-      <MainImage src={details.imageUrl} />
-      <Description>{details.summary}</Description>
-      <SliderSwiper />
+      <Title>{articleDetails.title}</Title>
+      <MainImage src={articleDetails.imageUrl} />
+      <Description>{articleDetails.summary}</Description>
+      <ArticleRecommendations />
     </StyledArticleContentPage>
   );
 };

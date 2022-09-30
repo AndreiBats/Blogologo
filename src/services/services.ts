@@ -5,11 +5,11 @@ enum Endpoint {
   ARTICLES = "articles",
   ARTICLES_COUNT = "articles/count",
   ARTICLES_LIMIT = "articles?_limit=12",
-  ARTICLES_ID = "articles/",
+  ARTICLES_SEARCH = "articles?title_contains=",
   BLOGS = "blogs",
   BLOGS_COUNT = "blogs/count",
   BLOGS_LIMIT = "blogs?_limit=12",
-  BLOGS_ID = "blogs/",
+  BLOGS_SEARCH = "blogs?title_contains=",
 }
 
 class SpaceFlyAPI {
@@ -31,19 +31,25 @@ class SpaceFlyAPI {
   }
 
   public async getArticleDetailByID(id: any) {
-    const { data } = await this.API.get<IArticle>(`${Endpoint.ARTICLES_ID}${id}`);
+    const { data } = await this.API.get<IArticle>(`${Endpoint.ARTICLES}/${id}`);
 
     return data;
   }
 
   public async getBlogDetailByID(id: number) {
-    const { data } = await this.API.get<IBlog>(`${Endpoint.BLOGS_ID}${id}`);
+    const { data } = await this.API.get<IBlog>(`${Endpoint.BLOGS}/${id}`);
 
     return data;
   }
 
-  public async getArticlesByRecommendations(word: string) {
-    const { data } = await this.API.get<IArticle>(`${Endpoint.ARTICLES}${word}`);
+  public async getArticlesByKeyWord(keyWord: string) {
+    const { data } = await this.API.get<IArticle>(`${Endpoint.ARTICLES_SEARCH}${keyWord}`);
+
+    return data;
+  }
+
+  public async getBlogsByKeyWord(keyWord: string) {
+    const { data } = await this.API.get<IBlog>(`${Endpoint.BLOGS_SEARCH}${keyWord}`);
 
     return data;
   }
