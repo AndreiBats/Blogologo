@@ -2,10 +2,10 @@ import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 import { StyledSlider, Slide } from "./styles";
 import { ArticlesItem } from "../ArticlesItem/ArticlesItem";
-import { ArticleRecommendations } from "../ArticleRecommendations/ArticleRecommendations";
-import { IArticle } from "../../types";
 import { useAppSelector } from "../../app/hooks";
 import { getDetailsArticle } from "../../app/selectors/articleDetailsSelectors";
+import { Link } from "react-router-dom";
+import { ROUTE } from "../../routes";
 
 export const Slider = () => {
   const { articleRecommendations } = useAppSelector(getDetailsArticle);
@@ -23,7 +23,9 @@ export const Slider = () => {
       {articleRecommendations.map((article) => {
         return (
           <Slide className="keen-slider__slide number-slide1">
-            <ArticlesItem article={article} key={article.id} />
+            <Link to={`/article/${article.id}`}>
+              <ArticlesItem article={article} key={article.id} />
+            </Link>
           </Slide>
         );
       })}

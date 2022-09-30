@@ -36,34 +36,11 @@ const initialState: ArticleDetailsState = {
       },
     ],
   },
-  articleRecommendations: [
-    {
-      id: 0,
-      featured: false,
-      title: "",
-      url: "",
-      imageUrl: "",
-      newsSite: "",
-      summary: "",
-      publishedAt: "",
-      launches: [
-        {
-          id: "",
-          provider: "",
-        },
-      ],
-      events: [
-        {
-          id: "",
-          provider: "",
-        },
-      ],
-    },
-  ],
+  articleRecommendations: [],
 };
 
 const fetchArticleDetailsByID = createAsyncThunk<
-  { articleDetails: IArticle; articleRecommendations: IArticle },
+  { articleDetails: IArticle; articleRecommendations: any },
   string,
   { rejectValue: string }
 >("articleDetails/fetchArticleDetailsByID", async (id, { rejectWithValue }) => {
@@ -91,7 +68,7 @@ const articleDetailsSlice = createSlice({
     builder.addCase(fetchArticleDetailsByID.fulfilled, (state, { payload }) => {
       state.isLoading = false;
       state.articleDetails = payload.articleDetails;
-      state.articleRecommendations = payload.articleRecommendations.title;
+      state.articleRecommendations = payload.articleRecommendations;
     });
     builder.addCase(fetchArticleDetailsByID.rejected, (state, { payload }) => {
       if (payload) {
