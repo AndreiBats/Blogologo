@@ -5,7 +5,6 @@ import { ArticlesItem } from "../ArticlesItem/ArticlesItem";
 import { useAppSelector } from "../../app/hooks";
 import { getDetailsArticle } from "../../app/selectors/articleDetailsSelectors";
 import { Link } from "react-router-dom";
-import { ROUTE } from "../../routes";
 
 export const Slider = () => {
   const { articleRecommendations } = useAppSelector(getDetailsArticle);

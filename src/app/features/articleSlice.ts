@@ -27,6 +27,18 @@ const fetchArticles = createAsyncThunk<IArticle[], undefined, { rejectValue: str
   },
 );
 
+const fetchSortedArticles = createAsyncThunk<IArticle[], string, { rejectValue: string }>(
+  "articles/fetchSortedArticles",
+  async (value, { rejectWithValue }) => {
+    try {
+      return await spaceFlyAPI.getSortedArticles(value);
+    } catch (error) {
+      const AxiosError = error as AxiosError;
+      return rejectWithValue(AxiosError.message);
+    }
+  },
+);
+
 const articleSlice = createSlice({
   name: "article",
   initialState,
@@ -46,9 +58,23 @@ const articleSlice = createSlice({
         state.error = payload;
       }
     });
+    builder.addCase(fetchSortedArticles.pending, (state) => {
+      state.isLoading = true;
+      state.error = null;
+    });
+    builder.addCase(fetchSortedArticles.fulfilled, (state, { payload }) => {
+      state.isLoading = false;
+      state.articles = payload;
+    });
+    builder.addCase(fetchSortedArticles.rejected, (state, { payload }) => {
+      if (payload) {
+        state.isLoading = false;
+        state.error = payload;
+      }
+    });
   },
 });
 
 export default articleSlice.reducer;
 
-export { fetchArticles };
+export { fetchArticles, fetchSortedArticles };
