@@ -24,6 +24,16 @@ class SpaceFlyAPI {
     return data;
   }
 
+  public async getArticlesByPage(page: number) {
+    const params = {
+      _start: page,
+    };
+
+    const { data } = await this.API.get<IArticle[]>(Endpoint.ARTICLES_LIMIT, { params });
+
+    return data;
+  }
+
   public async getSortedArticles(value: string) {
     const params = {
       _sort: value,

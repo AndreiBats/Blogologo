@@ -20,6 +20,7 @@ import { Modal } from "./Modal/Modal";
 import { FavoritesArticle } from "./FavoritesArticle/FavoritesArticle";
 import { ArticleRecommendations } from "./ArticleRecommendations/ArticleRecommendations";
 import { Slider } from "./Slider/Slider";
+import { Pagination } from "./Pagination/Pagination";
 
 export {
   TabBar,
@@ -44,4 +45,5 @@ export {
   FavoritesArticle,
   ArticleRecommendations,
   Slider,
+  Pagination,
 };

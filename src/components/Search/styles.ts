@@ -32,6 +32,7 @@ const Input = styled.input`
   font-weight: 400;
   line-height: 20px;
   padding: 18px;
+  margin-right: 15px;
 
   ${Media.Medium} {
     padding: 10px 14px;
