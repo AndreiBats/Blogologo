@@ -58,6 +58,7 @@ const articleSlice = createSlice({
         state.error = payload;
       }
     });
+
     builder.addCase(fetchSortedArticles.pending, (state) => {
       state.isLoading = true;
       state.error = null;

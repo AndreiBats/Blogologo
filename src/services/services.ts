@@ -40,6 +40,16 @@ class SpaceFlyAPI {
     return data;
   }
 
+  public async getSortedBlogs(value: string) {
+    const params = {
+      _sort: value,
+    };
+
+    const { data } = await this.API.get<IBlog[]>(Endpoint.BLOGS_LIMIT, { params });
+
+    return data;
+  }
+
   public async getArticleDetailByID(id: any) {
     const { data } = await this.API.get<IArticle>(`${Endpoint.ARTICLES}/${id}`);
 
