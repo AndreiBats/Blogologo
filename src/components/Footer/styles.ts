@@ -20,6 +20,8 @@ const ThemeToggle = styled.button`
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
+  padding: 10px;
+  border-radius: 4px;
 `;
 
 export { StyledFooter, ThemeToggle, CopyRight };

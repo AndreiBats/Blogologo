@@ -1,4 +1,4 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { createUserWithEmailAndPassword, getAuth } from "firebase/auth";
 import { FireBaseErrorCode, getFireBaseMessage, FireBaseError } from "../../utils";
 
@@ -8,6 +8,7 @@ interface IUserState {
   error: null | FireBaseError;
   isAuth: boolean;
   creationTime: string;
+  theme: "light" | "dark";
 }
 
 const initialState: IUserState = {
@@ -16,6 +17,7 @@ const initialState: IUserState = {
   error: null,
   isAuth: false,
   creationTime: "",
+  theme: "light",
 };
 
 export const fetchSignInUser = createAsyncThunk<
@@ -40,7 +42,11 @@ export const fetchSignInUser = createAsyncThunk<
 const userSlice = createSlice({
   name: "user",
   initialState,
-  reducers: {},
+  reducers: {
+    changeTheme(state, { payload }: PayloadAction<"light" | "dark">) {
+      state.theme = payload;
+    },
+  },
   extraReducers(builder) {
     builder.addCase(fetchSignInUser.pending, (state) => {
       state.isPendingAuth = true;
@@ -65,3 +71,5 @@ const userSlice = createSlice({
 });
 
 export default userSlice.reducer;
+
+export const { changeTheme } = userSlice.actions;
