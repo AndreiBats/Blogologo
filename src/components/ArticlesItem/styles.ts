@@ -19,6 +19,7 @@ const MainImage = styled.img`
   width: 100%;
   height: 208px;
   border-radius: 16px 16px 0 0;
+  object-fit: cover;
 
   ${Media.Medium} {
     height: 160px;
