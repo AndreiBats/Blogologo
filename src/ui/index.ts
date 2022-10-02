@@ -1,13 +1,13 @@
 export enum Color {
-  Primary = "#6C1BDB",
-  PrimaryLight = "#912EF2",
-  Secondary = "#313037",
-  Medium = "#98989B",
-  Light = "#C1C1C3",
-  ExtraLight = "#EAEAEB",
-  Red = "#FD3419",
-  White = "#FFFFFF",
-  Gray = "#F3F3F3;",
+  Primary = "var(--primary)",
+  PrimaryLight = "var(--primaryLight)",
+  Secondary = "var(--secondary)",
+  Medium = "var(--medium)",
+  Light = "var(--light)",
+  ExtraLight = "var(--extraLight)",
+  Red = "var(--red)",
+  White = "var(--white)",
+  Gray = "var(--gray)",
 }
 
 export enum Media {

@@ -16,10 +16,10 @@ export const Footer = () => {
   setAttributeTheme(theme);
 
   const handleTheme = () => {
-    if (theme === "dark") {
-      dispatch(changeTheme("light"));
-    } else {
+    if (theme === "light") {
       dispatch(changeTheme("dark"));
+    } else {
+      dispatch(changeTheme("light"));
     }
 
     setAttributeTheme(theme);

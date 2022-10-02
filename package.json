@@ -1,4 +1,5 @@
 {
+  "homepage": "https://andreibats.github.io/blogologo/",
   "name": "blogologo",
   "version": "0.1.0",
   "private": true,
@@ -37,7 +38,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint -c .eslintrc --ext .ts,.tsx ."
+    "lint": "eslint -c .eslintrc --ext .ts,.tsx .",
+    "deploy": "gh-pages -d build"
   },
   "browserslist": {
     "production": [
