@@ -16,6 +16,7 @@ import blogDetailsReducer from "./features/blogDetailsSlice";
 import favoritesDetailsReducer from "./features/favoritesSlice";
 import userReducer from "./features/userSlice";
 import storage from "redux-persist/es/storage";
+import articlesSearchSlice from "./features/articlesSearchSlice";
 
 const persistConfig = {
   key: "root",
@@ -30,6 +31,7 @@ const rootReducer = combineReducers({
   blogDetails: blogDetailsReducer,
   favoritesDetails: favoritesDetailsReducer,
   user: userReducer,
+  searchArticles: articlesSearchSlice,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

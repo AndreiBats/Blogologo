@@ -15,9 +15,9 @@ export const ArticlesList = () => {
     dispatch(fetchArticles());
   }, [dispatch]);
 
-  // if (isLoading) {
-  //   return <Spinner />;
-  // }
+  if (isLoading) {
+    return <Spinner />;
+  }
 
   if (error) {
     return <h1>Error: {error}</h1>;
@@ -27,8 +27,8 @@ export const ArticlesList = () => {
     <StyledArticlesList>
       {articles.map((article) => {
         return (
-          <Link to={`/article/${article.id}`}>
-            <ArticlesItem article={article} key={article.id} />
+          <Link to={`/article/${article.id}`} key={article.id}>
+            <ArticlesItem article={article} />
           </Link>
         );
       })}

@@ -21,6 +21,7 @@ import { FavoritesArticle } from "./FavoritesArticle/FavoritesArticle";
 import { ArticleRecommendations } from "./ArticleRecommendations/ArticleRecommendations";
 import { Slider } from "./Slider/Slider";
 import { Pagination } from "./Pagination/Pagination";
+import { SearchList } from "./SearchList/SearchList";
 
 export {
   TabBar,
@@ -46,4 +47,5 @@ export {
   ArticleRecommendations,
   Slider,
   Pagination,
+  SearchList,
 };

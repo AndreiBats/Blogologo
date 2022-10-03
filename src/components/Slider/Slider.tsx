@@ -22,8 +22,8 @@ export const Slider = () => {
       {articleRecommendations.map((article) => {
         return (
           <Slide className="keen-slider__slide number-slide1">
-            <Link to={`/article/${article.id}`}>
-              <ArticlesItem article={article} key={article.id} />
+            <Link to={`/article/${article.id}`} key={article.id}>
+              <ArticlesItem article={article} />
             </Link>
           </Slide>
         );

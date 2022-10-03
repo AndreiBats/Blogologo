@@ -16,9 +16,9 @@ export const BlogsList = () => {
     dispatch(fetchBlogs());
   }, [dispatch]);
 
-  // if (isLoading) {
-  //   return <Spinner />;
-  // }
+  if (isLoading) {
+    return <Spinner />;
+  }
 
   if (error) {
     return <h1>Error: {error}</h1>;
@@ -28,8 +28,8 @@ export const BlogsList = () => {
     <StyledBlogsList>
       {blogs.map((blog) => {
         return (
-          <Link to={`/blog/${blog.id}`}>
-            <BlogsItem blog={blog} key={blog.id} />
+          <Link to={`/blog/${blog.id}`} key={blog.id}>
+            <BlogsItem blog={blog} />
           </Link>
         );
       })}

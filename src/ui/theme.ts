@@ -1,7 +1,7 @@
 import { css } from "styled-components";
 
 export const theme = css`
-  html[theme="light"] {
+  html {
     --primary: #6c1bdb;
     --primaryLight: "#912EF2";
     --secondary: "#313037";
@@ -13,13 +13,13 @@ export const theme = css`
     --gray: "#F3F3F3";
   }
 
-  html[theme="dark"] {
+  html {
     --primary: #6c1bdb;
     --primaryLight: "#912EF2";
     --secondary: "#FFFFFF";
     --medium: "#98989B";
     --light: "#C1C1C3";
-    --extraLight: "#EAEAEB";
+    --extraLight: "#6c1bdb";
     --red: "#FD3419";
     --white: "#FFFFFF";
     --gray: "#F3F3F3";

@@ -1,10 +1,15 @@
-import { StyledSearch, SearchButton, Input } from "./styles";
+import { ChangeEvent } from "react";
+import { StyledSearch, Input } from "./styles";
 
-export const Search = () => {
+interface IProps {
+  value: string;
+  onChange: (event: ChangeEvent<HTMLInputElement>) => void;
+}
+
+export const Search = ({ value, onChange }: IProps) => {
   return (
     <StyledSearch>
-      <Input type="search" placeholder="Search" />
-      <SearchButton>Search</SearchButton>
+      <Input value={value} onChange={onChange} type="text" placeholder="search..." />
     </StyledSearch>
   );
 };

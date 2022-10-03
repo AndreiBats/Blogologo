@@ -83,6 +83,12 @@ class SpaceFlyAPI {
 
     return data;
   }
+
+  public async getArticlesBySearch(word: string) {
+    const { data } = await this.API.get<IArticle[]>(Endpoint.ARTICLES + `?title_contains=${word}`);
+
+    return data;
+  }
 }
 
 export const spaceFlyAPI = new SpaceFlyAPI();
