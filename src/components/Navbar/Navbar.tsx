@@ -22,7 +22,7 @@ export const Navbar = () => {
       </Link>
       <NavbarList>
         <SearchItem>
-          <Link to={ROUTE.SEARCH}>
+          <Link to={ROUTE.SEARCH} key={1}>
             {" "}
             <Search />
           </Link>
@@ -30,21 +30,24 @@ export const Navbar = () => {
         {isAuth ? (
           <>
             <FavoritesItem>
-              <Link to={ROUTE.FAVORITES}>
+              <Link to={ROUTE.FAVORITES} key={2}>
                 {" "}
                 <Favorites />
               </Link>
             </FavoritesItem>
 
             <AccountItem>
-              <Link to={ROUTE.ACCOUNT}>
+              <Link to={ROUTE.ACCOUNT} key={3}>
                 <Account />
               </Link>
             </AccountItem>
           </>
         ) : (
           <NavItem>
-            <Link to={ROUTE.SING_IN}> Sign In</Link>
+            <Link to={ROUTE.SING_IN} key={4}>
+              {" "}
+              Sign In
+            </Link>
           </NavItem>
         )}
       </NavbarList>

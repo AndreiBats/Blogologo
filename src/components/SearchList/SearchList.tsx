@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { fetchArticlesBySearch } from "../../app/features/articlesSearchSlice";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { getSearchArticles } from "../../app/selectors/articlesSearchSelectors";
+import { useDebounce } from "../../hooks/useDebounce";
 import { IArticle } from "../../types";
 import { ArticlesItem } from "../ArticlesItem/ArticlesItem";
 import { Spinner } from "../Spinner/Spinner";
@@ -16,10 +17,15 @@ interface IProps {
 export const SearchList = ({ value }: IProps) => {
   const dispatch = useAppDispatch();
   const { isLoading, error, searchArticles } = useAppSelector(getSearchArticles);
+  const debounceValue = useDebounce(value, 1000);
 
-  useEffect(() => {
-    value !== "" ? dispatch(fetchArticlesBySearch(value)) : dispatch(fetchArticlesBySearch("@"));
-  }, [dispatch, value]);
+  useEffect((): void => {
+    if (debounceValue) {
+      value !== ""
+        ? dispatch(fetchArticlesBySearch(debounceValue))
+        : dispatch(fetchArticlesBySearch("@"));
+    }
+  }, [debounceValue, dispatch, value]);
 
   if (isLoading) {
     return <Spinner />;

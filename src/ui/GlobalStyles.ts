@@ -10,7 +10,8 @@ ${theme}
 
 body {   
     font-family: "Inter", sans-serif;
-    background-color: ${Color.ExtraLight};    
+    background-color: ${Color.ExtraLight};  
+    overflow-y: visible;  
 }
 
 

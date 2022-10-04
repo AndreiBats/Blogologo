@@ -9,6 +9,11 @@ const StyledBlogsItem = styled.li`
   position: relative;
   height: 400px;
 
+  &:hover {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    transition: all 0.5s;
+  }
+
   ${Media.Medium} {
     height: 320px;
     margin: 0 auto;
@@ -66,6 +71,11 @@ const Button = styled.button`
   top: 15px;
   right: 15px;
   cursor: pointer;
+
+  &:hover {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    transition: all 0.5s;
+  }
 
   ${Media.Medium} {
     padding: 8px;

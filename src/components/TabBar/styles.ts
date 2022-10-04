@@ -28,9 +28,18 @@ const Button = styled.button`
   padding: 16px 24px;
   border: none;
   border-radius: 4px;
+  cursor: pointer;
 
-  &:active,
-  :focus {
+  &:hover {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    transition: all 0.5s;
+  }
+
+  &:active {
+    background-color: ${Color.Primary};
+  }
+
+  &:focus {
     background-color: ${Color.Primary};
   }
 `;
