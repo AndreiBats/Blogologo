@@ -7,7 +7,7 @@ const StyledBlogsItem = styled.li`
   box-shadow: 0px 12px 40px 9px rgba(0, 0, 0, 0.1);
   border-radius: 16px;
   position: relative;
-  height: 400px;
+  height: 480px;
 
   &:hover {
     box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;

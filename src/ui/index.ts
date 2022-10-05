@@ -10,7 +10,12 @@ export enum Color {
   Gray = "var(--gray)",
 }
 
-export enum Media {
-  Small = "@media screen and (max-width: 568px)",
-  Medium = "@media screen and (max-width: 768px)",
+export enum Breakpoint {
+  MD = 768,
+  SM = 568,
 }
+
+export const Media = {
+  Small: `@media screen and (max-width: ${Breakpoint.SM}px)`,
+  Medium: `@media screen and (max-width: ${Breakpoint.MD}px)`,
+};

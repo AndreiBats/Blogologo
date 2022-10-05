@@ -31,4 +31,17 @@ const AccountEmail = styled.h3`
   font-size: 16px;
 `;
 
-export { StyledNavbar, NavbarList, SearchItem, NavItem, FavoritesItem, AccountItem, AccountEmail };
+const ButtonBurger = styled.button`
+  background-color: none;
+`;
+
+export {
+  StyledNavbar,
+  NavbarList,
+  SearchItem,
+  NavItem,
+  FavoritesItem,
+  AccountItem,
+  AccountEmail,
+  ButtonBurger,
+};
