@@ -18,10 +18,11 @@ import { Search } from "./Search/Search";
 import { Portal } from "./Portal/Portal";
 import { Modal } from "./Modal/Modal";
 import { FavoritesArticle } from "./FavoritesArticle/FavoritesArticle";
-import { ArticleRecommendations } from "./ArticleRecommendations/ArticleRecommendations";
+import { Recommendations } from "./Recommendations/Recommendations";
 import { Slider } from "./Slider/Slider";
 import { Pagination } from "./Pagination/Pagination";
 import { SearchList } from "./SearchList/SearchList";
+import { BurgerMenu } from "./BurgerMenu/BurgerMenu";
 
 export {
   TabBar,
@@ -44,8 +45,9 @@ export {
   Portal,
   Modal,
   FavoritesArticle,
-  ArticleRecommendations,
+  Recommendations,
   Slider,
   Pagination,
   SearchList,
+  BurgerMenu,
 };

@@ -13,7 +13,7 @@ const NavbarList = styled.ul`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 200px;
+  width: 300px;
 `;
 
 const SearchItem = styled.li`
@@ -27,4 +27,8 @@ const FavoritesItem = styled.li``;
 
 const AccountItem = styled.li``;
 
-export { StyledNavbar, NavbarList, SearchItem, NavItem, FavoritesItem, AccountItem };
+const AccountEmail = styled.h3`
+  font-size: 16px;
+`;
+
+export { StyledNavbar, NavbarList, SearchItem, NavItem, FavoritesItem, AccountItem, AccountEmail };

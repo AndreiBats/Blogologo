@@ -5,7 +5,6 @@ import { IOption } from "../../types";
 import { CustomStyles } from "./styles";
 
 const options: IOption[] = [
-  { value: "title", label: "Default" },
   { value: "title", label: "Title" },
   { value: "publishedAt", label: "Date" },
 ];

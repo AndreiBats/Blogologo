@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import { Color, Media } from "../../ui";
 
-const StyledArticleRecommendations = styled.li`
-  /* background-color: ${Color.White};
+const StyledRecommendations = styled.li`
+  background-color: ${Color.White};
   max-width: 351px;
   box-shadow: 0px 12px 40px 9px rgba(0, 0, 0, 0.1);
   border-radius: 16px;
@@ -12,7 +12,7 @@ const StyledArticleRecommendations = styled.li`
   ${Media.Medium} {
     height: 320px;
     margin: 0 auto;
-  } */
+  }
 `;
 
 const MainImage = styled.img`
@@ -72,4 +72,4 @@ const Button = styled.button`
   }
 `;
 
-export { StyledArticleRecommendations, MainImage, MainDate, Title, Description, Button };
+export { StyledRecommendations, MainImage, MainDate, Title, Description, Button };

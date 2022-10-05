@@ -10,10 +10,11 @@ import {
   NavItem,
   FavoritesItem,
   AccountItem,
+  AccountEmail,
 } from "./styles";
 
 export const Navbar = () => {
-  const { isAuth } = useAppSelector(getUserInfo);
+  const { isAuth, email } = useAppSelector(getUserInfo);
 
   return (
     <StyledNavbar>
@@ -35,6 +36,20 @@ export const Navbar = () => {
                 <Favorites />
               </Link>
             </FavoritesItem>
+            {isAuth ? (
+              <AccountItem>
+                <Link to={ROUTE.ACCOUNT} key={3}>
+                  {/* <Account /> */}
+                  <AccountEmail>{email}</AccountEmail>
+                </Link>
+              </AccountItem>
+            ) : (
+              <AccountItem>
+                <Link to={ROUTE.ACCOUNT} key={3}>
+                  <Account />
+                </Link>
+              </AccountItem>
+            )}
 
             <AccountItem>
               <Link to={ROUTE.ACCOUNT} key={3}>

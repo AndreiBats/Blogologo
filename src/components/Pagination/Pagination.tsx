@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react";
 import { fetchArticlesByPage } from "../../app/features/articleSlice";
+import { fetchBlogsByPage } from "../../app/features/blogSlice";
+import { useAppDispatch } from "../../app/hooks";
 import { StyledPagination, ButtonPrev, ButtonNext } from "./styles";
 
 export const Pagination = () => {
+  const dispatch = useAppDispatch();
   const [requestParams, setRequestParams] = useState({ page: 24 });
 
   const handlePrev = () => {
@@ -18,8 +21,12 @@ export const Pagination = () => {
   };
 
   useEffect(() => {
-    fetchArticlesByPage(requestParams.page);
-  }, [requestParams]);
+    dispatch(fetchArticlesByPage(requestParams.page));
+  }, [dispatch, requestParams]);
+
+  useEffect(() => {
+    dispatch(fetchBlogsByPage(requestParams.page));
+  }, [dispatch, requestParams]);
 
   return (
     <StyledPagination>

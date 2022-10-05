@@ -5,7 +5,6 @@ import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { getArticles } from "../../app/selectors/articleSelectors";
 import { StyledArticlesList } from "./styles";
 import { Link } from "react-router-dom";
-import { ROUTE } from "../../routes";
 
 export const ArticlesList = () => {
   const dispatch = useAppDispatch();
