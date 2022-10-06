@@ -19,7 +19,7 @@ export const BlogsItem = ({ blog }: IProps) => {
     toggleIsRead();
   };
   return (
-    <StyledBlogsItem>
+    <StyledBlogsItem whileHover={{ scale: 1.1 }}>
       <MainImage src={imageUrl} alt={title} />
       <Description>
         <MainDate>{publishedAt}</MainDate>

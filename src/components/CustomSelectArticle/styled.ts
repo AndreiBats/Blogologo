@@ -9,10 +9,6 @@ export const CustomStyles = {
     padding: "15px",
   }),
 
-  container: () => ({
-    cursor: "pointer",
-  }),
-
   indicatorSeparator: () => ({
     width: 0,
   }),

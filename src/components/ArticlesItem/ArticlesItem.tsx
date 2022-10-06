@@ -23,7 +23,7 @@ export const ArticlesItem = ({ article }: IProps) => {
   };
 
   return (
-    <StyledArticlesItem>
+    <StyledArticlesItem whileHover={{ scale: 1.1 }}>
       <MainImage src={imageUrl} alt={title} />
       <Description>
         <MainDate>{publishedAt}</MainDate>

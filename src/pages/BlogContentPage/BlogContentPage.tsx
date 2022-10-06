@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import { fetchArticleDetailsByID } from "../../app/features/articleDetailsSlice";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { getDetailsArticle } from "../../app/selectors/articleDetailsSelectors";
-import { Spinner } from "../../components";
+import { Slider, Spinner } from "../../components";
 import { ROUTE } from "../../routes";
 import { Description, MainImage, StyledArticleContentPage, Title, ButtonHome } from "./styles";
 
@@ -31,6 +31,7 @@ export const BlogContentPage = () => {
       <Title>{details.title}</Title>
       <MainImage src={details.imageUrl} />
       <Description>{details.summary}</Description>
+      <Slider />
     </StyledArticleContentPage>
   );
 };

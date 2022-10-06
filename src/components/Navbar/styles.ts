@@ -32,7 +32,7 @@ const AccountEmail = styled.h3`
 `;
 
 const ButtonBurger = styled.button`
-  background-color: ${Color.Gray};
+  background-color: ${Color.White};
 `;
 
 export {

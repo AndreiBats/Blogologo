@@ -1,15 +1,20 @@
 import styled from "styled-components";
 import { Color } from "../../ui";
+import { motion } from "framer-motion";
 
 const StyledBurgerMenu = styled.div`
-  background-color: ${Color.Primary};
+  background-color: ${Color.White};
   width: 100%;
-  height: 50vh;
   position: fixed;
   left: 0;
   top: 0;
   z-index: 20;
   padding: 15px;
+`;
+
+const Wrapper = styled(motion.div)`
+  background-color: ${Color.White};
+  height: 300px;
 `;
 
 const NavbarList = styled.ul`
@@ -31,6 +36,7 @@ const AccountEmail = styled.h3`
 
 const CloseButton = styled.button`
   width: 48px;
+  background-color: ${Color.White};
 `;
 
 const BurgerHeader = styled.div`
@@ -40,6 +46,7 @@ const BurgerHeader = styled.div`
 
 export {
   StyledBurgerMenu,
+  Wrapper,
   NavbarList,
   SearchItem,
   NavItem,

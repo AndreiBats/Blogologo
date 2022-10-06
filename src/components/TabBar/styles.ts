@@ -24,11 +24,12 @@ const Button = styled.button`
   font-size: 16px;
   line-height: 24px;
   color: ${Color.Secondary};
-  background-color: transparent;
-  padding: 16px 24px;
+  background-color: ${Color.Light};
+  padding: 12px 20px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  margin-right: 6px;
 
   &:hover {
     box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
@@ -41,6 +42,7 @@ const Button = styled.button`
 
   &:focus {
     background-color: ${Color.Primary};
+    color: ${Color.White};
   }
 `;
 
