@@ -2,11 +2,11 @@ import { useEffect, useState } from "react";
 import { fetchArticlesByPage } from "../../app/features/articleSlice";
 import { fetchBlogsByPage } from "../../app/features/blogSlice";
 import { useAppDispatch } from "../../app/hooks";
-import { StyledPagination, ButtonPrev, ButtonNext } from "./styles";
+import { StyledPagination, ButtonPrev, ButtonNext, Pages, Page } from "./styles";
 
 export const Pagination = () => {
   const dispatch = useAppDispatch();
-  const [requestParams, setRequestParams] = useState({ page: 24 });
+  const [requestParams, setRequestParams] = useState({ page: 0 });
 
   const handlePrev = () => {
     setRequestParams({
@@ -28,14 +28,32 @@ export const Pagination = () => {
     dispatch(fetchBlogsByPage(requestParams.page));
   }, [dispatch, requestParams]);
 
+  const handleFirstPage = () => {
+    setRequestParams({
+      page: requestParams.page,
+    });
+  };
+
+  const handleSecondPage = () => {
+    setRequestParams({
+      page: requestParams.page + 12,
+    });
+  };
+
+  const handleThirdPage = () => {
+    setRequestParams({
+      page: requestParams.page + 24,
+    });
+  };
+
   return (
     <StyledPagination>
       <ButtonPrev onClick={handlePrev}>Prev</ButtonPrev>
-      <ul>
-        <li>{}</li>
-        <li>{}</li>
-        <li>{}</li>
-      </ul>
+      <Pages>
+        <Page onClick={handleFirstPage}>{(requestParams.page + 12 * 2) / 12 - 1}</Page>
+        <Page onClick={handleSecondPage}>{(requestParams.page + 12 * 2) / 12}</Page>
+        <Page onClick={handleThirdPage}>{(requestParams.page + 12 * 2) / 12 + 1}</Page>
+      </Pages>
       <ButtonNext onClick={handleNext}>Next</ButtonNext>
     </StyledPagination>
   );

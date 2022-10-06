@@ -1,18 +1,21 @@
 import styled from "styled-components";
+import { Color } from "../../ui";
 
 const StyledBurgerMenu = styled.div`
-  width: 2rem;
-  height: 2rem;
+  background-color: ${Color.Primary};
+  width: 100%;
+  height: 50vh;
   position: fixed;
-  top: 15px;
-  right: 20px;
-  display: flex;
-  justify-content: space-around;
-  flex-direction: column nowrap;
+  left: 0;
+  top: 0;
   z-index: 20;
+  padding: 15px;
 `;
 
-const NavbarList = styled.ul``;
+const NavbarList = styled.ul`
+  display: flex;
+  flex-direction: column;
+`;
 
 const SearchItem = styled.li``;
 
@@ -26,7 +29,14 @@ const AccountEmail = styled.h3`
   font-size: 16px;
 `;
 
-const CloseButton = styled.button``;
+const CloseButton = styled.button`
+  width: 48px;
+`;
+
+const BurgerHeader = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
 
 export {
   StyledBurgerMenu,
@@ -37,4 +47,5 @@ export {
   AccountItem,
   AccountEmail,
   CloseButton,
+  BurgerHeader,
 };

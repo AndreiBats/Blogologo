@@ -29,4 +29,14 @@ const ButtonNext = styled.button`
   }
 `;
 
-export { StyledPagination, ButtonPrev, ButtonNext };
+const Pages = styled.ul`
+  display: flex;
+  justify-content: space-between;
+  width: 70px;
+`;
+
+const Page = styled.li`
+  cursor: pointer;
+`;
+
+export { StyledPagination, ButtonPrev, ButtonNext, Pages, Page };

@@ -17,7 +17,7 @@ import {
   AccountEmail,
   ButtonBurger,
 } from "./styles";
-import { BurgerMenu } from "../BurgerMenu/BurgerMenu";
+import { BurgerMenu } from "../index";
 
 export const Navbar = () => {
   const { isAuth, email } = useAppSelector(getUserInfo);
