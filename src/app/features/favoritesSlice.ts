@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { IArticle } from "../../types";
+import { IArticle } from "types";
 
 interface IFavoritesState {
   favorites: IArticle[];

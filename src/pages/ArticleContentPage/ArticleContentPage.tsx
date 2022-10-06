@@ -1,10 +1,10 @@
 import { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
-import { fetchArticleDetailsByID } from "../../app/features/articleDetailsSlice";
-import { useAppDispatch, useAppSelector } from "../../app/hooks";
-import { getDetailsArticle } from "../../app/selectors/articleDetailsSelectors";
-import { Slider, Spinner } from "../../components";
-import { ROUTE } from "../../routes";
+import { fetchArticleDetailsByID } from "app/features/articleDetailsSlice";
+import { useAppDispatch, useAppSelector } from "app/hooks";
+import { getDetailsArticle } from "app/selectors/articleDetailsSelectors";
+import { Slider, Spinner } from "components";
+import { ROUTE } from "routes";
 import { StyledArticleContentPage, Title, Description, MainImage, ButtonHome } from "./styles";
 
 export const ArticleContentPage = () => {

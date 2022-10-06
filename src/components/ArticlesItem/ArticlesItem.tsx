@@ -1,10 +1,11 @@
 import { format } from "date-fns";
-import { useAppDispatch, useAppSelector } from "../../app/hooks";
-import { IArticle } from "../../types";
+
+import { IArticle } from "types";
 import { Button, Description, MainDate, MainImage, StyledArticlesItem, Title } from "./styles";
-import { addToFavorites } from "../../app/features/favoritesSlice";
-import { useToggle } from "../../hooks/useToggle";
-import { getUserInfo } from "../../app/selectors/userSelectors";
+import { addToFavorites } from "app/features/favoritesSlice";
+import { useToggle } from "hooks/index";
+import { getUserInfo } from "app/selectors/userSelectors";
+import { useAppDispatch, useAppSelector } from "app/hooks";
 
 interface IProps {
   article: IArticle;

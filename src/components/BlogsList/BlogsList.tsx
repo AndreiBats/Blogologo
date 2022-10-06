@@ -1,10 +1,8 @@
 import { useEffect } from "react";
-import { BlogsItem } from "../index";
-import { fetchBlogs } from "../../app/features/blogSlice";
-import { useAppDispatch, useAppSelector } from "../../app/hooks";
-import { getBlogs } from "../../app/selectors/blogSelectors";
-
-import { Spinner } from "../Spinner/Spinner";
+import { BlogsItem, Spinner } from "../index";
+import { fetchBlogs } from "app/features/blogSlice";
+import { useAppDispatch, useAppSelector } from "app/hooks";
+import { getBlogs } from "app/selectors/blogSelectors";
 import { StyledBlogsList } from "./styles";
 import { Link } from "react-router-dom";
 

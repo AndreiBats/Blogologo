@@ -1,11 +1,10 @@
 import { Link } from "react-router-dom";
-import { useAppSelector } from "../../app/hooks";
-import { getUserInfo } from "../../app/selectors/userSelectors";
-import { Logo, Search, Account, Favorites, Burger } from "../../assets/index";
-import { useWindowSize } from "../../hooks/useWindowSize";
-import { ROUTE } from "../../routes";
-import { Breakpoint } from "../../ui";
-import { useToggle } from "../../hooks/useToggle";
+import { useAppSelector } from "app/hooks";
+import { getUserInfo } from "app/selectors/userSelectors";
+import { Logo, Search, Account, Favorites, Burger } from "assets/index";
+import { useWindowSize, useToggle } from "hooks/index";
+import { ROUTE } from "routes";
+import { Breakpoint } from "ui";
 
 import {
   NavbarList,

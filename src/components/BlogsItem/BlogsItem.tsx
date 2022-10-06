@@ -1,7 +1,7 @@
-import { addToFavorites } from "../../app/features/favoritesSlice";
-import { useAppDispatch } from "../../app/hooks";
-import { useToggle } from "../../hooks/useToggle";
-import { IBlog } from "../../types";
+import { addToFavorites } from "app/features/favoritesSlice";
+import { useAppDispatch } from "app/hooks";
+import { useToggle } from "hooks/index";
+import { IBlog } from "types";
 import { Button, Description, MainDate, MainImage, StyledBlogsItem, Title } from "./styles";
 
 interface IProps {

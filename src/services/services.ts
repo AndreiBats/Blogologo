@@ -1,5 +1,5 @@
 import axios from "axios";
-import { IArticle, IBlog } from "../types";
+import { IArticle, IBlog } from "types";
 
 enum Endpoint {
   ARTICLES = "articles",

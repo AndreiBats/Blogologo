@@ -1,7 +1,7 @@
 import Select, { SingleValue } from "react-select";
-import { fetchSortedArticles } from "../../app/features/articleSlice";
-import { useAppDispatch } from "../../app/hooks";
-import { IOption } from "../../types";
+import { fetchSortedArticles } from "app/features/articleSlice";
+import { useAppDispatch } from "app/hooks";
+import { IOption } from "types";
 import { CustomStyles } from "./styled";
 
 const options: IOption[] = [

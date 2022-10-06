@@ -1,5 +1,4 @@
-import { useState } from "react";
-import { useToggle } from "../../hooks/useToggle";
+import { useToggle } from "hooks/useToggle";
 import { CustomSelectArticle, CustomSelectBlog } from "../index";
 import { Button, StyledTabBar, TabItems } from "./styles";
 

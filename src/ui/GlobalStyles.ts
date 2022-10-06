@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components";
-import { Color } from ".";
+import { Color } from "ui";
 import { Reset } from "./reset";
 import { theme } from "./theme";
 

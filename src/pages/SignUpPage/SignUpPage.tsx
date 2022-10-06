@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { FormSignUp, Modal } from "../../components";
-import { ROUTE } from "../../routes";
+import { FormSignUp, Modal } from "components";
+import { ROUTE } from "routes";
 import { Back, StyledSignUpPage, Title } from "./styles";
 
 export const SignUpPage = () => {

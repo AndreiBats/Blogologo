@@ -1,5 +1,5 @@
-import { Search, SearchList } from "../../components";
-import { useInput } from "../../hooks/useInput";
+import { Search, SearchList } from "components";
+import { useInput } from "hooks/useInput";
 import { StyledSearchPage } from "./styles";
 
 export const SearchPage = () => {

@@ -1,7 +1,7 @@
-import { changeTheme } from "../../app/features/userSlice";
-import { useAppDispatch, useAppSelector } from "../../app/hooks";
-import { getUserInfo } from "../../app/selectors/userSelectors";
-import { useToggle } from "../../hooks/useToggle";
+import { changeTheme } from "app/features/userSlice";
+import { useAppDispatch, useAppSelector } from "app/hooks";
+import { getUserInfo } from "app/selectors/userSelectors";
+import { useToggle } from "hooks/index";
 import { StyledFooter, CopyRight, ThemeToggle } from "./styles";
 
 export const Footer = () => {

@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
-import { useAppSelector } from "../../app/hooks";
-import { getUserInfo } from "../../app/selectors/userSelectors";
-import { Account, Close, Favorites, Logo, Search } from "../../assets/index";
-import { useWindowSize } from "../../hooks/useWindowSize";
-import { ROUTE } from "../../routes";
-import { Breakpoint } from "../../ui";
+import { useAppSelector } from "app/hooks";
+import { getUserInfo } from "app/selectors/userSelectors";
+import { Account, Close, Favorites, Logo, Search } from "assets/index";
+import { useWindowSize } from "hooks/index";
+import { ROUTE } from "routes";
+import { Breakpoint } from "ui";
 import { AnimatePresence } from "framer-motion";
 
 import {

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { fetchArticlesByPage } from "../../app/features/articleSlice";
-import { fetchBlogsByPage } from "../../app/features/blogSlice";
-import { useAppDispatch } from "../../app/hooks";
+import { fetchArticlesByPage } from "app/features/articleSlice";
+import { fetchBlogsByPage } from "app/features/blogSlice";
+import { useAppDispatch } from "app/hooks";
 import { StyledPagination, ButtonPrev, ButtonNext, Pages, Page } from "./styles";
 
 export const Pagination = () => {

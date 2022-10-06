@@ -1,9 +1,8 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { AxiosError } from "axios";
-import { WritableDraft } from "immer/dist/internal";
-import { spaceFlyAPI } from "../../services/services";
-import { IArticle } from "../../types";
-import { getKeyWord } from "../../utils/keyword";
+import { spaceFlyAPI } from "services/services";
+import { IArticle } from "types";
+import { getKeyWord } from "utils/keyword";
 
 interface ArticleDetailsState {
   isLoading: boolean;

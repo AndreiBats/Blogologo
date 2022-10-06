@@ -1,4 +1,15 @@
 import { configureStore, combineReducers } from "@reduxjs/toolkit";
+import articlesSearchSlice from "./features/articlesSearchSlice";
+import storage from "redux-persist/es/storage";
+import {
+  articleReducer,
+  blogReducer,
+  articleDetailsReducer,
+  blogDetailsReducer,
+  favoritesDetailsReducer,
+  userReducer,
+} from "app/index";
+
 import {
   persistStore,
   persistReducer,
@@ -9,19 +20,11 @@ import {
   PURGE,
   REGISTER,
 } from "redux-persist";
-import articleReducer from "./features/articleSlice";
-import blogReducer from "./features/blogSlice";
-import articleDetailsReducer from "./features/articleDetailsSlice";
-import blogDetailsReducer from "./features/blogDetailsSlice";
-import favoritesDetailsReducer from "./features/favoritesSlice";
-import userReducer from "./features/userSlice";
-import storage from "redux-persist/es/storage";
-import articlesSearchSlice from "./features/articlesSearchSlice";
 
 const persistConfig = {
   key: "root",
   storage,
-  whitelist: ["favoritesDetails", "user"],
+  whitelist: ["favoritesDetails"],
 };
 
 const rootReducer = combineReducers({

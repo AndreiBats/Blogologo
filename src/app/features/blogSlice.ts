@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { AxiosError } from "axios";
-import { spaceFlyAPI } from "../../services/services";
-import { IBlog } from "../../types";
+import { spaceFlyAPI } from "services/services";
+import { IBlog } from "types";
 
 interface BlogState {
   blogs: any[];

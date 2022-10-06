@@ -1,21 +1,20 @@
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { Controller, SubmitHandler, useForm } from "react-hook-form";
 import { Input, Spinner } from "../index";
-import { ROUTE } from "../../routes";
+import { ROUTE } from "routes";
+import { useState } from "react";
+import { getFireBaseMessage } from "utils/firebaseErrors";
+import { useNavigate } from "react-router-dom";
 import {
   Form,
   StyledFormSignUp,
   Button,
-  Question,
   Title,
   SignUp,
   Auth,
   Message,
   ErrorMessage,
 } from "./styles";
-import { useState } from "react";
-import { getFireBaseMessage } from "../../utils/firebaseErrors";
-import { useNavigate } from "react-router-dom";
 
 type SignInValues = {
   email: string;

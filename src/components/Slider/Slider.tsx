@@ -1,9 +1,9 @@
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 import { StyledSlider, Slide } from "./styles";
-import { ArticlesItem } from "../ArticlesItem/ArticlesItem";
-import { useAppSelector } from "../../app/hooks";
-import { getDetailsArticle } from "../../app/selectors/articleDetailsSelectors";
+import { ArticlesItem } from "../index";
+import { useAppSelector } from "app/hooks";
+import { getDetailsArticle } from "app/selectors/articleDetailsSelectors";
 import { Link } from "react-router-dom";
 
 export const Slider = () => {

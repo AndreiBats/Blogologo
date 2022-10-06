@@ -1,8 +1,7 @@
-import { format } from "date-fns";
-import { useAppDispatch } from "../../app/hooks";
-import { IArticle } from "../../types";
+import { useAppDispatch } from "app/hooks";
+import { IArticle } from "types";
 import { Button, Description, MainDate, MainImage, StyledArticlesItem, Title } from "./styles";
-import { removeFavorite } from "../../app/features/favoritesSlice";
+import { removeFavorite } from "app/features/favoritesSlice";
 
 interface IProps {
   article: IArticle;

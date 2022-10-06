@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { createUserWithEmailAndPassword, getAuth } from "firebase/auth";
-import { FireBaseErrorCode, getFireBaseMessage, FireBaseError } from "../../utils";
+import { FireBaseErrorCode, getFireBaseMessage, FireBaseError } from "utils";
 
 interface IUserState {
   email: string;
