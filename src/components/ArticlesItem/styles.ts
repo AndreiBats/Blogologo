@@ -8,7 +8,7 @@ const StyledArticlesItem = styled(motion.li)`
   box-shadow: 0px 12px 40px 9px rgba(0, 0, 0, 0.1);
   border-radius: 16px;
   position: relative;
-  height: 480px;
+  height: 420px;
 
   &:hover {
     box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
@@ -33,7 +33,7 @@ const MainImage = styled.img`
 `;
 
 const Description = styled.div`
-  padding: 32px;
+  padding: 12px;
 
   ${Media.Medium} {
     padding: 16px;

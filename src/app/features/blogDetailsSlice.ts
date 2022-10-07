@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { spaceFlyAPI } from "services/services";
+import { spaceFlyAPI } from "services/spaceFlyAPI";
 import { IArticle, IBlog } from "types";
 
 interface BlogDetailsState {

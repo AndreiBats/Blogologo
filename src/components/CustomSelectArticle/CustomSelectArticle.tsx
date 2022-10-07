@@ -16,5 +16,7 @@ export const CustomSelectArticle = () => {
     if (option) dispatch(fetchSortedArticles(option.value));
   };
 
-  return <Select options={options} styles={CustomStyles} onChange={handleSort} />;
+  return (
+    <Select options={options} styles={CustomStyles} onChange={handleSort} isSearchable={false} />
+  );
 };

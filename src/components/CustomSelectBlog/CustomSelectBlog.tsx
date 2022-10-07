@@ -16,5 +16,7 @@ export const CustomSelectBlog = () => {
     if (option) dispatch(fetchSortedBlogs(option.value));
   };
 
-  return <Select options={options} styles={CustomStyles} onChange={handleSort} />;
+  return (
+    <Select options={options} styles={CustomStyles} onChange={handleSort} isSearchable={false} />
+  );
 };

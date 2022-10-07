@@ -4,11 +4,9 @@ import { IArticle, IBlog } from "types";
 enum Endpoint {
   ARTICLES = "articles",
   ARTICLES_COUNT = "articles/count",
-  ARTICLES_LIMIT = "articles?_limit=12",
   ARTICLES_SEARCH = "articles?title_contains=",
   BLOGS = "blogs",
   BLOGS_COUNT = "blogs/count",
-  BLOGS_LIMIT = "blogs?_limit=12",
   BLOGS_SEARCH = "blogs?title_contains=",
 }
 
@@ -19,17 +17,21 @@ class SpaceFlyAPI {
   });
 
   public async getArticles() {
-    const { data } = await this.API.get<IArticle[]>(Endpoint.ARTICLES_LIMIT);
+    const params = {
+      _limit: 12,
+    };
 
+    const { data } = await this.API.get<IArticle[]>(Endpoint.ARTICLES, { params });
     return data;
   }
 
   public async getArticlesByPage(page: number) {
     const params = {
       _start: page,
+      _limit: 12,
     };
 
-    const { data } = await this.API.get<IArticle[]>(Endpoint.ARTICLES_LIMIT, { params });
+    const { data } = await this.API.get<IArticle[]>(Endpoint.ARTICLES, { params });
 
     return data;
   }
@@ -37,9 +39,10 @@ class SpaceFlyAPI {
   public async getBlogsByPage(page: number) {
     const params = {
       _start: page,
+      _limit: 12,
     };
 
-    const { data } = await this.API.get<IBlog[]>(Endpoint.BLOGS_LIMIT, { params });
+    const { data } = await this.API.get<IBlog[]>(Endpoint.BLOGS, { params });
 
     return data;
   }
@@ -47,15 +50,20 @@ class SpaceFlyAPI {
   public async getSortedArticles(value: string) {
     const params = {
       _sort: value,
+      _limit: 12,
     };
 
-    const { data } = await this.API.get<IArticle[]>(Endpoint.ARTICLES_LIMIT, { params });
+    const { data } = await this.API.get<IArticle[]>(Endpoint.ARTICLES, { params });
 
     return data;
   }
 
   public async getBlogs() {
-    const { data } = await this.API.get<IArticle[]>(Endpoint.BLOGS_LIMIT);
+    const params = {
+      _limit: 12,
+    };
+
+    const { data } = await this.API.get<IArticle[]>(Endpoint.BLOGS, { params });
 
     return data;
   }
@@ -63,9 +71,10 @@ class SpaceFlyAPI {
   public async getSortedBlogs(value: string) {
     const params = {
       _sort: value,
+      _limit: 12,
     };
 
-    const { data } = await this.API.get<IBlog[]>(Endpoint.BLOGS_LIMIT, { params });
+    const { data } = await this.API.get<IBlog[]>(Endpoint.BLOGS, { params });
 
     return data;
   }

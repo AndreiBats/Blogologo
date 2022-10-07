@@ -29,7 +29,12 @@ export const ArticlesItem = ({ article }: IProps) => {
       <Description>
         <MainDate>{publishedAt}</MainDate>
         <Title>{title}</Title>
-        <Button onClick={handleAddToLibrary}>{isRead ? "Added to library" : "Read Later"}</Button>
+
+        {isAuth ? (
+          <Button onClick={handleAddToLibrary}>{isRead ? "Added to library" : "Read Later"}</Button>
+        ) : (
+          <Button> Sign In To Add To Favorites</Button>
+        )}
       </Description>
     </StyledArticlesItem>
   );
