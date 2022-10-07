@@ -13,7 +13,6 @@ import { MainTemplate } from "./MainTemplate/MainTemplate";
 import { Navbar } from "./Navbar/Navbar";
 import { Spinner } from "./Spinner/Spinner";
 import { RequireAuth } from "./RequireAuth/RequireAuth";
-import { Favorites } from "./Favorites/Favorites";
 import { Search } from "./Search/Search";
 import { Portal } from "./Portal/Portal";
 import { Modal } from "./Modal/Modal";
@@ -41,7 +40,6 @@ export {
   Navbar,
   Spinner,
   RequireAuth,
-  Favorites,
   Search,
   Portal,
   Modal,

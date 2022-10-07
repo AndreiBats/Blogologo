@@ -1,5 +1,10 @@
 import { format } from "date-fns";
-
+import { addToFavorites } from "app/features/favoritesSlice";
+import { useToggle } from "hooks/index";
+import { getUserInfo } from "app/selectors/userSelectors";
+import { useAppDispatch, useAppSelector } from "app/hooks";
+import { Link } from "react-router-dom";
+import { ROUTE } from "routes";
 import { IArticle } from "types";
 import {
   Button,
@@ -10,12 +15,6 @@ import {
   Title,
   ButtonSingIn,
 } from "./styles";
-import { addToFavorites } from "app/features/favoritesSlice";
-import { useToggle } from "hooks/index";
-import { getUserInfo } from "app/selectors/userSelectors";
-import { useAppDispatch, useAppSelector } from "app/hooks";
-import { Link } from "react-router-dom";
-import { ROUTE } from "routes";
 
 interface IProps {
   article: IArticle;
@@ -23,6 +22,7 @@ interface IProps {
 
 export const ArticlesItem = ({ article }: IProps) => {
   const { imageUrl, title, publishedAt } = article;
+  const date = format(new Date(publishedAt), "do MMMM Y");
   const dispatch = useAppDispatch();
   const [isRead, toggleIsRead] = useToggle(false);
   const { isAuth } = useAppSelector(getUserInfo);
@@ -37,7 +37,7 @@ export const ArticlesItem = ({ article }: IProps) => {
     <StyledArticlesItem whileHover={{ scale: 1.1 }}>
       <MainImage src={imageUrl} alt={title} />
       <Description>
-        <MainDate>{publishedAt}</MainDate>
+        <MainDate>{date}</MainDate>
         <Title>{title}</Title>
 
         {isAuth ? (
