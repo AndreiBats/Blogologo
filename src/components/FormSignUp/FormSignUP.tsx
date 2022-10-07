@@ -3,7 +3,7 @@ import { Input, Spinner } from "../index";
 import { ROUTE } from "routes";
 import { useAppDispatch, useAppSelector } from "app/hooks";
 import { getUserInfo } from "app/selectors/userSelectors";
-import { fetchSignInUser } from "app/features/userSlice";
+import { fetchSignUpUser } from "app/features/userSlice";
 import {
   Form,
   StyledFormSignUp,
@@ -30,7 +30,7 @@ const validateRules = {
     },
   },
   email: {
-    requared: "Email is requared !",
+    required: "Email is required !",
     pattern: {
       value: /^[\w-\\.]+@([\w-]+\.)+[\w-]{2,4}$/g,
       message: "Please enter a valid email",
@@ -63,7 +63,7 @@ export const FormSignUp = ({ toggleModal }: IProps) => {
   });
 
   const onSubmit: SubmitHandler<SignUpValues> = (userInfo) => {
-    dispatch(fetchSignInUser(userInfo))
+    dispatch(fetchSignUpUser(userInfo))
       .then(() => {
         toggleModal(true);
       })

@@ -11,7 +11,27 @@ interface BlogDetailsState {
 const initialState: BlogDetailsState = {
   isLoading: false,
   error: null,
-  blogDetails: {},
+  blogDetails: {
+    id: 0,
+    title: "",
+    url: "",
+    imageUrl: "",
+    newsSite: "",
+    summary: "",
+    publishedAt: "",
+    launches: [
+      {
+        id: "",
+        provider: "",
+      },
+    ],
+    events: [
+      {
+        id: "",
+        provider: "",
+      },
+    ],
+  },
 };
 
 const fetchBlogDetailsByID = createAsyncThunk<IArticle, string>(

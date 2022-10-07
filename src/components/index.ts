@@ -18,6 +18,7 @@ import { Search } from "./Search/Search";
 import { Portal } from "./Portal/Portal";
 import { Modal } from "./Modal/Modal";
 import { FavoritesArticle } from "./FavoritesArticle/FavoritesArticle";
+import { FavoritesBlog } from "./FavoritesBlog/FavoritesBlog";
 import { Recommendations } from "./Recommendations/Recommendations";
 import { Slider } from "./Slider/Slider";
 import { Pagination } from "./Pagination/Pagination";
@@ -45,6 +46,7 @@ export {
   Portal,
   Modal,
   FavoritesArticle,
+  FavoritesBlog,
   Recommendations,
   Slider,
   Pagination,

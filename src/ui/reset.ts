@@ -1,6 +1,6 @@
 import { css } from "styled-components";
 
-export const Reset = css`
+export const reset = css`
   * {
     box-sizing: border-box;
     padding: 0;

@@ -1,11 +1,21 @@
 import { format } from "date-fns";
 
 import { IArticle } from "types";
-import { Button, Description, MainDate, MainImage, StyledArticlesItem, Title } from "./styles";
+import {
+  Button,
+  Description,
+  MainDate,
+  MainImage,
+  StyledArticlesItem,
+  Title,
+  ButtonSingIn,
+} from "./styles";
 import { addToFavorites } from "app/features/favoritesSlice";
 import { useToggle } from "hooks/index";
 import { getUserInfo } from "app/selectors/userSelectors";
 import { useAppDispatch, useAppSelector } from "app/hooks";
+import { Link } from "react-router-dom";
+import { ROUTE } from "routes";
 
 interface IProps {
   article: IArticle;
@@ -33,7 +43,9 @@ export const ArticlesItem = ({ article }: IProps) => {
         {isAuth ? (
           <Button onClick={handleAddToLibrary}>{isRead ? "Added to library" : "Read Later"}</Button>
         ) : (
-          <Button> Sign In To Add To Favorites</Button>
+          <ButtonSingIn>
+            <Link to={ROUTE.SING_IN}> Sign In To Add To Library</Link>
+          </ButtonSingIn>
         )}
       </Description>
     </StyledArticlesItem>

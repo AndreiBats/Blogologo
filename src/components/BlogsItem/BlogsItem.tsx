@@ -1,4 +1,4 @@
-import { addToFavorites } from "app/features/favoritesSlice";
+import { addToFavoritesBlog } from "app/features/favoritesBlogSlice";
 import { useAppDispatch } from "app/hooks";
 import { useToggle } from "hooks/index";
 import { IBlog } from "types";
@@ -15,7 +15,7 @@ export const BlogsItem = ({ blog }: IProps) => {
 
   const handleAddToLibrary = (event: { preventDefault: () => void }) => {
     event.preventDefault();
-    dispatch(addToFavorites(blog));
+    dispatch(addToFavoritesBlog(blog));
     toggleIsRead();
   };
   return (

@@ -1,3 +1,3 @@
-export const getKeyWord = (title: any) => {
+export const getKeyWord = (title: string) => {
   return title.split(" ")[0];
 };

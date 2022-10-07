@@ -2,12 +2,13 @@ import { configureStore, combineReducers } from "@reduxjs/toolkit";
 import articlesSearchSlice from "./features/articlesSearchSlice";
 import storage from "redux-persist/es/storage";
 import {
-  articleReducer,
   blogReducer,
   articleDetailsReducer,
   blogDetailsReducer,
-  favoritesDetailsReducer,
+  favoritesReducer,
   userReducer,
+  articleReducer,
+  favoritesBlogReducer,
 } from "app/index";
 
 import {
@@ -24,7 +25,7 @@ import {
 const persistConfig = {
   key: "root",
   storage,
-  whitelist: ["favoritesDetails"],
+  whitelist: ["favoritesDetails", "user"],
 };
 
 const rootReducer = combineReducers({
@@ -32,9 +33,10 @@ const rootReducer = combineReducers({
   blog: blogReducer,
   articleDetails: articleDetailsReducer,
   blogDetails: blogDetailsReducer,
-  favoritesDetails: favoritesDetailsReducer,
+  favorites: favoritesReducer,
   user: userReducer,
   searchArticles: articlesSearchSlice,
+  favoritesBlog: favoritesBlogReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
