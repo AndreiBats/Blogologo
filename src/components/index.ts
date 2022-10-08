@@ -3,8 +3,7 @@ import { ArticlesItem } from "./ArticlesItem/ArticlesItem";
 import { ArticlesList } from "./ArticlesList/ArticlesList";
 import { BlogsItem } from "./BlogsItem/BlogsItem";
 import { BlogsList } from "./BlogsList/BlogsList";
-import { CustomSelectArticle } from "./CustomSelectArticle/CustomSelectArticle";
-import { CustomSelectBlog } from "./CustomSelectBlog/CustomSelectBlog";
+import { CustomSelect } from "./CustomSelect/CustomSelect";
 import { Footer } from "./Footer/Footer";
 import { FormSignIn } from "./FormSignIn/FormSignIn";
 import { FormSignUp } from "./FormSignUp/FormSignUP";
@@ -30,8 +29,7 @@ export {
   ArticlesList,
   BlogsItem,
   BlogsList,
-  CustomSelectArticle,
-  CustomSelectBlog,
+  CustomSelect,
   Footer,
   FormSignIn,
   FormSignUp,

@@ -1,5 +1,5 @@
 import { format } from "date-fns";
-import { addToFavorites } from "app/features/favoritesSlice";
+import { addToFavorites } from "app/features";
 import { useToggle } from "hooks/index";
 import { getUserInfo } from "app/selectors/userSelectors";
 import { useAppDispatch, useAppSelector } from "app/hooks";

@@ -1,18 +1,20 @@
 import Select, { SingleValue } from "react-select";
-import { fetchSortedArticles } from "app/features/articleSlice";
 import { useAppDispatch } from "app/hooks";
 import { IOption } from "types";
-import { CustomStyles } from "./styled";
+import { CustomStyles } from "./styles";
+import { fetchSortedBlogs, fetchSortedArticles } from "app/features";
 
 const options: IOption[] = [
   { value: "title", label: "Title" },
   { value: "publishedAt", label: "Date" },
+  { value: "", label: "Reset" },
 ];
 
-export const CustomSelectArticle = () => {
+export const CustomSelect = () => {
   const dispatch = useAppDispatch();
 
   const handleSort = (option: SingleValue<IOption>): void => {
+    if (option) dispatch(fetchSortedBlogs(option.value));
     if (option) dispatch(fetchSortedArticles(option.value));
   };
 

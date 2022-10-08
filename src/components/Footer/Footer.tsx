@@ -28,7 +28,7 @@ export const Footer = () => {
 
   return (
     <StyledFooter>
-      <CopyRight>©2022 Blogolog</CopyRight>
+      <CopyRight>©2022 Blogologo</CopyRight>
 
       {isDark ? (
         <ThemeToggle type="button" onClick={handleTheme}>

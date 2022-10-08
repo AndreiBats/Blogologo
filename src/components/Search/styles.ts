@@ -3,7 +3,7 @@ import { Color, Media } from "../../ui";
 
 const StyledSearch = styled.div`
   display: flex;
-  margin: 0 15px;
+  margin: 30px 15px;
 `;
 
 const Input = styled.input`

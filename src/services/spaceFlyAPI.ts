@@ -63,7 +63,7 @@ class SpaceFlyAPI {
       _limit: 12,
     };
 
-    const { data } = await this.API.get<IArticle[]>(Endpoint.BLOGS, { params });
+    const { data } = await this.API.get<IBlog[]>(Endpoint.BLOGS, { params });
 
     return data;
   }
