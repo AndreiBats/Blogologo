@@ -1,10 +1,10 @@
 import { useEffect } from "react";
 import { BlogsItem, Spinner } from "../index";
-import { fetchBlogs } from "app/features/blogSlice";
 import { useAppDispatch, useAppSelector } from "app/hooks";
-import { getBlogs } from "app/selectors/blogSelectors";
 import { StyledBlogsList } from "./styles";
 import { Link } from "react-router-dom";
+import { fetchBlogs } from "app/features";
+import { getBlogs } from "app/selectors";
 
 export const BlogsList = () => {
   const dispatch = useAppDispatch();

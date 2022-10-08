@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Color, Media } from "../../ui";
+import { Color, Media } from "ui";
 
 const StyledSearch = styled.div`
   display: flex;

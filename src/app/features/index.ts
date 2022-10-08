@@ -5,7 +5,7 @@ import { fetchBlogDetailsByID } from "./blogDetailsSlice";
 import { fetchBlogs, fetchSortedBlogs, fetchBlogsByPage } from "./blogSlice";
 import { addToFavoritesBlog, removeFavoriteBlog } from "./favoritesBlogSlice";
 import { addToFavorites, removeFavorite } from "./favoritesSlice";
-import { changeTheme } from "./userSlice";
+import { changeTheme, fetchSignInUser } from "./userSlice";
 
 export {
   fetchArticleDetailsByID,
@@ -22,4 +22,5 @@ export {
   addToFavorites,
   removeFavorite,
   changeTheme,
+  fetchSignInUser,
 };

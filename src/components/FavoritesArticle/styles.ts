@@ -1,7 +1,8 @@
 import styled from "styled-components";
-import { Color, Media } from "../../ui";
+import { Color, Media } from "ui";
+import { motion } from "framer-motion";
 
-const StyledArticlesItem = styled.li`
+const StyledArticlesItem = styled(motion.li)`
   background-color: ${Color.White};
   max-width: 351px;
   box-shadow: 0px 12px 40px 9px rgba(0, 0, 0, 0.1);

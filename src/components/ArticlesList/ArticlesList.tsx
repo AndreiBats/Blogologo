@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 import { ArticlesItem, Spinner } from "../index";
-import { fetchArticles } from "app/features/articleSlice";
+import { fetchArticles } from "app/features";
 import { useAppDispatch, useAppSelector } from "app/hooks";
-import { getArticles } from "app/selectors/articleSelectors";
+import { getArticles } from "app/selectors";
 import { StyledArticlesList } from "./styles";
 import { Link } from "react-router-dom";
 

@@ -1,3 +1,4 @@
+import { useToggle } from "hooks";
 import { CustomSelect } from "../index";
 import { ButtonArticles, ButtonBlogs, StyledTabBar, TabItems } from "./styles";
 
@@ -7,19 +8,27 @@ interface IProps {
 }
 
 export const TabBar = ({ setTab }: IProps) => {
+  const [isActive, asActiveToggle] = useToggle(true);
+
   const handleSetArticles = () => {
     setTab("articles");
+    asActiveToggle();
   };
 
   const handleSetBlogs = () => {
     setTab("blogs");
+    asActiveToggle();
   };
 
   return (
     <StyledTabBar>
       <TabItems>
-        <ButtonArticles onClick={handleSetArticles}>Articles</ButtonArticles>
-        <ButtonBlogs onClick={handleSetBlogs}>Blogs</ButtonBlogs>
+        <ButtonArticles $isActive={isActive} onClick={handleSetArticles}>
+          Articles
+        </ButtonArticles>
+        <ButtonBlogs $isActive={isActive} onClick={handleSetBlogs}>
+          Blogs
+        </ButtonBlogs>
       </TabItems>
       <CustomSelect />
     </StyledTabBar>

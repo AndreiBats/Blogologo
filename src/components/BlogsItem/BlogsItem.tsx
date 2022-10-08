@@ -1,4 +1,4 @@
-import { addToFavoritesBlog } from "app/features/favoritesBlogSlice";
+import { addToFavorites } from "app/features";
 import { useAppDispatch } from "app/hooks";
 import { format } from "date-fns";
 import { useToggle } from "hooks/index";
@@ -17,11 +17,11 @@ export const BlogsItem = ({ blog }: IProps) => {
 
   const handleAddToLibrary = (event: { preventDefault: () => void }) => {
     event.preventDefault();
-    dispatch(addToFavoritesBlog(blog));
+    dispatch(addToFavorites(blog));
     toggleIsRead();
   };
   return (
-    <StyledBlogsItem whileHover={{ scale: 1.1 }}>
+    <StyledBlogsItem whileHover={{ scale: 1.05 }}>
       <MainImage src={imageUrl} alt={title} />
       <Description>
         <MainDate>{date}</MainDate>

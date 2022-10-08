@@ -2,7 +2,7 @@ import { Controller, SubmitHandler, useForm } from "react-hook-form";
 import { Input, Spinner } from "../index";
 import { ROUTE } from "routes";
 import { useAppDispatch, useAppSelector } from "app/hooks";
-import { getUserInfo } from "app/selectors/userSelectors";
+import { getUserInfo } from "app/selectors";
 import { fetchSignUpUser } from "app/features/userSlice";
 import {
   Form,

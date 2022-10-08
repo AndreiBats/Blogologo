@@ -3,8 +3,9 @@ import { Input, Spinner } from "../index";
 import { ROUTE } from "routes";
 import { useState } from "react";
 import { useAppDispatch, useAppSelector } from "app/hooks";
-import { getUserInfo } from "app/selectors/userSelectors";
-import { fetchSignInUser } from "app/features/userSlice";
+import { useNavigate } from "react-router-dom";
+import { getUserInfo } from "app/selectors";
+import { fetchSignInUser } from "app/features";
 import {
   Form,
   StyledFormSignUp,
@@ -15,7 +16,6 @@ import {
   Message,
   ErrorMessage,
 } from "./styles";
-import { useNavigate } from "react-router-dom";
 
 type SignInValues = {
   userEmailSignIn: string;

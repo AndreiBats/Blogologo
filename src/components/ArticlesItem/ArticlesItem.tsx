@@ -1,7 +1,7 @@
 import { format } from "date-fns";
 import { addToFavorites } from "app/features";
 import { useToggle } from "hooks/index";
-import { getUserInfo } from "app/selectors/userSelectors";
+import { getUserInfo } from "app/selectors";
 import { useAppDispatch, useAppSelector } from "app/hooks";
 import { Link } from "react-router-dom";
 import { ROUTE } from "routes";
@@ -34,12 +34,11 @@ export const ArticlesItem = ({ article }: IProps) => {
   };
 
   return (
-    <StyledArticlesItem whileHover={{ scale: 1.1 }}>
+    <StyledArticlesItem whileHover={{ scale: 1.05 }}>
       <MainImage src={imageUrl} alt={title} />
       <Description>
         <MainDate>{date}</MainDate>
         <Title>{title}</Title>
-
         {isAuth ? (
           <Button onClick={handleAddToLibrary}>{isRead ? "Added to library" : "Read Later"}</Button>
         ) : (

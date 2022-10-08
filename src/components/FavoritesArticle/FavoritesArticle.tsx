@@ -1,14 +1,16 @@
 import { useAppDispatch } from "app/hooks";
-import { IArticle } from "types";
+import { IFavorites } from "types";
 import { Button, Description, MainDate, MainImage, StyledArticlesItem, Title } from "./styles";
-import { removeFavorite } from "app/features/favoritesSlice";
+import { format } from "date-fns";
+import { removeFavorite } from "app/features";
 
 interface IProps {
-  article: IArticle;
+  article: IFavorites;
 }
 
 export const FavoritesArticle = ({ article }: IProps) => {
   const { imageUrl, title, publishedAt } = article;
+  const date = format(new Date(publishedAt), "do MMMM Y");
   const dispatch = useAppDispatch();
 
   const handleDeleteArticle = (event: any) => {
@@ -17,10 +19,10 @@ export const FavoritesArticle = ({ article }: IProps) => {
   };
 
   return (
-    <StyledArticlesItem>
+    <StyledArticlesItem whileHover={{ scale: 1.05 }}>
       <MainImage src={imageUrl} alt={title} />
       <Description>
-        <MainDate>{publishedAt}</MainDate>
+        <MainDate>{date}</MainDate>
         <Title>{title}</Title>
         <Button onClick={handleDeleteArticle}>Delete</Button>
       </Description>

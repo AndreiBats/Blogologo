@@ -1,12 +1,12 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
-import { fetchArticleDetailsByID } from "app/features/articleDetailsSlice";
 import { useAppDispatch, useAppSelector } from "app/hooks";
-import { getDetailsArticle } from "app/selectors/articleDetailsSelectors";
 import { Slider, Spinner } from "components";
 import { ROUTE } from "routes";
 import { Description, MainImage, StyledArticleContentPage, Title, ButtonHome } from "./styles";
+import { getDetailsArticle } from "app/selectors";
+import { fetchArticleDetailsByID } from "app/features";
 
 export const BlogContentPage = () => {
   const { id } = useParams();

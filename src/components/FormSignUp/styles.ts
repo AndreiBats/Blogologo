@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { Color } from "../../ui";
+import { Color } from "ui";
 
 const StyledFormSignUp = styled.div`
   background-color: ${Color.White};

@@ -3,8 +3,8 @@ import "keen-slider/keen-slider.min.css";
 import { StyledSlider, Slide } from "./styles";
 import { ArticlesItem } from "../index";
 import { useAppSelector } from "app/hooks";
-import { getDetailsArticle } from "app/selectors/articleDetailsSelectors";
 import { Link } from "react-router-dom";
+import { getDetailsArticle } from "app/selectors";
 
 export const Slider = () => {
   const { articleRecommendations } = useAppSelector(getDetailsArticle);

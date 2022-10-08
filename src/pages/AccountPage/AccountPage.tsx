@@ -1,5 +1,5 @@
 import { useAppSelector } from "app/hooks";
-import { getUserInfo } from "app/selectors/userSelectors";
+import { getUserInfo } from "app/selectors";
 import { Email, RegistrationDate, StyledAccountPage } from "./styles";
 
 export const AccountPage = () => {

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Color } from "../../ui";
+import { Color } from "ui";
 
 const StyledArticleContentPage = styled.div`
   margin: 0 15px;

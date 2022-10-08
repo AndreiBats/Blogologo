@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { useAppSelector } from "app/hooks";
-import { getUserInfo } from "app/selectors/userSelectors";
 import { Account, Close, Favorites, Logo, Search } from "assets/index";
 import { useWindowSize } from "hooks/index";
 import { ROUTE } from "routes";
@@ -18,6 +17,7 @@ import {
   BurgerHeader,
   Wrapper,
 } from "./styles";
+import { getUserInfo } from "app/selectors";
 
 interface IProps {
   isOpen: boolean;

@@ -1,7 +1,7 @@
 import { Navigate, Outlet } from "react-router-dom";
 import { useAppSelector } from "app/hooks";
-import { getUserInfo } from "app/selectors/userSelectors";
 import { ROUTE } from "routes";
+import { getUserInfo } from "app/selectors";
 
 export const RequireAuth = () => {
   const { isAuth } = useAppSelector(getUserInfo);

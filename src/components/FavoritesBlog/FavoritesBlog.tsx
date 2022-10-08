@@ -1,7 +1,7 @@
+import { removeFavoriteBlog } from "app/features";
 import { useAppDispatch } from "app/hooks";
 import { IBlog } from "types";
 import { Button, Description, MainDate, MainImage, StyledBlogsItem, Title } from "./styles";
-import { removeFavoriteBlog } from "app/features/favoritesBlogSlice";
 
 interface IProps {
   blog: IBlog;

@@ -1,6 +1,6 @@
-import { changeTheme } from "app/features/userSlice";
+import { changeTheme } from "app/features";
 import { useAppDispatch, useAppSelector } from "app/hooks";
-import { getUserInfo } from "app/selectors/userSelectors";
+import { getUserInfo } from "app/selectors";
 import { useToggle } from "hooks/index";
 import { StyledFooter, CopyRight, ThemeToggle } from "./styles";
 

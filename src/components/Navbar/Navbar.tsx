@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useAppSelector } from "app/hooks";
-import { getUserInfo } from "app/selectors/userSelectors";
+
 import { Logo, Search, Account, Favorites, Burger } from "assets/index";
 import { useWindowSize, useToggle } from "hooks/index";
 import { ROUTE } from "routes";
@@ -17,6 +17,7 @@ import {
   ButtonBurger,
 } from "./styles";
 import { BurgerMenu } from "../index";
+import { getUserInfo } from "app/selectors";
 
 export const Navbar = () => {
   const { isAuth, email } = useAppSelector(getUserInfo);

@@ -1,12 +1,12 @@
 import { ChangeEvent, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { fetchArticlesBySearch } from "app/features/articlesSearchSlice";
 import { useAppDispatch, useAppSelector } from "app/hooks";
-import { getSearchArticles } from "app/selectors/articlesSearchSelectors";
 import { useDebounce } from "hooks/index";
 import { IArticle } from "types";
 import { ArticlesItem, Spinner } from "../index";
 import { StyledSearchList } from "./styles";
+import { getSearchArticles } from "app/selectors";
+import { fetchArticlesBySearch } from "app/features";
 
 interface IProps {
   value: string;
