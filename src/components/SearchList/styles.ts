@@ -18,4 +18,9 @@ const StyledSearchList = styled.ul`
   }
 `;
 
-export { StyledSearchList };
+const Description = styled.h3`
+  text-align: center;
+  font-size: 36px;
+`;
+
+export { StyledSearchList, Description };

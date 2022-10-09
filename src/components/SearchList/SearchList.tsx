@@ -4,7 +4,7 @@ import { useAppDispatch, useAppSelector } from "app/hooks";
 import { useDebounce } from "hooks/index";
 import { IArticle } from "types";
 import { ArticlesItem, Spinner } from "../index";
-import { StyledSearchList } from "./styles";
+import { Description, StyledSearchList } from "./styles";
 import { getSearchArticles } from "app/selectors";
 import { fetchArticlesBySearch } from "app/features";
 
@@ -35,7 +35,7 @@ export const SearchList = ({ value }: IProps) => {
   }
 
   return searchArticles.length === 0 ? (
-    <h3>nothing</h3>
+    <Description>Please, enter your request!</Description>
   ) : (
     <StyledSearchList>
       {searchArticles.map((article: IArticle) => {

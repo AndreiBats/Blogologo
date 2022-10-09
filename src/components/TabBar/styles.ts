@@ -23,7 +23,7 @@ const ButtonArticles = styled.button<{ $isActive: boolean }>`
   font-weight: 600;
   font-size: 16px;
   line-height: 24px;
-  color: ${Color.Secondary};
+  color: ${({ $isActive }) => ($isActive ? Color.White : Color.Secondary)};
   background-color: ${({ $isActive }) => ($isActive ? Color.Primary : Color.Light)};
   padding: 12px 20px;
   border: none;
@@ -36,7 +36,7 @@ const ButtonBlogs = styled.button<{ $isActive: boolean }>`
   font-weight: 600;
   font-size: 16px;
   line-height: 24px;
-  color: ${Color.Secondary};
+  color: ${({ $isActive }) => ($isActive ? Color.Secondary : Color.White)};
   background-color: ${({ $isActive }) => ($isActive ? Color.Light : Color.Primary)};
   padding: 12px 20px;
   border: none;
