@@ -59,21 +59,21 @@ export const Navbar = () => {
                   </AccountItem>
                 ) : (
                   <AccountItem>
-                    <Link to={ROUTE.ACCOUNT} key={3}>
+                    <Link to={ROUTE.ACCOUNT} key={4}>
                       <Account />
                     </Link>
                   </AccountItem>
                 )}
 
                 <AccountItem>
-                  <Link to={ROUTE.ACCOUNT} key={3}>
+                  <Link to={ROUTE.ACCOUNT} key={5}>
                     <Account />
                   </Link>
                 </AccountItem>
               </>
             ) : (
               <NavItem>
-                <Link to={ROUTE.SING_IN} key={4}>
+                <Link to={ROUTE.SING_IN} key={6}>
                   {" "}
                   Sign In
                 </Link>

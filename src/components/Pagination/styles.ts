@@ -5,6 +5,7 @@ const StyledPagination = styled.div`
   display: flex;
   justify-content: space-around;
   margin-top: o 15px;
+  align-items: center;
 `;
 
 const ButtonPrev = styled.button`
@@ -60,6 +61,14 @@ const Pages = styled.ul`
 
 const Page = styled.li`
   cursor: pointer;
+  padding: 10px;
 `;
 
-export { StyledPagination, ButtonPrev, ButtonNext, Pages, Page };
+const Page1 = styled.li`
+  cursor: pointer;
+  background-color: ${Color.Primary};
+  padding: 10px;
+  border-radius: 10px;
+`;
+
+export { StyledPagination, ButtonPrev, ButtonNext, Pages, Page, Page1 };

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useAppDispatch } from "app/hooks";
-import { StyledPagination, ButtonPrev, ButtonNext, Pages, Page } from "./styles";
+import { StyledPagination, ButtonPrev, ButtonNext, Pages, Page, Page1 } from "./styles";
 import { fetchArticlesByPage, fetchBlogsByPage } from "app/features";
 
 export const Pagination = () => {
@@ -54,7 +54,7 @@ export const Pagination = () => {
       )}
 
       <Pages>
-        <Page onClick={handleFirstPage}>{(requestParams.page + 12 * 2) / 12 - 1}</Page>
+        <Page1 onClick={handleFirstPage}>{(requestParams.page + 12 * 2) / 12 - 1}</Page1>
         <Page onClick={handleSecondPage}>{(requestParams.page + 12 * 2) / 12}</Page>
         <Page onClick={handleThirdPage}>{(requestParams.page + 12 * 2) / 12 + 1}</Page>
       </Pages>
