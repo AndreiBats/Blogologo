@@ -6,6 +6,8 @@ const StyledFavoritesPage = styled.div`
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(4, 1fr);
   grid-gap: 40px 32px;
+  margin: 0 15px;
+  text-align: center;
 
   ${Media.Medium} {
     grid-template-columns: repeat(2, 1fr);
@@ -17,4 +19,8 @@ const StyledFavoritesPage = styled.div`
   }
 `;
 
-export { StyledFavoritesPage };
+const Description = styled.h3`
+  font-size: 36px;
+`;
+
+export { StyledFavoritesPage, Description };

@@ -8,7 +8,7 @@ const StyledArticlesItem = styled(motion.li)`
   box-shadow: 0px 12px 40px 9px rgba(0, 0, 0, 0.1);
   border-radius: 16px;
   position: relative;
-  height: 380px;
+  height: 420px;
 
   &:hover {
     box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
@@ -53,7 +53,7 @@ const MainDate = styled.h3`
 
 const Title = styled.h2`
   font-weight: 600;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 28px;
   color: ${Color.Secondary};
   margin-bottom: 16px;

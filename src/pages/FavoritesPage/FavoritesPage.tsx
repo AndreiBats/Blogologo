@@ -3,7 +3,7 @@ import { getFavoriteArticle } from "app/selectors";
 import { FavoritesArticle } from "components";
 import { Link } from "react-router-dom";
 import { IFavorites } from "types";
-import { StyledFavoritesPage } from "./styles";
+import { Description, StyledFavoritesPage } from "./styles";
 
 export const FavoritesPage = () => {
   const { favorites } = useAppSelector(getFavoriteArticle);
@@ -19,7 +19,7 @@ export const FavoritesPage = () => {
           );
         })
       ) : (
-        <h2>Empty</h2>
+        <Description>There is nothing to show you!</Description>
       )}
     </StyledFavoritesPage>
   );
