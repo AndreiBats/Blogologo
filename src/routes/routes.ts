@@ -1,6 +1,7 @@
 export enum ROUTE {
   HOME = "/",
   ARTICLES = "articles",
+  ARTICLE_PAGE = "articles?_limit=12&_start=12",
   BLOGS = "blogs",
   SEARCH = "search",
   FAVORITES = "favorites",
@@ -10,4 +11,5 @@ export enum ROUTE {
   BLOG = "blog/:id",
   NOT_FOUND = "*",
   ACCOUNT = "account",
+  RESET = "reset",
 }

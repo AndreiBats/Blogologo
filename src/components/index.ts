@@ -22,6 +22,7 @@ import { Slider } from "./Slider/Slider";
 import { Pagination } from "./Pagination/Pagination";
 import { SearchList } from "./SearchList/SearchList";
 import { BurgerMenu } from "./BurgerMenu/BurgerMenu";
+import { ResetPassword } from "./ResetPassword/ResetPassword";
 
 export {
   TabBar,
@@ -48,4 +49,5 @@ export {
   Pagination,
   SearchList,
   BurgerMenu,
+  ResetPassword,
 };

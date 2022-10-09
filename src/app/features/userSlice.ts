@@ -1,6 +1,11 @@
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { FirebaseError } from "firebase/app";
-import { createUserWithEmailAndPassword, getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import {
+  createUserWithEmailAndPassword,
+  getAuth,
+  sendPasswordResetEmail,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
 import { FireBaseErrorCode, getFireBaseMessage, FireBaseError } from "utils";
 
 interface IUserState {
@@ -67,6 +72,20 @@ export const fetchSignInUser = createAsyncThunk<
   },
 );
 
+export const resetPassword = createAsyncThunk<void, { userEmail: string }, { rejectValue: string }>(
+  "user/resetPassword",
+  async ({ userEmail }, { rejectWithValue }) => {
+    try {
+      const auth = getAuth();
+      await sendPasswordResetEmail(auth, userEmail);
+    } catch (error) {
+      const firebaseError = error as { code: FireBaseErrorCode };
+
+      return rejectWithValue(getFireBaseMessage(firebaseError.code));
+    }
+  },
+);
+
 const userSlice = createSlice({
   name: "user",
   initialState,
@@ -113,6 +132,20 @@ const userSlice = createSlice({
         state.isPendingAuth = false;
         state.error = payload;
         state.isAuth = false;
+      }
+    });
+
+    builder.addCase(resetPassword.pending, (state) => {
+      state.isPendingAuth = true;
+      state.error = null;
+    });
+    builder.addCase(resetPassword.fulfilled, (state) => {
+      state.isPendingAuth = false;
+      state.error = null;
+    });
+    builder.addCase(resetPassword.rejected, (state, { payload }) => {
+      if (payload) {
+        state.isPendingAuth = false;
       }
     });
   },

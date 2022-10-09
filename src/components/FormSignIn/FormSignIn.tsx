@@ -15,6 +15,8 @@ import {
   Auth,
   Message,
   ErrorMessage,
+  ResetPassword,
+  Reset,
 } from "./styles";
 
 type SignInValues = {
@@ -99,6 +101,10 @@ export const FormSignIn = ({ toggleModal }: IProps) => {
           Sign In
           {isPendingAuth && <Spinner />}
         </Button>
+        <ResetPassword>
+          Forgot your password? <Reset to={`/${ROUTE.RESET}`}>Reset Password</Reset>
+        </ResetPassword>
+
         <Auth>
           Don't have an account? <SignUp to={`/${ROUTE.SIGN_UP}`}>Sign Up</SignUp>
         </Auth>

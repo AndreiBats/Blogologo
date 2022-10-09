@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { Color } from "ui";
 
-const StyledSignInPage = styled.div``;
+const StyledResetPage = styled.div``;
 
 const Back = styled(Link)`
   color: ${Color.Secondary};
@@ -23,4 +23,4 @@ const Title = styled.h2`
   padding: 15px;
 `;
 
-export { StyledSignInPage, Back, Title };
+export { StyledResetPage, Back, Title };

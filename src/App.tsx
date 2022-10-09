@@ -7,6 +7,7 @@ import {
   FavoritesPage,
   HomePage,
   NotFoundPage,
+  ResetPage,
   SearchPage,
   SignInPage,
   SignUpPage,
@@ -24,6 +25,7 @@ export const App = () => {
           <Route path={ROUTE.FAVORITES} element={<FavoritesPage />} />
           <Route path={ROUTE.ACCOUNT} element={<AccountPage />} />
         </Route>
+        <Route path={ROUTE.RESET} element={<ResetPage />}></Route>
         <Route path={ROUTE.SING_IN} element={<SignInPage />} />
         <Route path={ROUTE.SIGN_UP} element={<SignUpPage />} />
         <Route path={ROUTE.ARTICLE} element={<ArticleContentPage />} />

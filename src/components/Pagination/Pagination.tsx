@@ -47,7 +47,12 @@ export const Pagination = () => {
 
   return (
     <StyledPagination>
-      <ButtonPrev onClick={handlePrev}>Prev</ButtonPrev>
+      {requestParams.page === 0 ? (
+        <ButtonPrev disabled>Prev</ButtonPrev>
+      ) : (
+        <ButtonPrev onClick={handlePrev}>Prev</ButtonPrev>
+      )}
+
       <Pages>
         <Page onClick={handleFirstPage}>{(requestParams.page + 12 * 2) / 12 - 1}</Page>
         <Page onClick={handleSecondPage}>{(requestParams.page + 12 * 2) / 12}</Page>

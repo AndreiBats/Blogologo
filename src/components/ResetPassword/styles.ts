@@ -1,8 +1,8 @@
-import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 import { Color } from "ui";
 
-const StyledFormSignUp = styled.div`
+const StyledReset = styled.div`
   background-color: ${Color.White};
   border-radius: 16px;
   margin: 0 auto;
@@ -88,7 +88,7 @@ const Message = styled.p`
 
 const ErrorMessage = styled.p``;
 
-const ResetPassword = styled.h3`
+const TitleResetPassword = styled.h3`
   font-weight: 500;
   font-size: 16px;
   line-height: 20px;
@@ -105,7 +105,7 @@ const Reset = styled(Link)`
 `;
 
 export {
-  StyledFormSignUp,
+  StyledReset,
   Form,
   EmailInput,
   PasswordInput,
@@ -117,5 +117,5 @@ export {
   Message,
   ErrorMessage,
   Reset,
-  ResetPassword,
+  TitleResetPassword,
 };
