@@ -18,6 +18,7 @@ import {
   Wrapper,
 } from "./styles";
 import { getUserInfo } from "app/selectors";
+import { CustomLink } from "components";
 
 interface IProps {
   isOpen: boolean;
@@ -53,49 +54,41 @@ export const BurgerMenu = ({ isOpen, handleBurger }: IProps) => {
 
                     <NavbarList>
                       <SearchItem>
-                        <Link to={ROUTE.SEARCH} key={1}>
+                        <CustomLink to={ROUTE.SEARCH} key={1}>
                           {" "}
                           <Search /> Search
-                        </Link>
+                        </CustomLink>
                       </SearchItem>
                       {isAuth ? (
                         <>
                           <FavoritesItem>
-                            <Link to={ROUTE.FAVORITES} key={2}>
+                            <CustomLink to={ROUTE.FAVORITES} key={2}>
                               {" "}
                               <Favorites />
                               Favorites
-                            </Link>
+                            </CustomLink>
                           </FavoritesItem>
                           {isAuth ? (
                             <AccountItem>
-                              <Link to={ROUTE.ACCOUNT} key={3}>
+                              <CustomLink to={ROUTE.ACCOUNT} key={3}>
                                 {" "}
                                 {email}
-                                {/* <AccountEmail>{email}</AccountEmail> */}
-                              </Link>
+                              </CustomLink>
                             </AccountItem>
                           ) : (
                             <AccountItem>
-                              <Link to={ROUTE.ACCOUNT} key={3}>
+                              <CustomLink to={ROUTE.ACCOUNT} key={3}>
                                 <Account />
-                              </Link>
+                              </CustomLink>
                             </AccountItem>
                           )}
-
-                          <AccountItem>
-                            <Link to={ROUTE.ACCOUNT} key={3}>
-                              <Account />
-                            </Link>
-                          </AccountItem>
                         </>
                       ) : (
                         <NavItem>
-                          <Link to={ROUTE.SING_IN} key={4}>
+                          <CustomLink to={ROUTE.SING_IN} key={4}>
                             {" "}
                             Sign In
-                          </Link>
-                          Sign In
+                          </CustomLink>
                         </NavItem>
                       )}
                     </NavbarList>

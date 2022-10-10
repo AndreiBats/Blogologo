@@ -23,6 +23,7 @@ import { Pagination } from "./Pagination/Pagination";
 import { SearchList } from "./SearchList/SearchList";
 import { BurgerMenu } from "./BurgerMenu/BurgerMenu";
 import { ResetPassword } from "./ResetPassword/ResetPassword";
+import { CustomLink } from "./CustomLink/CustomLink";
 
 export {
   TabBar,
@@ -50,4 +51,5 @@ export {
   SearchList,
   BurgerMenu,
   ResetPassword,
+  CustomLink,
 };

@@ -5,10 +5,10 @@ import { Color } from "ui";
 const StyledFormSignUp = styled.div`
   background-color: ${Color.White};
   border-radius: 16px;
-  margin: 0 auto;
-  margin-bottom: 152px;
+  margin: 0 auto 152px;
+
   padding: 40px;
-  width: 624px;
+  max-width: 624px;
 `;
 
 const Form = styled.form`

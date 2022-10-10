@@ -15,6 +15,7 @@ import {
   Title,
   ButtonSingIn,
 } from "./styles";
+import { CustomLink } from "components";
 
 interface IProps {
   article: IArticle;
@@ -43,7 +44,7 @@ export const ArticlesItem = ({ article }: IProps) => {
           <Button onClick={handleAddToLibrary}>{isRead ? "Added to library" : "Read Later"}</Button>
         ) : (
           <ButtonSingIn>
-            <Link to={ROUTE.SING_IN}> Sign In To Add To Library</Link>
+            <CustomLink to={ROUTE.SING_IN}> Sign In To Add To Library</CustomLink>
           </ButtonSingIn>
         )}
       </Description>

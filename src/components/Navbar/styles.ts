@@ -21,7 +21,9 @@ const SearchItem = styled.li`
   list-style: none;
 `;
 
-const NavItem = styled.li``;
+const NavItem = styled.li`
+  color: ${Color.Primary};
+`;
 
 const FavoritesItem = styled.li``;
 

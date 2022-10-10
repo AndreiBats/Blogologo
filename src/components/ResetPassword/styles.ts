@@ -8,7 +8,7 @@ const StyledReset = styled.div`
   margin: 0 auto;
   margin-bottom: 152px;
   padding: 40px;
-  width: 624px;
+  max-width: 624px;
 `;
 
 const Form = styled.form`

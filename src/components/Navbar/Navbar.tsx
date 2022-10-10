@@ -16,7 +16,7 @@ import {
   AccountEmail,
   ButtonBurger,
 } from "./styles";
-import { BurgerMenu } from "../index";
+import { BurgerMenu, CustomLink } from "../index";
 import { getUserInfo } from "app/selectors";
 
 export const Navbar = () => {
@@ -37,46 +37,46 @@ export const Navbar = () => {
         <>
           <NavbarList>
             <SearchItem>
-              <Link to={ROUTE.SEARCH} key={1}>
+              <CustomLink to={ROUTE.SEARCH} key={1}>
                 {" "}
                 <Search />
-              </Link>
+              </CustomLink>
             </SearchItem>
             {isAuth ? (
               <>
                 <FavoritesItem>
-                  <Link to={ROUTE.FAVORITES} key={2}>
+                  <CustomLink to={ROUTE.FAVORITES} key={2}>
                     {" "}
                     <Favorites />
-                  </Link>
+                  </CustomLink>
                 </FavoritesItem>
                 {isAuth ? (
                   <AccountItem>
-                    <Link to={ROUTE.ACCOUNT} key={3}>
+                    <CustomLink to={ROUTE.ACCOUNT} key={3}>
                       {/* <Account /> */}
                       <AccountEmail>{email}</AccountEmail>
-                    </Link>
+                    </CustomLink>
                   </AccountItem>
                 ) : (
                   <AccountItem>
-                    <Link to={ROUTE.ACCOUNT} key={4}>
+                    <CustomLink to={ROUTE.ACCOUNT} key={4}>
                       <Account />
-                    </Link>
+                    </CustomLink>
                   </AccountItem>
                 )}
 
                 <AccountItem>
-                  <Link to={ROUTE.ACCOUNT} key={5}>
+                  <CustomLink to={ROUTE.ACCOUNT} key={5}>
                     <Account />
-                  </Link>
+                  </CustomLink>
                 </AccountItem>
               </>
             ) : (
               <NavItem>
-                <Link to={ROUTE.SING_IN} key={6}>
+                <CustomLink to={ROUTE.SING_IN} key={6}>
                   {" "}
                   Sign In
-                </Link>
+                </CustomLink>
               </NavItem>
             )}
           </NavbarList>
