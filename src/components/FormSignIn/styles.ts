@@ -3,12 +3,11 @@ import styled from "styled-components";
 import { Color } from "ui";
 
 const StyledFormSignUp = styled.div`
-  background-color: ${Color.White};
-  border-radius: 16px;
-  margin: 0 auto 152px;
-
-  padding: 40px;
   max-width: 624px;
+  margin: 0 auto 152px;
+  padding: 40px;
+  border-radius: 16px;
+  background-color: ${Color.White};
 `;
 
 const Form = styled.form`
@@ -17,61 +16,61 @@ const Form = styled.form`
 `;
 
 const EmailInput = styled.input`
-  border: 1px solid ${Color.Light};
+  margin-bottom: 40px;
+  padding: 18px;
   border-radius: 4px;
-  color: ${Color.Medium};
   font-size: 16px;
   font-weight: 400;
   line-height: 20px;
-  margin-bottom: 40px;
-  padding: 18px;
+  border: 1px solid ${Color.Light};
+  color: ${Color.Medium};
 `;
 
 const PasswordInput = styled.input`
-  border: 1px solid ${Color.Light};
+  margin-bottom: 16px;
+  padding: 18px;
   border-radius: 4px;
-  color: ${Color.Medium};
   font-size: 16px;
   font-weight: 400;
   line-height: 20px;
-  margin-bottom: 16px;
-  padding: 18px;
+  border: 1px solid ${Color.Light};
+  color: ${Color.Medium};
 `;
 
 const Button = styled.button`
-  background: ${Color.Primary};
-  border: none;
+  margin-bottom: 24px;
+  padding: 16px;
   border-radius: 4px;
-  color: ${Color.White};
+  border: none;
   font-size: 18px;
   font-weight: 600;
   line-height: 24px;
-  margin-bottom: 24px;
-  padding: 16px;
+  background: ${Color.Primary};
+  color: ${Color.White};
 `;
 
 const Question = styled.p`
-  color: ${Color.Secondary};
+  margin-bottom: 48px;
   font-size: 16px;
   font-weight: 400;
   line-height: 20px;
-  margin-bottom: 48px;
+  color: ${Color.Secondary};
 `;
 
 const Title = styled.h3`
-  color: ${Color.Secondary};
+  margin-bottom: 8px;
   font-size: 16px;
   font-weight: 600;
   line-height: 20px;
-  margin-bottom: 8px;
+  color: ${Color.Secondary};
 `;
 
 const SignUp = styled(Link)`
-  color: ${Color.Primary};
   text-decoration: none;
   font-weight: 500;
   font-size: 16px;
   line-height: 20px;
+  color: ${Color.Primary};
 `;
 
 const Auth = styled.h3`
@@ -82,26 +81,26 @@ const Auth = styled.h3`
 `;
 
 const Message = styled.p`
-  color: ${Color.Red};
   margin-bottom: 26px;
+  color: ${Color.Red};
 `;
 
 const ErrorMessage = styled.p``;
 
 const ResetPassword = styled.h3`
+  margin-bottom: 26px;
   font-weight: 500;
   font-size: 16px;
   line-height: 20px;
   color: ${Color.Light};
-  margin-bottom: 26px;
 `;
 
 const Reset = styled(Link)`
-  color: ${Color.Primary};
   text-decoration: none;
   font-weight: 500;
   font-size: 16px;
   line-height: 20px;
+  color: ${Color.Primary};
 `;
 
 export {

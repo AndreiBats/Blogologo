@@ -2,12 +2,12 @@ import styled from "styled-components";
 import { Color, Media } from "ui";
 
 const StyledRecommendations = styled.li`
-  background-color: ${Color.White};
-  max-width: 351px;
-  box-shadow: 0px 12px 40px 9px rgba(0, 0, 0, 0.1);
-  border-radius: 16px;
   position: relative;
   height: 400px;
+  max-width: 351px;
+  border-radius: 16px;
+  box-shadow: 0px 12px 40px 9px rgba(0, 0, 0, 0.1);
+  background-color: ${Color.White};
 
   ${Media.Medium} {
     height: 320px;
@@ -34,11 +34,11 @@ const Description = styled.div`
 `;
 
 const MainDate = styled.h3`
+  margin-bottom: 8px;
   font-weight: 500;
   font-size: 16px;
   line-height: 24px;
   color: ${Color.Medium};
-  margin-bottom: 8px;
 
   ${Media.Medium} {
     font-size: 14px;
@@ -46,11 +46,11 @@ const MainDate = styled.h3`
 `;
 
 const Title = styled.h2`
+  margin-bottom: 16px;
   font-weight: 600;
   font-size: 18px;
   line-height: 28px;
   color: ${Color.Secondary};
-  margin-bottom: 16px;
 
   ${Media.Medium} {
     font-size: 14px;
@@ -58,14 +58,14 @@ const Title = styled.h2`
 `;
 
 const Button = styled.button`
-  padding: 10px;
-  border-radius: 4px;
-  color: ${Color.White};
-  background-color: ${Color.Primary};
   position: absolute;
   top: 15px;
   right: 15px;
+  padding: 10px;
+  border-radius: 4px;
   cursor: pointer;
+  background-color: ${Color.Primary};
+  color: ${Color.White};
 
   ${Media.Medium} {
     padding: 8px;

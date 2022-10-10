@@ -20,9 +20,9 @@ const StyledSearchList = styled.ul`
 `;
 
 const Description = styled.div`
+  min-height: 800px;
   text-align: center;
   font-size: 36px;
-  min-height: 800px;
 `;
 
 export { StyledSearchList, Description };

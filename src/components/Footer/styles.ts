@@ -4,8 +4,8 @@ import { Color, Media } from "ui";
 const StyledFooter = styled.div`
   display: flex;
   justify-content: space-between;
-  padding: 24px 0;
   margin: 0 15px;
+  padding: 24px 0;
 
   ${Media.Small} {
     display: block;
@@ -14,10 +14,10 @@ const StyledFooter = styled.div`
 `;
 
 const CopyRight = styled.h3`
-  color: ${Color.Medium};
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
+  color: ${Color.Medium};
 
   ${Media.Small} {
     margin-bottom: 16px;
@@ -25,16 +25,16 @@ const CopyRight = styled.h3`
 `;
 
 const ThemeToggle = styled.button`
+  border-radius: 4px;
+  margin-right: 6px;
+  padding: 6px 12px;
   font-weight: 600;
   font-size: 16px;
   line-height: 24px;
   color: ${Color.Secondary};
   background-color: ${Color.Light};
-  padding: 6px 12px;
   border: none;
-  border-radius: 4px;
   cursor: pointer;
-  margin-right: 6px;
 
   &:active {
     background-color: ${Color.Primary};

@@ -8,14 +8,14 @@ const StyledSearch = styled.div`
 
 const Input = styled.input`
   width: 100%;
-  border: 1px solid ${Color.Light};
+  margin-right: 15px;
+  padding: 18px;
   border-radius: 4px;
-  color: ${Color.Medium};
   font-size: 16px;
   font-weight: 400;
   line-height: 20px;
-  padding: 18px;
-  margin-right: 15px;
+  border: 1px solid ${Color.Light};
+  color: ${Color.Medium};
 
   ${Media.Medium} {
     padding: 10px 14px;

@@ -10,9 +10,9 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  margin: 0 auto;
   max-width: 1120px;
   width: 100%;
+  margin: 0 auto;
 `;
 
 const Main = styled.div`

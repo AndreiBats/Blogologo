@@ -5,8 +5,8 @@ const StyledNotFoundPage = styled.div`
 `;
 
 const Title = styled.h2`
-  font-size: 46px;
   margin-bottom: 36px;
+  font-size: 46px;
 `;
 
 const Description = styled.h3`

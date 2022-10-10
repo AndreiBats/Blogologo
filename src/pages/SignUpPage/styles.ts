@@ -5,20 +5,20 @@ import { Color } from "ui";
 const StyledSignUpPage = styled.div``;
 
 const Back = styled(Link)`
-  color: ${Color.Secondary};
+  margin-bottom: 32px;
+  text-decoration: none;
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
-  margin-bottom: 32px;
-  text-decoration: none;
+  color: ${Color.Secondary};
 `;
 
 const Title = styled.h2`
-  color: ${Color.Secondary};
+  margin-bottom: 72px;
   font-size: 56px;
   font-weight: 700;
   line-height: 80px;
-  margin-bottom: 72px;
+  color: ${Color.Secondary};
 `;
 
 export { StyledSignUpPage, Back, Title };

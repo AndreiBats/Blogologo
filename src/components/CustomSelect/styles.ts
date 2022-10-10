@@ -2,11 +2,11 @@ import { Color } from "ui";
 
 export const CustomStyles = {
   control: () => ({
-    width: "256px",
     display: "flex",
-    background: Color.ExtraLight,
-    borderRadius: "4px",
+    width: "256px",
     padding: "15px",
+    borderRadius: "4px",
+    background: Color.ExtraLight,
   }),
 
   indicatorSeparator: () => ({

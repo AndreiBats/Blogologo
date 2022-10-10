@@ -2,18 +2,18 @@ import styled from "styled-components";
 import { Color } from "ui";
 
 const StyledNavbar = styled.nav`
-  background-color: ${Color.White};
   display: flex;
   justify-content: space-between;
   margin-bottom: 50px;
   padding: 20px 32px;
+  background-color: ${Color.White};
 `;
 
 const NavbarList = styled.ul`
   display: flex;
   justify-content: space-between;
-  align-items: center;
   width: 300px;
+  align-items: center;
 `;
 
 const SearchItem = styled.li`

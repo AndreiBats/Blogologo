@@ -60,15 +60,15 @@ const Pages = styled.ul`
 `;
 
 const Page = styled.li`
-  cursor: pointer;
   padding: 10px;
+  cursor: pointer;
 `;
 
 const Page1 = styled.li`
-  cursor: pointer;
-  background-color: ${Color.Primary};
   padding: 10px;
   border-radius: 10px;
+  cursor: pointer;
+  background-color: ${Color.Primary};
 `;
 
 const Button = styled.button``;

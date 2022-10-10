@@ -6,22 +6,22 @@ const StyledArticleContentPage = styled.div`
 `;
 
 const ButtonHome = styled.button`
+  margin-bottom: 20px;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
+  cursor: pointer;
   color: ${Color.Secondary};
   background-color: ${Color.ExtraLight};
-  margin-bottom: 20px;
-  cursor: pointer;
 `;
 
 const Title = styled.h3`
+  margin-bottom: 48px;
   font-weight: 700;
   font-size: 56px;
   line-height: 80px;
   align-items: center;
   color: ${Color.Secondary};
-  margin-bottom: 48px;
 `;
 
 const MainImage = styled.img`
@@ -30,11 +30,11 @@ const MainImage = styled.img`
 `;
 
 const Description = styled.p`
+  margin-bottom: 48px;
   font-weight: 400;
   font-size: 18px;
   line-height: 32px;
   color: ${Color.Secondary};
-  margin-bottom: 48px;
 `;
 
 export { StyledArticleContentPage, Title, Description, MainImage, ButtonHome };

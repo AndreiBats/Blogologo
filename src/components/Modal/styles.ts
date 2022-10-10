@@ -20,16 +20,16 @@ const ModalContainer = styled.div`
 `;
 
 const ModalContent = styled.div`
-  text-align: center;
   padding: 30px 20px;
-  background-color: ${Color.Gray};
   border-radius: 16px;
+  text-align: center;
+  background-color: ${Color.Gray};
 `;
 
 const Title = styled.h3`
+  margin-bottom: 24px;
   font-size: 16px;
   font-weight: bold;
-  margin-bottom: 24px;
 `;
 
 const CloseButton = styled.button`
@@ -37,8 +37,8 @@ const CloseButton = styled.button`
   font-weight: bold;
 
   padding: 15px;
-  background-color: ${Color.PrimaryLight};
   border-radius: 16px;
+  background-color: ${Color.PrimaryLight};
 `;
 
 export { Overlay, Title, ModalContainer, ModalContent, CloseButton };

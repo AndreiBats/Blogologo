@@ -5,22 +5,22 @@ import { Color } from "ui";
 const StyledSignInPage = styled.div``;
 
 const Back = styled(Link)`
-  color: ${Color.Secondary};
+  padding: 15px;
+  margin-bottom: 32px;
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
-  margin-bottom: 32px;
   text-decoration: none;
-  padding: 15px;
+  color: ${Color.Secondary};
 `;
 
 const Title = styled.h2`
-  color: ${Color.Secondary};
+  margin-bottom: 72px;
+  padding: 15px;
   font-size: 56px;
   font-weight: 700;
   line-height: 80px;
-  margin-bottom: 72px;
-  padding: 15px;
+  color: ${Color.Secondary};
 `;
 
 export { StyledSignInPage, Back, Title };
