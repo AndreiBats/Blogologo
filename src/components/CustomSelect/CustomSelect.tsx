@@ -10,12 +10,17 @@ const options: IOption[] = [
   { value: "", label: "Reset" },
 ];
 
-export const CustomSelect = () => {
+interface IProps {
+  setValue: (value: string) => void;
+}
+
+export const CustomSelect = ({ setValue }: IProps) => {
   const dispatch = useAppDispatch();
 
   const handleSort = (option: SingleValue<IOption>): void => {
     if (option) dispatch(fetchSortedBlogs(option.value));
     if (option) dispatch(fetchSortedArticles(option.value));
+    if (option) setValue(option.value);
   };
 
   return (

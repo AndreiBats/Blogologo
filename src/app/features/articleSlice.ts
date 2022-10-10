@@ -2,6 +2,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { AxiosError } from "axios";
 import { spaceFlyAPI } from "services/spaceFlyAPI";
 import { IArticle } from "types";
+import { ISortedList } from "types/types";
 
 interface ArticleState {
   articles: IArticle[];
@@ -27,11 +28,11 @@ const fetchArticles = createAsyncThunk<IArticle[], undefined, { rejectValue: str
   },
 );
 
-const fetchArticlesByPage = createAsyncThunk<IArticle[], number, { rejectValue: string }>(
+const fetchArticlesByPage = createAsyncThunk<IArticle[], ISortedList, { rejectValue: string }>(
   "articles/fetchArticlesByPage",
-  async (page, { rejectWithValue }) => {
+  async (sortedValue, { rejectWithValue }) => {
     try {
-      return await spaceFlyAPI.getArticlesByPage(page);
+      return await spaceFlyAPI.getArticlesByPage(sortedValue);
     } catch (error) {
       const AxiosError = error as AxiosError;
       return rejectWithValue(AxiosError.message);

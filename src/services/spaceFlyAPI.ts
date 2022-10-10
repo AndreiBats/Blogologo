@@ -1,5 +1,6 @@
 import axios from "axios";
 import { IArticle, IBlog } from "types";
+import { ISortedList } from "types/types";
 
 enum Endpoint {
   ARTICLES = "articles",
@@ -21,10 +22,9 @@ class SpaceFlyAPI {
     return data;
   }
 
-  public async getArticlesByPage(page: number) {
+  public async getArticlesByPage(sortedValue: ISortedList) {
     const params = {
-      _start: page,
-      _limit: 12,
+      ...sortedValue,
     };
 
     const { data } = await this.API.get<IArticle[]>(Endpoint.ARTICLES, { params });
@@ -32,10 +32,9 @@ class SpaceFlyAPI {
     return data;
   }
 
-  public async getBlogsByPage(page: number) {
+  public async getBlogsByPage(value: ISortedList) {
     const params = {
-      _start: page,
-      _limit: 12,
+      ...value,
     };
 
     const { data } = await this.API.get<IBlog[]>(Endpoint.BLOGS, { params });

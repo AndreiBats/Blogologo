@@ -30,7 +30,6 @@ export const TabBar = ({ setTab }: IProps) => {
           Blogs
         </ButtonBlogs>
       </TabItems>
-      <CustomSelect />
     </StyledTabBar>
   );
 };

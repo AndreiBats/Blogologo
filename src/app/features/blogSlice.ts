@@ -2,6 +2,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { AxiosError } from "axios";
 import { spaceFlyAPI } from "services/spaceFlyAPI";
 import { IBlog } from "types";
+import { ISortedList } from "types/types";
 
 interface BlogState {
   blogs: any[];
@@ -39,11 +40,11 @@ const fetchSortedBlogs = createAsyncThunk<IBlog[], string, { rejectValue: string
   },
 );
 
-const fetchBlogsByPage = createAsyncThunk<IBlog[], number, { rejectValue: string }>(
+const fetchBlogsByPage = createAsyncThunk<IBlog[], ISortedList, { rejectValue: string }>(
   "blogs/fetchBlogsByPage",
-  async (page, { rejectWithValue }) => {
+  async (sortedValue, { rejectWithValue }) => {
     try {
-      return await spaceFlyAPI.getBlogsByPage(page);
+      return await spaceFlyAPI.getBlogsByPage(sortedValue);
     } catch (error) {
       const AxiosError = error as AxiosError;
       return rejectWithValue(AxiosError.message);

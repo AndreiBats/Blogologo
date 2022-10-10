@@ -1,67 +1,80 @@
 import { useEffect, useState } from "react";
 import { useAppDispatch } from "app/hooks";
 import { StyledPagination, ButtonPrev, ButtonNext, Pages, Page, Page1 } from "./styles";
-import {
-  fetchArticlesByPage,
-  fetchBlogsByPage,
-  fetchSortedArticles,
-  fetchSortedBlogs,
-} from "app/features";
+import { fetchArticlesByPage, fetchBlogsByPage } from "app/features";
 
-export const Pagination = () => {
+interface IProps {
+  value: string;
+}
+
+export const Pagination = ({ value }: IProps) => {
   const dispatch = useAppDispatch();
-  const [requestParams, setRequestParams] = useState({ page: 0 });
+  const [requestParams, setRequestParams] = useState({
+    _start: 0,
+    _sort: value,
+    _limit: "12",
+  });
 
   const handlePrev = () => {
     setRequestParams({
-      page: requestParams.page - 12,
+      _start: requestParams._start - 12,
+      _sort: requestParams._sort,
+      _limit: requestParams._limit,
     });
   };
 
   const handleNext = () => {
     setRequestParams({
-      page: requestParams.page + 12,
+      _start: requestParams._start + 12,
+      _sort: requestParams._sort,
+      _limit: requestParams._limit,
     });
   };
 
   useEffect(() => {
-    dispatch(fetchArticlesByPage(requestParams.page));
+    dispatch(fetchArticlesByPage(requestParams));
   }, [dispatch, requestParams]);
 
   useEffect(() => {
-    dispatch(fetchBlogsByPage(requestParams.page));
+    dispatch(fetchBlogsByPage(requestParams));
   }, [dispatch, requestParams]);
 
   const handleFirstPage = () => {
     setRequestParams({
-      page: requestParams.page,
+      _start: requestParams._start,
+      _sort: requestParams._sort,
+      _limit: requestParams._limit,
     });
   };
 
   const handleSecondPage = () => {
     setRequestParams({
-      page: requestParams.page + 12,
+      _start: requestParams._start + 12,
+      _sort: requestParams._sort,
+      _limit: requestParams._limit,
     });
   };
 
   const handleThirdPage = () => {
     setRequestParams({
-      page: requestParams.page + 24,
+      _start: requestParams._start + 24,
+      _sort: requestParams._sort,
+      _limit: requestParams._limit,
     });
   };
 
   return (
     <StyledPagination>
-      {requestParams.page === 0 ? (
+      {requestParams._start === 0 ? (
         <ButtonPrev disabled>Prev</ButtonPrev>
       ) : (
         <ButtonPrev onClick={handlePrev}>Prev</ButtonPrev>
       )}
 
       <Pages>
-        <Page1 onClick={handleFirstPage}>{(requestParams.page + 12 * 2) / 12 - 1}</Page1>
-        <Page onClick={handleSecondPage}>{(requestParams.page + 12 * 2) / 12}</Page>
-        <Page onClick={handleThirdPage}>{(requestParams.page + 12 * 2) / 12 + 1}</Page>
+        <Page1 onClick={handleFirstPage}>{(requestParams._start + 12 * 2) / 12 - 1}</Page1>
+        <Page onClick={handleSecondPage}>{(requestParams._start + 12 * 2) / 12}</Page>
+        <Page onClick={handleThirdPage}>{(requestParams._start + 12 * 2) / 12 + 1}</Page>
       </Pages>
       <ButtonNext onClick={handleNext}>Next</ButtonNext>
     </StyledPagination>

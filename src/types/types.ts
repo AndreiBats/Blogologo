@@ -53,3 +53,9 @@ export interface IFavorites {
   launches: ILauncher[];
   events: IEvent[];
 }
+
+export interface ISortedList {
+  _limit: string;
+  _start: number;
+  _sort: string;
+}

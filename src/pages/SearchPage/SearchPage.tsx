@@ -9,7 +9,7 @@ export const SearchPage = () => {
     <StyledSearchPage>
       <Search {...searchInput} />
       <SearchList {...searchInput} />
-      <Pagination />
+      {/* <Pagination /> */}
     </StyledSearchPage>
   );
 };
