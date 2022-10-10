@@ -7,6 +7,7 @@ const StyledArticlesList = styled.ul`
   grid-template-rows: repeat(4, 1fr);
   grid-gap: 30px 22px;
   margin-bottom: 32px;
+
   ${Media.Medium} {
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 20px 16px;

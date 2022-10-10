@@ -7,6 +7,7 @@ const StyledSearchList = styled.ul`
   grid-template-rows: repeat(4, 1fr);
   grid-gap: 40px 32px;
   margin-bottom: 32px;
+  min-height: 800px;
 
   ${Media.Medium} {
     grid-template-columns: repeat(2, 1fr);
@@ -18,9 +19,10 @@ const StyledSearchList = styled.ul`
   }
 `;
 
-const Description = styled.h3`
+const Description = styled.div`
   text-align: center;
   font-size: 36px;
+  min-height: 800px;
 `;
 
 export { StyledSearchList, Description };

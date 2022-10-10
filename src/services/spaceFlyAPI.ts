@@ -3,11 +3,7 @@ import { IArticle, IBlog } from "types";
 
 enum Endpoint {
   ARTICLES = "articles",
-  ARTICLES_COUNT = "articles/count",
-  ARTICLES_SEARCH = "articles?title_contains=",
   BLOGS = "blogs",
-  BLOGS_COUNT = "blogs/count",
-  BLOGS_SEARCH = "blogs?title_contains=",
 }
 
 class SpaceFlyAPI {
@@ -92,19 +88,32 @@ class SpaceFlyAPI {
   }
 
   public async getArticlesByKeyWord(keyWord: string) {
-    const { data } = await this.API.get<IArticle>(`${Endpoint.ARTICLES_SEARCH}${keyWord}`);
+    const params = {
+      _title_contains: keyWord,
+    };
+
+    const { data } = await this.API.get<IArticle>(Endpoint.ARTICLES, { params });
 
     return data;
   }
 
   public async getBlogsByKeyWord(keyWord: string) {
-    const { data } = await this.API.get<IBlog>(`${Endpoint.BLOGS_SEARCH}${keyWord}`);
+    const params = {
+      _title_contains: keyWord,
+    };
+
+    const { data } = await this.API.get<IBlog>(Endpoint.BLOGS, { params });
 
     return data;
   }
 
   public async getArticlesBySearch(word: string) {
-    const { data } = await this.API.get<IArticle[]>(Endpoint.ARTICLES + `?title_contains=${word}`);
+    const params = {
+      _limit: 12,
+      _title_contains: word,
+    };
+
+    const { data } = await this.API.get<IArticle[]>(Endpoint.ARTICLES, { params });
 
     return data;
   }

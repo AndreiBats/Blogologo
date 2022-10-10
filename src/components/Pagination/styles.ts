@@ -71,4 +71,6 @@ const Page1 = styled.li`
   border-radius: 10px;
 `;
 
-export { StyledPagination, ButtonPrev, ButtonNext, Pages, Page, Page1 };
+const Button = styled.button``;
+
+export { StyledPagination, ButtonPrev, ButtonNext, Pages, Page, Page1, Button };

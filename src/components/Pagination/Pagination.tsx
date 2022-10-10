@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useAppDispatch } from "app/hooks";
 import { StyledPagination, ButtonPrev, ButtonNext, Pages, Page, Page1 } from "./styles";
-import { fetchArticlesByPage, fetchBlogsByPage } from "app/features";
+import { fetchArticlesByPage, fetchBlogsByPage, fetchSortedArticles } from "app/features";
 
 export const Pagination = () => {
   const dispatch = useAppDispatch();

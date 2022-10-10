@@ -1,9 +1,8 @@
-import { fetchSignInUser } from "app/features";
 import { resetPassword } from "app/features/userSlice";
 import { useAppDispatch, useAppSelector } from "app/hooks";
 import { getUserInfo } from "app/selectors";
 import { Input, Spinner } from "components";
-import React, { useState } from "react";
+import { useState } from "react";
 import { Controller, SubmitHandler, useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { ROUTE } from "routes";
