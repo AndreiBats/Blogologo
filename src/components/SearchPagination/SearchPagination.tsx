@@ -1,32 +1,28 @@
-import { useEffect, useState } from "react";
+import { fetchSearchArticles } from "app/features";
 import { useAppDispatch } from "app/hooks";
-import { StyledPagination, ButtonPrev, ButtonNext, Pages, Page, Page1 } from "./styles";
-import { fetchArticlesByPage, fetchBlogsByPage } from "app/features";
+import { useEffect, useState } from "react";
+import { ButtonNext, ButtonPrev, Page, Page1, Pages, StyledPagination } from "./styles";
 
 interface IProps {
   value: string;
 }
 
-export const Pagination = ({ value }: IProps) => {
+export const SearchPagination = ({ value }: IProps) => {
   const dispatch = useAppDispatch();
   const [requestParams, setRequestParams] = useState({
-    _sort: "",
+    _title_contains: "",
     _start: 0,
     _limit: 12,
   });
 
   useEffect(() => {
-    dispatch(fetchArticlesByPage(requestParams));
-  }, [dispatch, requestParams]);
-
-  useEffect(() => {
-    dispatch(fetchBlogsByPage(requestParams));
+    dispatch(fetchSearchArticles(requestParams));
   }, [dispatch, requestParams]);
 
   const handlePrev = () => {
     setRequestParams({
       _start: requestParams._start === 0 ? 0 : requestParams._start - +requestParams._limit,
-      _sort: value,
+      _title_contains: value,
       _limit: requestParams._limit,
     });
   };
@@ -34,7 +30,7 @@ export const Pagination = ({ value }: IProps) => {
   const handleNext = () => {
     setRequestParams({
       _start: requestParams._start + +requestParams._limit,
-      _sort: value,
+      _title_contains: value,
       _limit: requestParams._limit,
     });
   };
@@ -42,7 +38,7 @@ export const Pagination = ({ value }: IProps) => {
   const handleFirstPage = () => {
     setRequestParams({
       _start: requestParams._start,
-      _sort: value,
+      _title_contains: value,
       _limit: requestParams._limit,
     });
   };
@@ -50,7 +46,7 @@ export const Pagination = ({ value }: IProps) => {
   const handleSecondPage = () => {
     setRequestParams({
       _start: requestParams._start + +requestParams._limit,
-      _sort: value,
+      _title_contains: value,
       _limit: requestParams._limit,
     });
   };
@@ -58,7 +54,7 @@ export const Pagination = ({ value }: IProps) => {
   const handleThirdPage = () => {
     setRequestParams({
       _start: requestParams._start + +requestParams._limit * 2,
-      _sort: value,
+      _title_contains: value,
       _limit: requestParams._limit,
     });
   };

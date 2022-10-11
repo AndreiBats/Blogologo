@@ -2,7 +2,6 @@ import { resetPassword } from "app/features/userSlice";
 import { useAppDispatch, useAppSelector } from "app/hooks";
 import { getUserInfo } from "app/selectors";
 import { Input, Spinner } from "components";
-import { useState } from "react";
 import { Controller, SubmitHandler, useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { ROUTE } from "routes";
@@ -23,11 +22,11 @@ const validateRules = {
 };
 
 interface IProps {
+  isOpen: boolean;
   toggleModal: (value: boolean) => void;
 }
 
 export const ResetPassword = ({ toggleModal }: IProps) => {
-  const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const { isPendingAuth, error } = useAppSelector(getUserInfo);
   const dispatch = useAppDispatch();
   const navigate = useNavigate();

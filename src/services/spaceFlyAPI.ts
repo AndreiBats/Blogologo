@@ -1,6 +1,6 @@
 import axios from "axios";
 import { IArticle, IBlog } from "types";
-import { ISortedList } from "types/types";
+import { ISearchList, ISortedList } from "types/types";
 
 enum Endpoint {
   ARTICLES = "articles",
@@ -22,9 +22,9 @@ class SpaceFlyAPI {
     return data;
   }
 
-  public async getArticlesByPage(sortedValue: ISortedList) {
+  public async getArticlesByPage(sortedValues: ISortedList) {
     const params = {
-      ...sortedValue,
+      ...sortedValues,
     };
 
     const { data } = await this.API.get<IArticle[]>(Endpoint.ARTICLES, { params });
@@ -32,9 +32,9 @@ class SpaceFlyAPI {
     return data;
   }
 
-  public async getBlogsByPage(value: ISortedList) {
+  public async getBlogsByPage(sortedValues: ISortedList) {
     const params = {
-      ...value,
+      ...sortedValues,
     };
 
     const { data } = await this.API.get<IBlog[]>(Endpoint.BLOGS, { params });
@@ -46,6 +46,16 @@ class SpaceFlyAPI {
     const params = {
       _sort: value,
       _limit: 12,
+    };
+
+    const { data } = await this.API.get<IArticle[]>(Endpoint.ARTICLES, { params });
+
+    return data;
+  }
+
+  public async getSearchArticles(sortedValues: ISearchList) {
+    const params = {
+      ...sortedValues,
     };
 
     const { data } = await this.API.get<IArticle[]>(Endpoint.ARTICLES, { params });

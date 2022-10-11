@@ -1,5 +1,6 @@
 import { removeFavoriteBlog } from "app/features";
 import { useAppDispatch } from "app/hooks";
+import { space } from "assets";
 import { IBlog } from "types";
 import { Button, Description, MainDate, MainImage, StyledBlogsItem, Title } from "./styles";
 
@@ -18,7 +19,7 @@ export const FavoritesBlog = ({ blog }: IProps) => {
 
   return (
     <StyledBlogsItem>
-      <MainImage src={imageUrl} alt={title} />
+      <MainImage src={imageUrl.endsWith(".jpg") ? imageUrl : space} alt={title} />
       <Description>
         <MainDate>{publishedAt}</MainDate>
         <Title>{title}</Title>

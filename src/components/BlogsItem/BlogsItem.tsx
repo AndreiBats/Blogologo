@@ -1,5 +1,6 @@
 import { addToFavorites } from "app/features";
 import { useAppDispatch } from "app/hooks";
+import { space } from "assets";
 import { format } from "date-fns";
 import { useToggle } from "hooks/index";
 import { IBlog } from "types";
@@ -22,7 +23,7 @@ export const BlogsItem = ({ blog }: IProps) => {
   };
   return (
     <StyledBlogsItem whileHover={{ scale: 1.05 }}>
-      <MainImage src={imageUrl} alt={title} />
+      <MainImage src={imageUrl.endsWith(".jpg") ? imageUrl : space} alt={title} />
       <Description>
         <MainDate>{date}</MainDate>
         <Title>{title}</Title>

@@ -24,6 +24,7 @@ import { SearchList } from "./SearchList/SearchList";
 import { BurgerMenu } from "./BurgerMenu/BurgerMenu";
 import { ResetPassword } from "./ResetPassword/ResetPassword";
 import { CustomLink } from "./CustomLink/CustomLink";
+import { SearchPagination } from "./SearchPagination/SearchPagination";
 
 export {
   TabBar,
@@ -52,4 +53,5 @@ export {
   BurgerMenu,
   ResetPassword,
   CustomLink,
+  SearchPagination,
 };

@@ -1,7 +1,6 @@
 import { Controller, SubmitHandler, useForm } from "react-hook-form";
 import { Input, Spinner } from "../index";
 import { ROUTE } from "routes";
-import { useState } from "react";
 import { useAppDispatch, useAppSelector } from "app/hooks";
 import { useNavigate } from "react-router-dom";
 import { getUserInfo } from "app/selectors";
@@ -47,7 +46,6 @@ interface IProps {
 }
 
 export const FormSignIn = ({ toggleModal }: IProps) => {
-  const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const { isPendingAuth, error } = useAppSelector(getUserInfo);
   const dispatch = useAppDispatch();
   const navigate = useNavigate();

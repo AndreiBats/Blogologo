@@ -1,4 +1,4 @@
-import { Pagination, Search, SearchList } from "components";
+import { Search, SearchList, SearchPagination } from "components";
 import { useInput } from "hooks/useInput";
 import { StyledSearchPage } from "./styles";
 
@@ -9,7 +9,7 @@ export const SearchPage = () => {
     <StyledSearchPage>
       <Search {...searchInput} />
       <SearchList {...searchInput} />
-      {/* <Pagination /> */}
+      <SearchPagination value={searchInput.value} />
     </StyledSearchPage>
   );
 };

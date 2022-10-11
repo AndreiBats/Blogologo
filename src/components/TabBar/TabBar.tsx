@@ -1,6 +1,5 @@
-import { useToggle } from "hooks";
-import { CustomSelect } from "../index";
 import { ButtonArticles, ButtonBlogs, StyledTabBar, TabItems } from "./styles";
+import { useToggle } from "hooks";
 
 interface IProps {
   tab: string;

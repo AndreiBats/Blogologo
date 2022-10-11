@@ -3,19 +3,9 @@ import { addToFavorites } from "app/features";
 import { useToggle } from "hooks/index";
 import { getUserInfo } from "app/selectors";
 import { useAppDispatch, useAppSelector } from "app/hooks";
-import { Link } from "react-router-dom";
-import { ROUTE } from "routes";
 import { IArticle } from "types";
-import {
-  Button,
-  Description,
-  MainDate,
-  MainImage,
-  StyledArticlesItem,
-  Title,
-  ButtonSingIn,
-} from "./styles";
-import { CustomLink } from "components";
+import { space } from "assets";
+import { Button, Description, MainDate, MainImage, StyledArticlesItem, Title } from "./styles";
 
 interface IProps {
   article: IArticle;
@@ -36,16 +26,14 @@ export const ArticlesItem = ({ article }: IProps) => {
 
   return (
     <StyledArticlesItem whileHover={{ scale: 1.05 }}>
-      <MainImage src={imageUrl} alt={title} />
+      <MainImage src={imageUrl.endsWith(".jpg") ? imageUrl : space} alt={title} />
       <Description>
         <MainDate>{date}</MainDate>
         <Title>{title}</Title>
         {isAuth ? (
           <Button onClick={handleAddToLibrary}>{isRead ? "Added to library" : "Read Later"}</Button>
         ) : (
-          <ButtonSingIn>
-            <CustomLink to={ROUTE.SING_IN}> Sign In To Add To Library</CustomLink>
-          </ButtonSingIn>
+          <></>
         )}
       </Description>
     </StyledArticlesItem>

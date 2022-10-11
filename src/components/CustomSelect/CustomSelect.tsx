@@ -7,7 +7,7 @@ import { fetchSortedBlogs, fetchSortedArticles } from "app/features";
 const options: IOption[] = [
   { value: "title", label: "Title" },
   { value: "publishedAt", label: "Date" },
-  { value: "", label: "Reset" },
+  { value: "", label: "Main Page" },
 ];
 
 interface IProps {

@@ -10,7 +10,7 @@ export const ResetPage = () => {
     <StyledResetPage>
       <Back to={ROUTE.HOME}>Back to home</Back>
       <Title>Reset Password</Title>
-      <ResetPassword toggleModal={toggleModal} />
+      <ResetPassword isOpen={isOpen} toggleModal={toggleModal} />
     </StyledResetPage>
   );
 };

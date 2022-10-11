@@ -3,6 +3,7 @@ import { IFavorites } from "types";
 import { Button, Description, MainDate, MainImage, StyledArticlesItem, Title } from "./styles";
 import { format } from "date-fns";
 import { removeFavorite } from "app/features";
+import { space } from "assets";
 
 interface IProps {
   article: IFavorites;
@@ -20,7 +21,7 @@ export const FavoritesArticle = ({ article }: IProps) => {
 
   return (
     <StyledArticlesItem whileHover={{ scale: 1.05 }}>
-      <MainImage src={imageUrl} alt={title} />
+      <MainImage src={imageUrl.endsWith(".jpg") ? imageUrl : space} alt={title} />
       <Description>
         <MainDate>{date}</MainDate>
         <Title>{title}</Title>

@@ -55,7 +55,13 @@ export interface IFavorites {
 }
 
 export interface ISortedList {
-  _limit: string;
+  _limit: number;
   _start: number;
   _sort: string;
+}
+
+export interface ISearchList {
+  _limit: number;
+  _start: number;
+  _title_contains: string;
 }
