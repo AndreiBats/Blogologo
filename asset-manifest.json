@@ -1,17 +1,20 @@
 {
   "files": {
     "main.css": "/blogologo/static/css/main.88474277.css",
-    "main.js": "/blogologo/static/js/main.43557dcd.js",
+    "main.js": "/blogologo/static/js/main.0f6ab59e.js",
+    "static/media/space.jpg": "/blogologo/static/media/space.1abc64e54f9fb73f2a93.jpg",
     "static/media/logo.svg": "/blogologo/static/media/logo.b36cca23f6841fe3e107e4642d66215c.svg",
+    "static/media/burger.svg": "/blogologo/static/media/burger.c4f935ae65a4b3ae939d1909c49c0c32.svg",
     "static/media/sign-in.svg": "/blogologo/static/media/sign-in.5a46bb3ab6ae548cebb41ffbd731ad5f.svg",
     "static/media/favorites.svg": "/blogologo/static/media/favorites.22cfa8ea3f09c7354061fa63248be779.svg",
+    "static/media/close.svg": "/blogologo/static/media/close.dbd2e00c9db2fa96bd8027f0e62937c6.svg",
     "index.html": "/blogologo/index.html",
     "static/media/search.svg": "/blogologo/static/media/search.7f0947de943e2eef52a15b039a4ae707.svg",
     "main.88474277.css.map": "/blogologo/static/css/main.88474277.css.map",
-    "main.43557dcd.js.map": "/blogologo/static/js/main.43557dcd.js.map"
+    "main.0f6ab59e.js.map": "/blogologo/static/js/main.0f6ab59e.js.map"
   },
   "entrypoints": [
     "static/css/main.88474277.css",
-    "static/js/main.43557dcd.js"
+    "static/js/main.0f6ab59e.js"
   ]
 }
