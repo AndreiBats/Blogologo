@@ -2,6 +2,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { AxiosError } from "axios";
 import { spaceFlyAPI } from "services/spaceFlyAPI";
 import { IArticle } from "types";
+import { ISearchList } from "types/types";
 
 interface ArticlesState {
   searchArticles: IArticle[];
@@ -20,6 +21,18 @@ const fetchArticlesBySearch = createAsyncThunk<IArticle[], string, { rejectValue
   async (word, { rejectWithValue }) => {
     try {
       return await spaceFlyAPI.getArticlesBySearch(word);
+    } catch (error) {
+      const AxiosError = error as AxiosError;
+      return rejectWithValue(AxiosError.message);
+    }
+  },
+);
+
+const fetchSearchArticles = createAsyncThunk<IArticle[], ISearchList, { rejectValue: string }>(
+  "articles/fetchSearchArticles",
+  async (searchValue, { rejectWithValue }) => {
+    try {
+      return await spaceFlyAPI.getSearchArticles(searchValue);
     } catch (error) {
       const AxiosError = error as AxiosError;
       return rejectWithValue(AxiosError.message);
@@ -46,9 +59,24 @@ const articlesSearchSlice = createSlice({
         state.error = payload;
       }
     });
+
+    builder.addCase(fetchSearchArticles.pending, (state) => {
+      state.isLoading = true;
+      state.error = null;
+    });
+    builder.addCase(fetchSearchArticles.fulfilled, (state, { payload }) => {
+      state.isLoading = false;
+      state.searchArticles = payload;
+    });
+    builder.addCase(fetchSearchArticles.rejected, (state, { payload }) => {
+      if (payload) {
+        state.isLoading = false;
+        state.error = payload;
+      }
+    });
   },
 });
 
 export default articlesSearchSlice.reducer;
 
-export { fetchArticlesBySearch };
+export { fetchArticlesBySearch, fetchSearchArticles };

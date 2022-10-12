@@ -14,6 +14,7 @@ interface IProps {
 }
 
 export const SearchList = ({ value }: IProps) => {
+  console.log(value);
   const dispatch = useAppDispatch();
   const { isLoading, error, searchArticles } = useAppSelector(getSearchArticles);
   const debounceValue = useDebounce(value, 1000);
