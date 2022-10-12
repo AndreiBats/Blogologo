@@ -41,11 +41,7 @@ const validateRules = {
   },
 };
 
-interface IProps {
-  toggleModal: (value: boolean) => void;
-}
-
-export const FormSignIn = ({ toggleModal }: IProps) => {
+export const FormSignIn = () => {
   const { isPendingAuth, error } = useAppSelector(getUserInfo);
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
@@ -62,7 +58,6 @@ export const FormSignIn = ({ toggleModal }: IProps) => {
   const onSubmit: SubmitHandler<SignInValues> = (userInfo) => {
     dispatch(fetchSignInUser(userInfo))
       .then(() => {
-        toggleModal(true);
         navigate("/");
       })
       .finally(() => {
