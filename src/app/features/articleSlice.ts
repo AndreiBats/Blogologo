@@ -2,7 +2,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { AxiosError } from "axios";
 import { spaceFlyAPI } from "services/spaceFlyAPI";
 import { IArticle } from "types";
-import { ISortedList, ISearchList } from "types/types";
+import { ISortedList } from "types/types";
 
 interface ArticleState {
   articles: IArticle[];
