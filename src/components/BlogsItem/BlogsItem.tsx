@@ -1,5 +1,6 @@
 import { addToFavorites } from "app/features";
-import { useAppDispatch } from "app/hooks";
+import { useAppDispatch, useAppSelector } from "app/hooks";
+import { getUserInfo } from "app/selectors";
 import { space } from "assets";
 import { format } from "date-fns";
 import { useToggle } from "hooks/index";
@@ -15,6 +16,7 @@ export const BlogsItem = ({ blog }: IProps) => {
   const date = format(new Date(publishedAt), "do MMMM Y");
   const dispatch = useAppDispatch();
   const [isRead, toggleIsRead] = useToggle(false);
+  const { isAuth } = useAppSelector(getUserInfo);
 
   const handleAddToLibrary = (event: { preventDefault: () => void }) => {
     event.preventDefault();
@@ -27,7 +29,11 @@ export const BlogsItem = ({ blog }: IProps) => {
       <Description>
         <MainDate>{date}</MainDate>
         <Title>{title}</Title>
-        <Button onClick={handleAddToLibrary}>{isRead ? "Added to library" : "Read Later"}</Button>
+        {isAuth ? (
+          <Button onClick={handleAddToLibrary}>{isRead ? "Added to library" : "Read Later"}</Button>
+        ) : (
+          <></>
+        )}
       </Description>
     </StyledBlogsItem>
   );
