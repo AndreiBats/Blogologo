@@ -136,4 +136,5 @@ Project Link: [https://github.com/AndreiBats/blogologo/tree/develop](https://git
 [keen-slider-url]: https://keen-slider.io/
 [react-spinners.com]: https://img.shields.io/badge/-react--spinners-lightgrey?style=for-the-badge&logo
 [react-spinners-url]: https://github.com/davidhu2000/react-spinners
+[date-fns.org]: https://img.shields.io/badge/-date--fns-green
 [date-fns-url]: https://date-fns.org/
